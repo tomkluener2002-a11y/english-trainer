@@ -1,17 +1,22 @@
 {
   "name": "english-trainer",
   "private": true,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "dev:lan": "vite --host",
-    "build": "tsc -b && vite build",
+    "validate:content": "bun scripts/validate-content.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc -b",
+    "build": "bun run validate:content && bun run test && tsc -b && vite build",
     "preview": "vite preview",
     "lint": "oxlint",
     "icons": "bun scripts/generate-icons.mjs"
   },
   "dependencies": {
+    "@fontsource/nunito": "^5.3.0",
     "react": "^19.3.1",
     "react-dom": "^19.3.1"
   },
@@ -26,7 +31,8 @@
     "tailwindcss": "^4.3.3",
     "typescript": "~7.0.2",
     "vite": "^8.3.5",
-    "vite-plugin-pwa": "^2.0.0"
+    "vite-plugin-pwa": "^2.0.0",
+    "vitest": "^5.0.5"
   },
-  "description": "English Trainer – Business-Englisch für Treasury & Finance (Single-User, localStorage)"
+  "description": "English Trainer – Englisch lernen im Duolingo-Stil: Einstufungstest, Basiskurs A1–B2 und Spezialisierungen (localStorage, PWA)"
 }

@@ -1,14 +1,15 @@
-/** Antwortprüfung für Tipp-Übungen: tolerant gegenüber Groß-/Kleinschreibung,
- *  Satzzeichen, Kurzformen (I'm / I am) und kleinen Tippfehlern. */
+/** Antwortprüfung: tolerant gegenüber Groß-/Kleinschreibung, Satzzeichen,
+ *  Kurzformen (I'm / I am), akzeptierten Varianten und kleinen Tippfehlern. */
 
-const PRONOUN_IS = ['it', 'that', 'she', 'he', 'there', 'what', 'here', 'who']
+export type Lang = 'en' | 'de'
+
+const PRONOUN_IS = ['it', 'that', 'she', 'he', 'there', 'what', 'here', 'who', 'where', 'how']
 
 /** Kurzformen, die am Handy oft ohne Apostroph getippt werden (nur eindeutige Fälle –
  *  "well", "were", "its" usw. sind echte Wörter und bleiben unverändert). */
 const NO_APOSTROPHE: Record<string, string> = {
   im: "i'm",
   ive: "i've",
-  ill: "i'll",
   youre: "you're",
   youve: "you've",
   theyre: "they're",
@@ -23,12 +24,14 @@ const NO_APOSTROPHE: Record<string, string> = {
   isnt: "isn't",
   arent: "aren't",
   wasnt: "wasn't",
+  werent: "weren't",
   cant: "can't",
   couldnt: "couldn't",
   wouldnt: "wouldn't",
   shouldnt: "shouldn't",
   havent: "haven't",
   hasnt: "hasn't",
+  wont: "won't",
 }
 
 function expandContractions(s: string): string {
@@ -47,12 +50,14 @@ function expandContractions(s: string): string {
     .replace(new RegExp(`\\b(${PRONOUN_IS.join('|')})'s\\b`, 'g'), '$1 is')
 }
 
-export function normalize(input: string): string {
+/** Vergleichsform eines Textes. Englisch: Kurzformen werden aufgelöst. */
+export function normalize(input: string, lang: Lang = 'en'): string {
   let s = input.toLowerCase().trim()
   s = s.replace(/[’‘`´]/g, "'")
-  s = expandContractions(s)
+  if (lang === 'en') s = expandContractions(s)
+  else s = s.replace(/ß/g, 'ss')
   s = s.replace(/[-–—/]/g, ' ')
-  s = s.replace(/[.,!?;:"“”()[\]€$%]/g, ' ')
+  s = s.replace(/[.,!?;:"“”„()[\]€$%¿¡…]/g, ' ')
   s = s.replace(/\s+/g, ' ').trim()
   return s
 }
@@ -77,14 +82,8 @@ export function editDistance(a: string, b: string): number {
   return d[a.length][b.length]
 }
 
-/** Satzvergleich ohne Satzzeichen und Groß-/Kleinschreibung (für Satzbau-Alternativen). */
-export function sameSentence(a: string, b: string): boolean {
-  const clean = (s: string) => s.replace(/[.,!?;:]/g, '').replace(/\s+/g, ' ').trim().toLowerCase()
-  return clean(a) === clean(b)
-}
-
 /** Wie viele Tippfehler bei einer Lösung dieser Länge noch als "fast richtig" gelten. */
-function tolerance(length: number): number {
+export function typoTolerance(length: number): number {
   if (length < 5) return 0
   if (length <= 12) return 1
   return Math.min(3, Math.floor(length / 12))
@@ -92,24 +91,50 @@ function tolerance(length: number): number {
 
 export interface TextCheck {
   correct: boolean
-  /** Richtig gewertet, aber mit kleinem Tippfehler */
+  /** Richtig gewertet, aber mit kleinem Tippfehler. */
   nearMiss: boolean
+  /** Die Musterlösung, der die Eingabe am nächsten kam. */
+  closest: string
 }
 
-export function checkText(input: string, accepted: string[]): TextCheck {
-  const given = normalize(input)
-  if (!given) return { correct: false, nearMiss: false }
+/** Prüft eine Tipp-Eingabe gegen akzeptierte Lösungen. `typos: false` verlangt exakte (normalisierte) Treffer. */
+export function checkText(input: string, accepted: string[], opts: { lang?: Lang; typos?: boolean } = {}): TextCheck {
+  const lang = opts.lang ?? 'en'
+  const given = normalize(input, lang)
+  const first = accepted[0] ?? ''
+  if (!given) return { correct: false, nearMiss: false, closest: first }
   let best = Infinity
   let bestLen = 0
+  let closest = first
   for (const option of accepted) {
-    const target = normalize(option)
-    if (given === target) return { correct: true, nearMiss: false }
-    const d = editDistance(given, target)
-    if (d < best) {
-      best = d
+    const target = normalize(option, lang)
+    if (given === target) return { correct: true, nearMiss: false, closest: option }
+    const dist = editDistance(given, target)
+    if (dist < best) {
+      best = dist
       bestLen = target.length
+      closest = option
     }
   }
-  if (best <= tolerance(bestLen)) return { correct: true, nearMiss: true }
-  return { correct: false, nearMiss: false }
+  if (opts.typos !== false && best <= typoTolerance(bestLen)) return { correct: true, nearMiss: true, closest }
+  return { correct: false, nearMiss: false, closest: first }
+}
+
+/** Wörter einer Musterlösung für die Wortbank: an Leerzeichen getrennt, Satzzeichen am Rand entfernt.
+ *  Apostrophe innerhalb eines Wortes bleiben erhalten ("I'm", "don't"). */
+export function bankTokens(sentence: string): string[] {
+  return sentence
+    .split(/\s+/)
+    .map((w) => w.replace(/^[.,!?;:"“”„()¿¡…]+|[.,!?;:"“”„()¿¡…]+$/g, ''))
+    .filter(Boolean)
+}
+
+/** Ähnlichkeit zweier Sätze für die Spracherkennung (Anteil getroffener Wörter, 0–1). */
+export function wordOverlap(spoken: string, target: string): number {
+  const t = normalize(target).split(' ').filter(Boolean)
+  const s = new Set(normalize(spoken).split(' ').filter(Boolean))
+  if (!t.length) return 0
+  let hit = 0
+  for (const w of t) if (s.has(w)) hit++
+  return hit / t.length
 }

@@ -1,33 +1,45 @@
-/** Datums-Helfer auf Basis lokaler Kalendertage im Format YYYY-MM-DD. */
+/** Datums-Helfer. Tage werden als lokale Schlüssel "YYYY-MM-DD" gespeichert. */
 
-export function dayKey(date: Date = new Date()): string {
-  const y = date.getFullYear()
+export const MINUTE = 60_000
+export const HOUR = 60 * MINUTE
+export const DAY = 24 * HOUR
+
+export function dayKey(d: Date | number = new Date()): string {
+  const date = typeof d === 'number' ? new Date(d) : d
   const m = String(date.getMonth() + 1).padStart(2, '0')
-  const d = String(date.getDate()).padStart(2, '0')
-  return `${y}-${m}-${d}`
+  const day = String(date.getDate()).padStart(2, '0')
+  return `${date.getFullYear()}-${m}-${day}`
 }
 
-function keyToUtc(key: string): number {
+/** Mittags-Zeitstempel eines Tagesschlüssels (robust gegen Sommerzeit). */
+export function parseDay(key: string): Date {
   const [y, m, d] = key.split('-').map(Number)
-  return Date.UTC(y, m - 1, d)
+  return new Date(y, m - 1, d, 12)
 }
 
-/** Anzahl Kalendertage von `from` bis `to` (positiv, wenn `to` später ist). */
-export function daysBetween(from: string, to: string): number {
-  return Math.round((keyToUtc(to) - keyToUtc(from)) / 86_400_000)
+/** Ganze Kalendertage von a nach b (b später → positiv). */
+export function daysBetween(a: string, b: string): number {
+  return Math.round((parseDay(b).getTime() - parseDay(a).getTime()) / DAY)
 }
 
-/** Die letzten `n` Tage inkl. heute, ältester zuerst. */
-export function lastDays(n: number, today: Date = new Date()): Date[] {
-  return Array.from({ length: n }, (_, i) => {
-    const d = new Date(today)
-    d.setDate(today.getDate() - (n - 1 - i))
-    return d
-  })
+export function addDays(key: string, n: number): string {
+  const d = parseDay(key)
+  d.setDate(d.getDate() + n)
+  return dayKey(d)
 }
 
-const WEEKDAYS_DE = ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa']
+/** Die letzten n Tage bis einschließlich `today`, ältester zuerst. */
+export function lastDays(today: string, n: number): string[] {
+  return Array.from({ length: n }, (_, i) => addDays(today, i - n + 1))
+}
 
-export function weekdayShort(date: Date): string {
-  return WEEKDAYS_DE[date.getDay()]
+const WEEKDAYS = ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa']
+export function weekdayShort(key: string): string {
+  return WEEKDAYS[parseDay(key).getDay()]
+}
+
+export function formatDuration(ms: number): string {
+  const s = Math.max(0, Math.round(ms / 1000))
+  const m = Math.floor(s / 60)
+  return `${m}:${String(s % 60).padStart(2, '0')}`
 }
