@@ -19,15 +19,15 @@ export default defineConfig(({ command }) => ({
         id: '/english-trainer/',
         name: 'English Trainer',
         short_name: 'EN Trainer',
-        description: 'Business-Englisch für Treasury & Finance – kurze Lektionen für zwischendurch.',
+        description: 'Englisch lernen im Spielmodus: Einstufungstest, Lernpfad A1–B2 und Spezialisierungen – offline, ohne Konto.',
         lang: 'de',
         // start_url und scope werden relativ zu "base" gesetzt
         start_url: '.',
         scope: '.',
         display: 'standalone',
         orientation: 'portrait',
-        background_color: '#f8fafc',
-        theme_color: '#4f46e5',
+        background_color: '#ffffff',
+        theme_color: '#58CC02',
         icons: [
           { src: 'pwa-64x64.png', sizes: '64x64', type: 'image/png' },
           { src: 'pwa-192x192.png', sizes: '192x192', type: 'image/png' },
@@ -36,7 +36,7 @@ export default defineConfig(({ command }) => ({
         ],
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,svg,png,ico,webmanifest}'],
+        globPatterns: ['**/*.{js,css,html,svg,png,ico,webmanifest,woff2}'],
         navigateFallback: 'index.html',
         cleanupOutdatedCaches: true,
       },
