@@ -152,11 +152,10 @@ export function ForkScreen() {
         <MascotSays mood={milestone ? 'celebrate' : 'happy'}>
           {milestone ? (
             <>
-              Glückwunsch{name ? `, ${name}` : ''}! Du hast „{milestone.title}“ geschafft. 🎉 Hier gabelt sich der Weg: Lass uns gemeinsam eine Spezialisierung wählen – der Basiskurs
-              läuft parallel weiter.
+              Glückwunsch{name ? `, ${name}` : ''}! Du hast „{milestone.title}“ geschafft. 🎉 Lass uns gemeinsam eine Spezialisierung wählen – sie kommt als Kapitel zwischendurch, der Basiskurs bleibt dein roter Faden.
             </>
           ) : (
-            <>Lass uns gemeinsam schauen, welche Spezialisierung zu dir passt. Du kannst mehrere wählen – der Basiskurs läuft parallel weiter.</>
+            <>Lass uns gemeinsam schauen, welche Spezialisierung zu dir passt. Du kannst mehrere wählen – sie kommen als Kapitel zwischen die Basis-Units, der Basiskurs bleibt dein roter Faden.</>
           )}
         </MascotSays>
 

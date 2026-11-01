@@ -55,6 +55,91 @@ export function nextLessonInTrack(s: ProgressState, track: Track): PlayableLesso
   return playableLessons(track).find(({ lesson }) => statuses.get(lesson.id) === 'available') ?? null
 }
 
+/* ─────────────────── Zusammengeführter Lernpfad (Curriculum) ─────────────────── */
+
+/** Nach so vielen Basis-Units folgt ein Spezialisierungs-Kapitel. */
+export const CHAPTER_EVERY = 2
+
+export interface CurriculumEntry {
+  track: Track
+  unit: Unit
+  /** true = Spezialisierungs-Kapitel zwischen Basis-Units. */
+  chapter: boolean
+}
+
+/**
+ * Ein durchgehender Pfad: Basiskurs-Units im Wechsel mit Kapiteln der gewählten Spezialisierungen
+ * (je CHAPTER_EVERY Basis-Units ein Kapitel, reihum durch die gewählten Tracks).
+ * Basis-Units ohne Lektionen („Bald verfügbar“) stehen am Ende des Basisteils; übrige
+ * Spezialisierungs-Units folgen danach, damit nichts verloren geht.
+ */
+export function buildCurriculum(tracks: Track[], chosen: string[]): CurriculumEntry[] {
+  const core = tracks.find((t) => t.kind === 'core')
+  if (!core) return []
+  const readyCore = core.units.filter((u) => u.lessons.length > 0)
+  const plannedCore = core.units.filter((u) => u.lessons.length === 0)
+  const queues = chosen
+    .map((id) => tracks.find((t) => t.id === id))
+    .filter((t): t is Track => !!t && t.kind === 'specialization')
+    .map((track) => ({ track, units: track.units.filter((u) => u.lessons.length > 0) }))
+    .filter((q) => q.units.length > 0)
+
+  const out: CurriculumEntry[] = []
+  let turn = 0
+  const nextChapter = (): CurriculumEntry | null => {
+    for (let k = 0; k < queues.length; k++) {
+      const q = queues[(turn + k) % queues.length]
+      const unit = q.units.shift()
+      if (unit) {
+        turn = (turn + k + 1) % queues.length
+        return { track: q.track, unit, chapter: true }
+      }
+    }
+    return null
+  }
+  readyCore.forEach((unit, i) => {
+    out.push({ track: core, unit, chapter: false })
+    if ((i + 1) % CHAPTER_EVERY === 0) {
+      const ch = nextChapter()
+      if (ch) out.push(ch)
+    }
+  })
+  for (const unit of plannedCore) out.push({ track: core, unit, chapter: false })
+  for (let ch = nextChapter(); ch; ch = nextChapter()) out.push(ch)
+  return out
+}
+
+/**
+ * Status aller Lektionen im Curriculum. Basis-Lektionen hängen nur an der vorherigen Basis-Lektion;
+ * Kapitel-Lektionen an der vorherigen Lektion desselben Tracks und an der davor liegenden Basis-Unit
+ * (so blockieren Kapitel den Basiskurs nie, werden aber der Reihe nach empfohlen).
+ */
+export function curriculumStatuses(s: ProgressState, curriculum: CurriculumEntry[]): Map<string, LessonStatus> {
+  const out = new Map<string, LessonStatus>()
+  const prevDoneByTrack = new Map<string, boolean>()
+  let anchorDone = true
+  for (const { track, unit, chapter } of curriculum) {
+    const gate = chapter ? anchorDone : true
+    for (const lesson of unit.lessons) {
+      const prevDone = prevDoneByTrack.get(track.id) ?? true
+      const done = isLessonDone(s, lesson.id, unit.id)
+      out.set(lesson.id, done ? 'done' : prevDone && gate ? 'available' : 'locked')
+      prevDoneByTrack.set(track.id, done)
+    }
+    if (!chapter) anchorDone = unit.lessons.length === 0 ? anchorDone : isUnitDone(s, unit) || isUnitPlayedThrough(s, unit)
+  }
+  return out
+}
+
+/** Erste offene, spielbare Lektion in Pfad-Reihenfolge. */
+export function nextLessonInCurriculum(s: ProgressState, curriculum: CurriculumEntry[]): (PlayableLesson & { track: Track; chapter: boolean }) | null {
+  const statuses = curriculumStatuses(s, curriculum)
+  for (const { track, unit, chapter } of curriculum) {
+    for (const lesson of unit.lessons) if (statuses.get(lesson.id) === 'available') return { lesson, unit, track, chapter }
+  }
+  return null
+}
+
 /** Einstufung → Units unterhalb des Niveaus gelten als bestanden. */
 export function unitsBelowLevel(core: Track, level: Cefr): string[] {
   const idx = CEFR_LEVELS.indexOf(level)
@@ -97,13 +182,8 @@ export function recommend(
   const mistakes = Object.keys(s.mistakes).length
   if (mistakes >= MISTAKE_BOX_FULL && !opts.practicedToday) return { kind: 'practice', mode: 'mistakes', count: mistakes }
 
-  const visible = [core, ...s.tracks.chosen.map((id) => tracks.find((t) => t.id === id)).filter((t): t is Track => !!t)]
-  const active = visible.find((t) => t.id === s.tracks.active) ?? core
-  const order = [active, ...visible.filter((t) => t !== active)]
-  for (const track of order) {
-    const next = nextLessonInTrack(s, track)
-    if (next) return { kind: 'lesson', lessonId: next.lesson.id, trackId: track.id, title: next.lesson.title, unitTitle: next.unit.title }
-  }
+  const next = nextLessonInCurriculum(s, buildCurriculum(tracks, s.tracks.chosen))
+  if (next) return { kind: 'lesson', lessonId: next.lesson.id, trackId: next.track.id, title: next.lesson.title, unitTitle: next.unit.title }
 
   const due = Object.values(s.srs).filter((w) => w.due <= opts.now).length
   if (due >= DUE_REVIEW_MIN) return { kind: 'practice', mode: 'due', count: due }
@@ -123,6 +203,9 @@ export type PathNode =
 
 export interface PathUnit {
   unit: Unit
+  track: Track
+  /** Spezialisierungs-Kapitel zwischen Basis-Units. */
+  chapter: boolean
   nodes: PathNode[]
   done: boolean
   testedOut: boolean
@@ -130,8 +213,12 @@ export interface PathUnit {
 
 /** Knotenliste einer Unit: Lektionen, Truhe nach der 2. Lektion, Pokal (Unit-Wiederholung), ggf. Weggabelung. */
 export function buildPath(s: ProgressState, track: Track, currentLessonId: string | null): PathUnit[] {
-  const statuses = lessonStatuses(s, track)
-  return track.units.map((unit) => {
+  return buildPathFor(s, track.units.map((unit) => ({ track, unit, chapter: false })), currentLessonId, lessonStatuses(s, track))
+}
+
+/** Pfad-Modell für beliebige Unit-Folgen (z.B. das zusammengeführte Curriculum). */
+export function buildPathFor(s: ProgressState, entries: CurriculumEntry[], currentLessonId: string | null, statuses: Map<string, LessonStatus>): PathUnit[] {
+  return entries.map(({ track, unit, chapter }) => {
     const nodes: PathNode[] = []
     unit.lessons.forEach((lesson, i) => {
       const status = statuses.get(lesson.id) ?? 'locked'
@@ -150,7 +237,7 @@ export function buildPath(s: ProgressState, track: Track, currentLessonId: strin
       const reached = isUnitDone(s, unit) || isUnitPlayedThrough(s, unit)
       nodes.push({ kind: 'fork', id: `${unit.id}:fork`, status: reached ? 'available' : 'locked' })
     }
-    return { unit, nodes, done: isUnitDone(s, unit), testedOut: s.testedOut.includes(unit.id) }
+    return { unit, track, chapter, nodes, done: isUnitDone(s, unit), testedOut: s.testedOut.includes(unit.id) }
   })
 }
 

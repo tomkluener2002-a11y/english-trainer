@@ -157,18 +157,11 @@ describe('Empfehlung "Weiter lernen"', () => {
     expect(rec(s, true).kind).toBe('lesson')
   })
 
-  it('aktiver Spezialisierungs-Track wird bevorzugt', () => {
+  it('Spezialisierung kommt als Kapitel in Pfad-Reihenfolge, der aktive Track wird nicht mehr bevorzugt', () => {
     const s = fresh()
     s.tracks.chosen = ['fin']
     s.tracks.active = 'fin'
-    expect(rec(s)).toMatchObject({ kind: 'lesson', trackId: 'fin', lessonId: 'fin.u1.l1' })
-  })
-
-  it('ist der aktive Track fertig, geht es im nächsten gewählten Track weiter', () => {
-    const s = fresh()
-    s.tracks.chosen = ['fin']
-    s.tracks.active = 'fin'
-    done(s, 'fin.u1.l1', 'fin.u1.l2', 'fin.u1.l3')
+    // Frisch gestartet: zuerst der Basiskurs, das Kapitel ist noch gesperrt.
     expect(rec(s)).toMatchObject({ kind: 'lesson', trackId: 'core' })
   })
 

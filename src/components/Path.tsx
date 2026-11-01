@@ -1,14 +1,14 @@
 /** Lernpfad (Home): geschwungener Pfad aus 3D-Knoten, Unit-Banner, „WEITER LERNEN“. */
 import { type CSSProperties, type ReactNode, type RefObject, useEffect, useRef, useState } from 'react'
-import { core } from '../content'
-import type { Track, Unit } from '../content/schema'
-import { buildPath, nextLessonInTrack, type PathNode, type PathUnit, type Recommendation } from '../lib/progress'
-import { openChest, setActiveTrack } from '../state/actions'
+import { tracks } from '../content'
+import type { Unit } from '../content/schema'
+import { buildCurriculum, buildPathFor, curriculumStatuses, nextLessonInCurriculum, type PathNode, type PathUnit, type Recommendation } from '../lib/progress'
+import { openChest } from '../state/actions'
 import { useAppState } from '../state/store'
 import { BookIcon, ChestIcon, CrownIcon, GemIcon, LockIcon, SignpostIcon, StarIcon, TrophyIcon } from './Icons'
 import { Mascot } from './Mascot'
 import { navigate } from './router'
-import { startRecommendation, useRecommendation, visibleTracks } from './recommendation'
+import { startRecommendation, useRecommendation } from './recommendation'
 import { sfx } from './sfx'
 import { CEFR_INFO, pal } from './theme'
 import { AudioButtons, Modal, Sheet } from './ui'
@@ -16,54 +16,32 @@ import { AudioButtons, Modal, Sheet } from './ui'
 const OFFSETS = [0, 44, 70, 44, 0, -44, -70, -44]
 export function PathScreen() {
   const s = useAppState()
-  const visible = visibleTracks(s.tracks.chosen)
-  const track = visible.find((t) => t.id === s.tracks.active) ?? core
-  const next = nextLessonInTrack(s, track)
-  const units = buildPath(s, track, next?.lesson.id ?? null)
+  const curriculum = buildCurriculum(tracks, s.tracks.chosen)
+  const next = nextLessonInCurriculum(s, curriculum)
+  const units = buildPathFor(s, curriculum, next?.lesson.id ?? null, curriculumStatuses(s, curriculum))
   const rec = useRecommendation()
   const currentRef = useRef<HTMLDivElement>(null)
   const [selected, setSelected] = useState<string | null>(null)
   const [tips, setTips] = useState<Unit | null>(null)
   const [chest, setChest] = useState<number | null>(null)
-  const hasLessons = track.units.some((u) => u.lessons.length)
 
   useEffect(() => {
     const t = window.setTimeout(() => currentRef.current?.scrollIntoView({ block: 'center', behavior: 'smooth' }), 120)
     return () => window.clearTimeout(t)
-  }, [track.id])
+  }, [])
 
-  const sections = units.map((pu, i) => ({ pu, no: i + 1, divider: track.kind === 'core' && i > 0 && pu.unit.cefr !== units[i - 1].unit.cefr }))
+  // Basis-Units zählen durch (Unit 1, 2, …); Spezialisierungs-Kapitel haben ein eigenes Etikett.
+  let coreNo = 0
+  const sections = units.map((pu, i) => {
+    if (!pu.chapter) coreNo += 1
+    const prev = i > 0 ? units.slice(0, i).filter((u) => !u.chapter).pop() : undefined
+    return { pu, no: coreNo, divider: !pu.chapter && !!prev && pu.unit.cefr !== prev.unit.cefr }
+  })
   return (
     <div className="mx-auto w-full max-w-[520px] px-4 pt-3 pb-[calc(190px+env(safe-area-inset-bottom))]">
-      {visible.length > 1 && (
-        <div className="no-scrollbar -mx-4 mb-3 flex gap-2 overflow-x-auto px-4 py-1" role="tablist" aria-label="Kurse">
-          {visible.map((t) => {
-            const on = t.id === track.id
-            return (
-              <button
-                key={t.id}
-                role="tab"
-                aria-selected={on}
-                onClick={() => setActiveTrack(t.id)}
-                className="flex shrink-0 items-center gap-2 rounded-2xl border-2 border-b-4 px-3 py-1.5 text-[15px] font-extrabold"
-                style={on ? { borderColor: pal(t.color).dark, background: pal(t.color).main, color: pal(t.color).fg } : { borderColor: '#E5E5E5', color: '#777' }}
-              >
-                <span>{t.icon}</span>
-                {t.kind === 'core' ? 'Basiskurs' : t.title}
-              </button>
-            )
-          })}
-          <button onClick={() => navigate('/fork')} className="flex shrink-0 items-center rounded-2xl border-2 border-b-4 border-dashed border-line px-3 py-1.5 text-[15px] font-extrabold text-sky">
-            + Neu
-          </button>
-        </div>
-      )}
-
-      {track.kind === 'specialization' && <TrackHeader track={track} hasLessons={hasLessons} />}
-
       {sections.map(({ pu, no: unitNo, divider }) => {
         return (
-          <section key={pu.unit.id} className="mb-6" aria-label={`Unit ${unitNo}: ${pu.unit.title}`}>
+          <section key={pu.unit.id} className="mb-6" aria-label={pu.chapter ? `Spezialkapitel: ${pu.unit.title}` : `Unit ${unitNo}: ${pu.unit.title}`}>
             {divider && (
               <div className="my-6 flex items-center gap-3 text-mute">
                 <span className="h-[2px] flex-1 bg-line" />
@@ -95,6 +73,9 @@ export function PathScreen() {
       <div className="mt-4 flex flex-col items-center gap-2 text-center text-mute">
         <Mascot mood="thinking" size={90} idle={false} />
         <p className="max-w-[280px] text-[15px] font-bold">Weitere Units sind in Arbeit. Bald geht's hier weiter!</p>
+        <button onClick={() => navigate('/fork')} className="mt-2 rounded-2xl border-2 border-b-4 border-dashed border-line px-4 py-2 text-[15px] font-extrabold text-sky">
+          + Spezialisierung hinzufügen
+        </button>
       </div>
 
       <ContinueBar rec={rec} />
@@ -141,36 +122,6 @@ export function PathScreen() {
   )
 }
 
-function TrackHeader({ track, hasLessons }: { track: Track; hasLessons: boolean }) {
-  const p = pal(track.color)
-  return (
-    <div className="mb-6 overflow-hidden rounded-3xl border-2 border-b-4" style={{ borderColor: p.dark, background: p.light }}>
-      <div className="flex items-center gap-4 p-4">
-        <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl text-4xl" style={{ background: p.main }}>
-          {track.icon}
-        </span>
-        <div>
-          <p className="label-caps" style={{ color: p.dark }}>
-            Spezialisierung
-          </p>
-          <h1 className="text-[22px] leading-tight font-black">{track.title}</h1>
-          <p className="text-[15px] font-semibold text-ink-soft">{track.subtitle}</p>
-        </div>
-      </div>
-      {!hasLessons && (
-        <div className="border-t-2 bg-white p-4" style={{ borderColor: p.main }}>
-          <p className="text-[15px] font-semibold text-ink-soft">
-            Diese Spezialisierung ist vorgemerkt – die Lektionen sind gerade in Arbeit. Bis dahin lernst du im Basiskurs weiter.
-          </p>
-          <button className="btn mt-3 w-full" onClick={() => setActiveTrack('core')}>
-            Zum Basiskurs
-          </button>
-        </div>
-      )}
-    </div>
-  )
-}
-
 function UnitBanner({ pu, no, onTips }: { pu: PathUnit; no: number; onTips: () => void }) {
   const { unit } = pu
   const planned = unit.lessons.length === 0
@@ -180,7 +131,7 @@ function UnitBanner({ pu, no, onTips }: { pu: PathUnit; no: number; onTips: () =
       <div className="flex items-start gap-3">
         <div className="min-w-0 flex-1">
           <p className="text-[12px] font-extrabold tracking-wider uppercase opacity-80">
-            {unit.cefr} · Unit {no}
+            {pu.chapter ? `Spezialkapitel · ${pu.track.title}` : `${unit.cefr} · Unit ${no}`}
             {pu.testedOut && ' · ✓ übersprungen'}
             {planned && ' · Bald verfügbar'}
             {unit.status === 'partial' && ' · Teilweise fertig'}
