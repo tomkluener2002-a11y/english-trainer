@@ -1,0 +1,169 @@
+[
+  {
+    "id": "core.b1u1.experience",
+    "en": "experience",
+    "de": "die Erfahrung",
+    "pos": "noun",
+    "example": "It was a great experience.",
+    "exampleDe": "Es war eine tolle Erfahrung.",
+    "altEn": ["experiences"],
+    "altDe": ["Erfahrung", "das Erlebnis"],
+    "note": "Auch Berufserfahrung heißt work experience."
+  },
+  {
+    "id": "core.b1u1.ever",
+    "en": "ever",
+    "de": "jemals / schon einmal",
+    "pos": "adv",
+    "example": "Have you ever been to Spain?",
+    "exampleDe": "Warst du schon einmal in Spanien?",
+    "altDe": ["jemals", "schon einmal", "schon mal"],
+    "note": "Steht in Fragen zwischen have und dem Partizip."
+  },
+  {
+    "id": "core.b1u1.never",
+    "en": "never",
+    "de": "noch nie / nie",
+    "pos": "adv",
+    "example": "I have never eaten sushi.",
+    "exampleDe": "Ich habe noch nie Sushi gegessen.",
+    "altDe": ["nie", "noch nie"],
+    "note": "Steht zwischen have und dem Partizip. Ein zusätzliches not brauchst du nicht."
+  },
+  {
+    "id": "core.b1u1.been",
+    "en": "been",
+    "de": "gewesen / war",
+    "pos": "verb",
+    "example": "I have been to Rome.",
+    "exampleDe": "Ich war schon in Rom.",
+    "altDe": ["gewesen", "war"],
+    "note": "Partizip II von be (sein). have been to = war schon einmal dort."
+  },
+  {
+    "id": "core.b1u1.seen",
+    "en": "seen",
+    "de": "gesehen",
+    "pos": "verb",
+    "example": "We have seen this film before.",
+    "exampleDe": "Wir haben diesen Film schon gesehen.",
+    "note": "Partizip II von see (sehen)."
+  },
+  {
+    "id": "core.b1u1.eaten",
+    "en": "eaten",
+    "de": "gegessen",
+    "pos": "verb",
+    "example": "She has eaten Thai food before.",
+    "exampleDe": "Sie hat schon mal thailändisches Essen gegessen.",
+    "note": "Partizip II von eat (essen)."
+  },
+  {
+    "id": "core.b1u1.gone",
+    "en": "gone",
+    "de": "gegangen / gefahren",
+    "pos": "verb",
+    "example": "He has gone to Paris.",
+    "exampleDe": "Er ist nach Paris gefahren.",
+    "note": "have gone to = ist weg und noch nicht zurück. Partizip II von go."
+  },
+  {
+    "id": "core.b1u1.met",
+    "en": "met",
+    "de": "kennengelernt / getroffen",
+    "pos": "verb",
+    "example": "I have met your sister.",
+    "exampleDe": "Ich habe deine Schwester kennengelernt.",
+    "altDe": ["getroffen"],
+    "note": "Partizip II von meet."
+  },
+  {
+    "id": "core.b1u1.since",
+    "en": "since",
+    "de": "seit (Zeitpunkt)",
+    "pos": "prep",
+    "example": "I have lived here since Monday.",
+    "exampleDe": "Ich wohne seit Montag hier.",
+    "note": "since + Zeitpunkt, z.B. since 2019 oder since Monday."
+  },
+  {
+    "id": "core.b1u1.for",
+    "en": "for",
+    "de": "seit (Zeitraum)",
+    "pos": "prep",
+    "example": "We have known each other for years.",
+    "exampleDe": "Wir kennen uns schon seit Jahren.",
+    "note": "for + Zeitraum, z.B. for two years. Achtung: for heißt auch „für“."
+  },
+  {
+    "id": "core.b1u1.already",
+    "en": "already",
+    "de": "schon / bereits",
+    "pos": "adv",
+    "example": "I have already eaten.",
+    "exampleDe": "Ich habe schon gegessen.",
+    "altDe": ["bereits"],
+    "note": "Steht zwischen have und dem Partizip."
+  },
+  {
+    "id": "core.b1u1.yet",
+    "en": "yet",
+    "de": "noch nicht / schon (in Fragen)",
+    "pos": "adv",
+    "example": "Have you finished yet?",
+    "exampleDe": "Bist du schon fertig?",
+    "altDe": ["noch nicht", "schon"],
+    "note": "Steht am Satzende: I haven't finished yet."
+  },
+  {
+    "id": "core.b1u1.trip",
+    "en": "trip",
+    "de": "die Reise / der Ausflug",
+    "emoji": "🧳",
+    "pos": "noun",
+    "example": "We went on a trip to the mountains.",
+    "exampleDe": "Wir haben einen Ausflug in die Berge gemacht.",
+    "altDe": ["Reise", "Ausflug", "Fahrt"],
+    "note": "Für eine kurze Reise. Für eine lange Reise sagt man journey."
+  },
+  {
+    "id": "core.b1u1.abroad",
+    "en": "abroad",
+    "de": "im Ausland / ins Ausland",
+    "pos": "adv",
+    "example": "She has lived abroad for years.",
+    "exampleDe": "Sie hat jahrelang im Ausland gelebt.",
+    "altDe": ["im Ausland", "ins Ausland"],
+    "note": "Ohne Präposition: lived abroad, nicht „in abroad“."
+  },
+  {
+    "id": "core.b1u1.concert",
+    "en": "concert",
+    "de": "das Konzert",
+    "emoji": "🎵",
+    "pos": "noun",
+    "example": "I have been to a rock concert.",
+    "exampleDe": "Ich war schon mal auf einem Rockkonzert.",
+    "altDe": ["Konzert"]
+  },
+  {
+    "id": "core.b1u1.amazing",
+    "en": "amazing",
+    "de": "großartig / toll",
+    "pos": "adj",
+    "example": "It was an amazing experience.",
+    "exampleDe": "Es war ein großartiges Erlebnis.",
+    "altDe": ["großartig", "toll", "unglaublich"],
+    "note": "Stärker als good. Man sagt es für sehr gute Erlebnisse."
+  },
+  {
+    "id": "core.b1u1.once",
+    "en": "once",
+    "de": "einmal",
+    "pos": "adv",
+    "example": "I have seen him once.",
+    "exampleDe": "Ich habe ihn einmal gesehen.",
+    "altDe": ["ein Mal"],
+    "note": "once = einmal. twice = zweimal."
+  }
+]

@@ -1,0 +1,26 @@
+[
+  { "id": "core.a1u4.monday", "en": "Monday", "de": "der Montag", "pos": "noun", "example": "I work on Monday.", "exampleDe": "Ich arbeite am Montag." },
+  { "id": "core.a1u4.tuesday", "en": "Tuesday", "de": "der Dienstag", "pos": "noun", "example": "Today is Tuesday.", "exampleDe": "Heute ist Dienstag." },
+  { "id": "core.a1u4.wednesday", "en": "Wednesday", "de": "der Mittwoch", "pos": "noun", "example": "We meet on Wednesday.", "exampleDe": "Wir treffen uns am Mittwoch.", "note": "Meist ausgesprochen wie „WENZ-dei“." },
+  { "id": "core.a1u4.thursday", "en": "Thursday", "de": "der Donnerstag", "pos": "noun", "example": "See you on Thursday.", "exampleDe": "Bis Donnerstag.", "note": "Das „th“ spricht man mit der Zungenspitze zwischen den Zähnen." },
+  { "id": "core.a1u4.friday", "en": "Friday", "de": "der Freitag", "pos": "noun", "example": "See you on Friday!", "exampleDe": "Bis Freitag!" },
+  { "id": "core.a1u4.saturday", "en": "Saturday", "de": "der Samstag", "pos": "noun", "example": "We meet on Saturday.", "exampleDe": "Wir treffen uns am Samstag.", "altDe": ["Sonnabend"], "note": "In Norddeutschland sagt man auch „Sonnabend“." },
+
+  { "id": "core.a1u4.what-time", "en": "What time is it?", "de": "Wie spät ist es?", "pos": "phrase", "example": "What time is it? – It is nine o'clock.", "exampleDe": "Wie spät ist es? – Es ist neun Uhr.", "altEn": ["what time is it"], "altDe": ["Wie viel Uhr ist es?"] },
+  { "id": "core.a1u4.oclock", "en": "o'clock", "de": "Uhr (volle Stunde)", "emoji": "🕖", "pos": "other", "example": "It is seven o'clock.", "exampleDe": "Es ist sieben Uhr.", "altEn": ["oclock"], "altDe": ["Uhr"], "note": "Nur bei vollen Stunden: seven o'clock = 7:00." },
+  { "id": "core.a1u4.half-past", "en": "half past", "de": "halb (+ nächste Stunde)", "pos": "phrase", "example": "It is half past seven.", "exampleDe": "Es ist halb acht.", "altEn": ["half past"], "note": "Achtung: Englisch nimmt die aktuelle Stunde, Deutsch die nächste." },
+  { "id": "core.a1u4.quarter-past", "en": "quarter past", "de": "Viertel nach", "pos": "phrase", "example": "It is quarter past nine.", "exampleDe": "Es ist Viertel nach neun.", "altEn": ["a quarter past"], "note": "quarter past nine = 9:15." },
+  { "id": "core.a1u4.quarter-to", "en": "quarter to", "de": "Viertel vor", "pos": "phrase", "example": "It is quarter to eight.", "exampleDe": "Es ist Viertel vor acht.", "altEn": ["a quarter to"], "note": "quarter to eight = 7:45." },
+
+  { "id": "core.a1u4.get-up", "en": "get up", "de": "aufstehen", "emoji": "⏰", "pos": "verb", "example": "I get up at seven.", "exampleDe": "Ich stehe um sieben auf.", "altDe": ["ich stehe auf"], "note": "Phrasal verb: immer mit up (nicht nur „get“)." },
+  { "id": "core.a1u4.have-breakfast", "en": "have breakfast", "de": "frühstücken", "emoji": "🍳", "pos": "phrase", "example": "I have breakfast at eight.", "exampleDe": "Ich frühstücke um acht.", "altDe": ["Frühstück essen"], "note": "Wörtlich „Frühstück haben“. „make breakfast“ heißt „Frühstück machen“." },
+  { "id": "core.a1u4.go-to-work", "en": "go to work", "de": "zur Arbeit gehen", "emoji": "🏢", "pos": "phrase", "example": "I go to work at half past eight.", "exampleDe": "Ich gehe um halb neun zur Arbeit.", "altDe": ["zur Arbeit fahren"], "note": "Ohne Artikel: to work, nicht „to the work“." },
+  { "id": "core.a1u4.come-home", "en": "come home", "de": "nach Hause kommen", "emoji": "🏠", "pos": "phrase", "example": "I come home at six.", "exampleDe": "Ich komme um sechs nach Hause.", "altDe": ["heimkommen"], "note": "Ohne „to“: come home, nicht „come to home“." },
+  { "id": "core.a1u4.go-to-bed", "en": "go to bed", "de": "ins Bett gehen", "emoji": "🛏️", "pos": "phrase", "example": "I go to bed at ten.", "exampleDe": "Ich gehe um zehn ins Bett.", "note": "Ohne Artikel: to bed, nicht „to the bed“." },
+
+  { "id": "core.a1u4.sunday", "en": "Sunday", "de": "der Sonntag", "pos": "noun", "example": "We usually meet on Sunday.", "exampleDe": "Wir treffen uns normalerweise am Sonntag." },
+  { "id": "core.a1u4.weekend", "en": "weekend", "de": "das Wochenende", "emoji": "🎉", "pos": "noun", "example": "Do you work at the weekend?", "exampleDe": "Arbeitest du am Wochenende?", "altEn": ["the weekend", "at the weekend"], "altDe": ["Wochenende"], "note": "Britisch: at the weekend. Amerikanisch: on the weekend." },
+  { "id": "core.a1u4.usually", "en": "usually", "de": "normalerweise", "pos": "adv", "example": "I usually get up at seven.", "exampleDe": "Ich stehe normalerweise um sieben auf.", "altDe": ["gewöhnlich", "meistens"], "note": "Steht vor dem Vollverb: I usually work." },
+  { "id": "core.a1u4.start", "en": "start", "de": "anfangen, beginnen", "pos": "verb", "example": "Work starts at nine.", "exampleDe": "Die Arbeit fängt um neun an.", "altDe": ["anfangen", "beginnen"], "note": "Bei he/she/it: starts." },
+  { "id": "core.a1u4.finish", "en": "finish", "de": "aufhören, beenden", "pos": "verb", "example": "I finish work at five.", "exampleDe": "Ich höre um fünf auf zu arbeiten.", "altDe": ["beenden", "Feierabend machen"], "note": "Bei he/she/it: finishes (-es nach sh)." }
+]

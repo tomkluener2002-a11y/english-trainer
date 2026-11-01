@@ -1,0 +1,27 @@
+[
+  { "id": "core.a2u3.hobby", "en": "hobby", "de": "das Hobby", "emoji": "🎨", "pos": "noun", "example": "Cooking is my favourite hobby.", "exampleDe": "Kochen ist mein Lieblingshobby.", "altDe": ["Freizeitbeschäftigung"] },
+  { "id": "core.a2u3.free-time", "en": "free time", "de": "die Freizeit", "pos": "noun", "example": "I have a lot of free time on Sundays.", "exampleDe": "Sonntags habe ich viel Freizeit.", "altEn": ["spare time"], "altDe": ["freie Zeit"] },
+  { "id": "core.a2u3.music", "en": "music", "de": "die Musik", "emoji": "🎵", "pos": "noun", "example": "I listen to music in the car.", "exampleDe": "Ich höre im Auto Musik." },
+  { "id": "core.a2u3.reading", "en": "reading", "de": "das Lesen", "emoji": "📖", "pos": "noun", "example": "Reading is very relaxing.", "exampleDe": "Lesen ist sehr entspannend.", "note": "Gerundium: I like reading = Ich lese gern." },
+  { "id": "core.a2u3.cooking", "en": "cooking", "de": "das Kochen", "emoji": "🍳", "pos": "noun", "example": "I enjoy cooking for my friends.", "exampleDe": "Ich koche gern für meine Freunde.", "altDe": ["Kochen"] },
+
+  { "id": "core.a2u3.sport", "en": "sport", "de": "der Sport", "emoji": "🏅", "pos": "noun", "example": "Sport is good for you.", "exampleDe": "Sport ist gut für dich.", "altEn": ["sports"] },
+  { "id": "core.a2u3.play-football", "en": "play football", "de": "Fußball spielen", "emoji": "⚽", "pos": "phrase", "example": "Tom plays football on Sundays.", "exampleDe": "Tom spielt sonntags Fußball.", "altEn": ["play soccer"], "note": "play für Ballsportarten: play tennis, play basketball." },
+  { "id": "core.a2u3.go-swimming", "en": "go swimming", "de": "schwimmen gehen", "emoji": "🏊", "pos": "phrase", "example": "We go swimming in the lake in summer.", "exampleDe": "Im Sommer gehen wir im See schwimmen.", "note": "go + -ing für Aktivitäten: go running, go hiking." },
+  { "id": "core.a2u3.do-yoga", "en": "do yoga", "de": "Yoga machen", "emoji": "🧘", "pos": "phrase", "example": "Mia does yoga every morning.", "exampleDe": "Mia macht jeden Morgen Yoga.", "altDe": ["Yoga üben"], "note": "do für Yoga und Karate: do karate." },
+  { "id": "core.a2u3.go-running", "en": "go running", "de": "joggen gehen", "emoji": "🏃", "pos": "phrase", "example": "Ben goes running before work.", "exampleDe": "Ben geht vor der Arbeit joggen.", "altEn": ["go jogging"], "altDe": ["laufen gehen"] },
+
+  { "id": "core.a2u3.always", "en": "always", "de": "immer", "pos": "adv", "example": "She is always on time.", "exampleDe": "Sie ist immer pünktlich.", "note": "Vor dem Vollverb, nach to be: I am always tired." },
+  { "id": "core.a2u3.usually", "en": "usually", "de": "meistens", "pos": "adv", "example": "We usually eat at home.", "exampleDe": "Wir essen meistens zu Hause.", "altDe": ["normalerweise", "gewöhnlich"] },
+  { "id": "core.a2u3.often", "en": "often", "de": "oft", "pos": "adv", "example": "I often go running.", "exampleDe": "Ich gehe oft joggen." },
+  { "id": "core.a2u3.sometimes", "en": "sometimes", "de": "manchmal", "pos": "adv", "example": "Sometimes I cook for my friends.", "exampleDe": "Manchmal koche ich für meine Freunde.", "altDe": ["ab und zu"] },
+  { "id": "core.a2u3.never", "en": "never", "de": "nie", "pos": "adv", "example": "He never eats meat.", "exampleDe": "Er isst nie Fleisch.", "altDe": ["niemals"] },
+  { "id": "core.a2u3.how-often", "en": "How often …?", "de": "Wie oft …?", "pos": "phrase", "example": "How often do you go swimming?", "exampleDe": "Wie oft gehst du schwimmen?", "altEn": ["how often"], "note": "Antworten: once a week, twice a week, every day." },
+
+  { "id": "core.a2u3.would-you-like-to", "en": "Would you like to …?", "de": "Möchtest du …?", "pos": "phrase", "example": "Would you like to come with us?", "exampleDe": "Möchtest du mit uns kommen?", "altEn": ["would you like to"], "altDe": ["Hast du Lust, …?"], "note": "Höfliche Einladung. Lockerer: Do you want to …?" },
+  { "id": "core.a2u3.lets-go", "en": "let's go", "de": "Lass uns gehen", "pos": "phrase", "example": "Let's go to the park.", "exampleDe": "Lass uns in den Park gehen.", "altEn": ["let us go", "lets go"], "altDe": ["Lasst uns gehen"] },
+  { "id": "core.a2u3.sounds-great", "en": "That sounds great!", "de": "Das klingt toll!", "pos": "phrase", "example": "Pizza tonight? That sounds great!", "exampleDe": "Pizza heute Abend? Das klingt toll!", "altEn": ["that sounds good"], "altDe": ["Das klingt super!", "Das hört sich toll an!"] },
+  { "id": "core.a2u3.what-about", "en": "What about …?", "de": "Wie wäre es mit …?", "pos": "phrase", "example": "What about Saturday?", "exampleDe": "Wie wäre es mit Samstag?", "altEn": ["what about"], "altDe": ["Was hältst du von …?"] },
+  { "id": "core.a2u3.sorry-cant", "en": "Sorry, I can't.", "de": "Tut mir leid, ich kann nicht.", "pos": "phrase", "example": "Sorry, I can't come on Monday.", "exampleDe": "Tut mir leid, am Montag kann ich nicht kommen.", "altEn": ["Sorry, I cannot."], "altDe": ["Leider kann ich nicht."] },
+  { "id": "core.a2u3.busy", "en": "busy", "de": "beschäftigt", "pos": "adj", "example": "I am busy on Friday.", "exampleDe": "Am Freitag bin ich beschäftigt.", "altDe": ["viel zu tun"], "note": "Falscher Freund: nicht mit business (Geschäft) verwechseln." }
+]
