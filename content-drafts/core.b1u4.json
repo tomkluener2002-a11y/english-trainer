@@ -1,0 +1,609 @@
+{
+  "id": "core.b1u4",
+  "title": "Geschichten erzählen",
+  "description": "Past Continuous und Erzähltechniken.",
+  "cefr": "B1",
+  "color": "pink",
+  "icon": "🎬",
+  "topics": ["Past Continuous", "Zeitwörter", "Spannung aufbauen", "Anekdoten"],
+  "status": "ready",
+  "milestone": true,
+  "tips": [
+    {
+      "title": "Past Continuous: was / were + -ing",
+      "text": "Mit dem Past Continuous beschreibst du eine Handlung, die zu einem Zeitpunkt in der Vergangenheit gerade im Gange war. Bilde es mit was (bei I, he, she, it) bzw. were (bei you, we, they) und der -ing-Form. Verneinung: wasn't und weren't.",
+      "examples": [
+        { "en": "At nine o'clock, I was cooking dinner.", "de": "Um neun Uhr kochte ich gerade das Abendessen." },
+        { "en": "They were waiting for the bus.", "de": "Sie warteten gerade auf den Bus." },
+        { "en": "It wasn't raining.", "de": "Es regnete nicht." }
+      ]
+    },
+    {
+      "title": "Hintergrund und Ereignis",
+      "text": "Den Hintergrund einer Geschichte erzählst du im Past Continuous, das plötzliche Ereignis im Past Simple. Mit when (als) leitest du das Ereignis ein, mit while (während) betonst du den Verlauf.",
+      "examples": [
+        { "en": "I was cooking when the phone rang.", "de": "Ich kochte gerade, als das Telefon klingelte." },
+        { "en": "While we were laughing, the dog ran away.", "de": "Während wir lachten, lief der Hund weg." }
+      ]
+    },
+    {
+      "title": "Anekdoten: Schritt für Schritt",
+      "text": "Mit Wörtern wie suddenly (plötzlich), in the end (am Ende) und by the way (übrigens) gliederst du deine Geschichte. by the way leitet eine Nebenbemerkung ein, die nicht zur Handlung gehört.",
+      "examples": [
+        { "en": "Suddenly, the lights went out.", "de": "Plötzlich gingen die Lichter aus." },
+        { "en": "In the end, we got home at midnight.", "de": "Am Ende kamen wir um Mitternacht nach Hause." },
+        { "en": "By the way, I met Anna yesterday.", "de": "Übrigens, ich habe gestern Anna getroffen." }
+      ]
+    }
+  ],
+  "lessons": [
+    {
+      "id": "core.b1u4.l1",
+      "title": "Was gerade passierte",
+      "description": "Past Continuous mit was / were, while und suddenly",
+      "introduces": ["core.b1u4.wait", "core.b1u4.cook", "core.b1u4.while", "core.b1u4.suddenly"],
+      "exercises": [
+        { "id": "e01", "type": "intro", "word": "core.b1u4.wait" },
+        { "id": "e02", "type": "intro", "word": "core.b1u4.cook" },
+        {
+          "id": "e03",
+          "type": "choice",
+          "prompt": "Welches Bild zeigt „kochen“?",
+          "choices": [
+            { "text": "cook", "emoji": "🍳", "correct": true },
+            { "text": "wait", "emoji": "⏳" },
+            { "text": "read", "emoji": "📖" }
+          ],
+          "words": ["core.b1u4.cook", "core.b1u4.wait"]
+        },
+        { "id": "e04", "type": "intro", "word": "core.b1u4.while" },
+        { "id": "e05", "type": "intro", "word": "core.b1u4.suddenly" },
+        {
+          "id": "e06",
+          "type": "match",
+          "pairs": [
+            { "en": "cook", "de": "kochen" },
+            { "en": "wait", "de": "warten" },
+            { "en": "while", "de": "während" },
+            { "en": "suddenly", "de": "plötzlich" }
+          ],
+          "words": ["core.b1u4.cook", "core.b1u4.wait", "core.b1u4.while", "core.b1u4.suddenly"]
+        },
+        {
+          "id": "e07",
+          "type": "fill",
+          "sentence": "She ___ a book at nine o'clock.",
+          "choices": [
+            { "text": "was reading", "correct": true },
+            { "text": "reads" },
+            { "text": "is reading" }
+          ],
+          "translation": "Um neun Uhr las sie gerade ein Buch.",
+          "explanation": "Verlauf in der Vergangenheit: was / were + -ing."
+        },
+        {
+          "id": "e08",
+          "type": "listen-choice",
+          "audio": "We were waiting for the bus.",
+          "prompt": "Was hast du gehört?",
+          "choices": [
+            { "text": "Wir warteten gerade auf den Bus.", "correct": true },
+            { "text": "Wir kochten gerade das Essen." },
+            { "text": "Wir haben den Bus verpasst." }
+          ],
+          "words": ["core.b1u4.wait"]
+        },
+        {
+          "id": "e09",
+          "type": "translate",
+          "direction": "de-en",
+          "prompt": "Ich kochte, während die Kinder spielten.",
+          "answer": "I was cooking while the kids were playing.",
+          "distractors": ["have", "cooked", "play"],
+          "explanation": "while + Past Continuous: zwei Handlungen, die gleichzeitig laufen.",
+          "words": ["core.b1u4.cook", "core.b1u4.while"]
+        },
+        {
+          "id": "e10",
+          "type": "type",
+          "sentence": "At eight o'clock, we ___ dinner.",
+          "accepted": ["were eating"],
+          "hint": "essen (im Verlauf)",
+          "translation": "Um acht Uhr aßen wir gerade zu Abend."
+        },
+        {
+          "id": "e11",
+          "type": "listen-type",
+          "audio": "Suddenly, the lights went out.",
+          "accepted": ["Suddenly the light went out"],
+          "translation": "Plötzlich gingen die Lichter aus.",
+          "words": ["core.b1u4.suddenly"]
+        },
+        {
+          "id": "e12",
+          "type": "speak",
+          "text": "I was reading when you called.",
+          "translation": "Ich las gerade, als du angerufen hast."
+        },
+        {
+          "id": "e13",
+          "type": "dialogue",
+          "title": "Am Abend",
+          "lines": [
+            { "speaker": "a", "name": "Sam", "en": "What were you doing at nine last night?", "de": "Was hast du gestern um neun gemacht?" },
+            { "speaker": "b", "name": "Anna", "en": "I was cooking, and my brother was watching TV.", "de": "Ich kochte, und mein Bruder sah fern." },
+            { "speaker": "a", "name": "Sam", "en": "Sounds like a busy evening!", "de": "Klingt nach einem geschäftigen Abend!" }
+          ],
+          "question": "Was hat Anna um neun Uhr gemacht?",
+          "choices": [
+            { "text": "Sie hat gekocht.", "correct": true },
+            { "text": "Sie hat ferngesehen." },
+            { "text": "Sie hat geschlafen." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "core.b1u4.l2",
+      "title": "Plötzlich passiert es",
+      "description": "Past Simple für Ereignisse, unregelmäßige Verben",
+      "introduces": ["core.b1u4.hide", "core.b1u4.escape", "core.b1u4.notice", "core.b1u4.whisper"],
+      "exercises": [
+        { "id": "e01", "type": "intro", "word": "core.b1u4.hide" },
+        { "id": "e02", "type": "intro", "word": "core.b1u4.escape" },
+        {
+          "id": "e03",
+          "type": "choice",
+          "prompt": "Was bedeutet das?",
+          "question": "hide",
+          "questionLang": "en",
+          "choices": [
+            { "text": "sich verstecken", "correct": true },
+            { "text": "finden" },
+            { "text": "laufen" }
+          ],
+          "words": ["core.b1u4.hide"]
+        },
+        { "id": "e04", "type": "intro", "word": "core.b1u4.notice" },
+        { "id": "e05", "type": "intro", "word": "core.b1u4.whisper" },
+        {
+          "id": "e06",
+          "type": "translate",
+          "direction": "en-de",
+          "prompt": "I noticed a small cat in the garden.",
+          "answer": "Ich habe im Garten eine kleine Katze bemerkt.",
+          "accepted": ["Im Garten habe ich eine kleine Katze bemerkt."],
+          "distractors": ["gefunden", "Hund", "verloren"],
+          "words": ["core.b1u4.notice"]
+        },
+        {
+          "id": "e07",
+          "type": "fill",
+          "sentence": "The cat ___ under the bed.",
+          "choices": [
+            { "text": "hid", "correct": true },
+            { "text": "hide" },
+            { "text": "hides" },
+            { "text": "hiding" }
+          ],
+          "translation": "Die Katze versteckte sich unter dem Bett.",
+          "explanation": "Unregelmäßig: hide – hid – hidden."
+        },
+        {
+          "id": "e08",
+          "type": "listen-choice",
+          "audio": "The thief escaped through the window.",
+          "prompt": "Was hast du gehört?",
+          "choices": [
+            { "text": "Der Dieb ist durch das Fenster entkommen.", "correct": true },
+            { "text": "Der Dieb hat das Fenster geputzt." },
+            { "text": "Der Dieb ist durch die Tür gekommen." }
+          ],
+          "words": ["core.b1u4.escape"]
+        },
+        {
+          "id": "e09",
+          "type": "type",
+          "sentence": "At nine o'clock, Dad ___ the dishes.",
+          "accepted": ["was washing"],
+          "hint": "abwaschen (im Verlauf)",
+          "translation": "Um neun Uhr wusch Papa gerade ab.",
+          "explanation": "Verlauf zu einer Uhrzeit: was / were + -ing."
+        },
+        {
+          "id": "e10",
+          "type": "match",
+          "pairs": [
+            { "en": "suddenly", "de": "plötzlich" },
+            { "en": "notice", "de": "bemerken" },
+            { "en": "whisper", "de": "flüstern" },
+            { "en": "hide", "de": "sich verstecken" }
+          ],
+          "words": ["core.b1u4.suddenly", "core.b1u4.notice", "core.b1u4.whisper", "core.b1u4.hide"]
+        },
+        {
+          "id": "e11",
+          "type": "listen-type",
+          "audio": "Suddenly, she whispered: \"Stay here.\"",
+          "translation": "Plötzlich flüsterte sie: „Bleib hier.“",
+          "words": ["core.b1u4.whisper", "core.b1u4.suddenly"]
+        },
+        {
+          "id": "e12",
+          "type": "dialogue",
+          "title": "Die Katze",
+          "lines": [
+            { "speaker": "a", "name": "Sam", "en": "Where is the cat?", "de": "Wo ist die Katze?" },
+            { "speaker": "b", "name": "Anna", "en": "It was hiding under the bed when I came in.", "de": "Sie versteckte sich gerade unter dem Bett, als ich hereinkam." },
+            { "speaker": "a", "name": "Sam", "en": "Oh no, where is it now?", "de": "Oh nein, wo ist sie jetzt?" }
+          ],
+          "question": "Wo war die Katze, als Anna hereinkam?",
+          "choices": [
+            { "text": "Unter dem Bett.", "correct": true },
+            { "text": "Im Garten." },
+            { "text": "Auf dem Sofa." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "core.b1u4.l3",
+      "title": "Spannung aufbauen",
+      "description": "Atmosphäre beschreiben: quiet, dark, noise, strange",
+      "introduces": ["core.b1u4.quiet", "core.b1u4.dark", "core.b1u4.noise", "core.b1u4.strange"],
+      "exercises": [
+        { "id": "e01", "type": "intro", "word": "core.b1u4.quiet" },
+        { "id": "e02", "type": "intro", "word": "core.b1u4.dark" },
+        {
+          "id": "e03",
+          "type": "choice",
+          "prompt": "Welches Bild zeigt „dunkel“?",
+          "choices": [
+            { "text": "dark", "emoji": "🌑", "correct": true },
+            { "text": "bright", "emoji": "☀️" },
+            { "text": "loud", "emoji": "📢" }
+          ],
+          "words": ["core.b1u4.dark"]
+        },
+        { "id": "e04", "type": "intro", "word": "core.b1u4.noise" },
+        { "id": "e05", "type": "intro", "word": "core.b1u4.strange" },
+        {
+          "id": "e06",
+          "type": "listen-choice",
+          "audio": "The room was quiet and dark.",
+          "prompt": "Was hast du gehört?",
+          "choices": [
+            { "text": "Der Raum war ruhig und dunkel.", "correct": true },
+            { "text": "Der Raum war laut und hell." },
+            { "text": "Der Raum war groß und warm." }
+          ],
+          "words": ["core.b1u4.quiet", "core.b1u4.dark"]
+        },
+        {
+          "id": "e07",
+          "type": "match",
+          "pairs": [
+            { "en": "quiet", "de": "ruhig" },
+            { "en": "dark", "de": "dunkel" },
+            { "en": "noise", "de": "Geräusch" },
+            { "en": "strange", "de": "seltsam" }
+          ],
+          "words": ["core.b1u4.quiet", "core.b1u4.dark", "core.b1u4.noise", "core.b1u4.strange"]
+        },
+        {
+          "id": "e08",
+          "type": "translate",
+          "direction": "de-en",
+          "prompt": "Es war ein seltsames Geräusch.",
+          "answer": "It was a strange noise.",
+          "distractors": ["is", "house", "loud"],
+          "words": ["core.b1u4.strange", "core.b1u4.noise"]
+        },
+        {
+          "id": "e09",
+          "type": "fill",
+          "sentence": "The old house was ___ and cold.",
+          "choices": [
+            { "text": "dark", "correct": true },
+            { "text": "happy" },
+            { "text": "fast" }
+          ],
+          "translation": "Das alte Haus war dunkel und kalt.",
+          "explanation": "Zustände beschreibst du mit was / were + Adjektiv."
+        },
+        {
+          "id": "e10",
+          "type": "type",
+          "sentence": "Suddenly, we heard a ___.",
+          "accepted": ["noise", "sound"],
+          "hint": "Geräusch",
+          "translation": "Plötzlich hörten wir ein Geräusch.",
+          "words": ["core.b1u4.noise"]
+        },
+        {
+          "id": "e11",
+          "type": "listen-type",
+          "audio": "Suddenly, something was moving in the dark.",
+          "accepted": ["Suddenly something was moving in the darkness"],
+          "translation": "Plötzlich bewegte sich etwas im Dunkeln.",
+          "words": ["core.b1u4.suddenly", "core.b1u4.dark"]
+        },
+        {
+          "id": "e12",
+          "type": "speak",
+          "text": "It was a very strange noise.",
+          "translation": "Es war ein sehr seltsames Geräusch.",
+          "words": ["core.b1u4.strange"]
+        },
+        {
+          "id": "e13",
+          "type": "dialogue",
+          "title": "Nachts im Haus",
+          "lines": [
+            { "speaker": "a", "name": "Sam", "en": "Did you hear that noise?", "de": "Hast du das Geräusch gehört?" },
+            { "speaker": "b", "name": "Anna", "en": "Yes, it was very strange. And the room was so dark!", "de": "Ja, es war sehr seltsam. Und das Zimmer war so dunkel!" },
+            { "speaker": "a", "name": "Sam", "en": "Let's turn on the lights.", "de": "Lass uns das Licht anmachen." },
+            { "speaker": "b", "name": "Anna", "en": "Good idea. Now it is quiet again.", "de": "Gute Idee. Jetzt ist es wieder ruhig." }
+          ],
+          "question": "Was machen Sam und Anna als Nächstes?",
+          "choices": [
+            { "text": "Sie machen das Licht an.", "correct": true },
+            { "text": "Sie gehen schlafen." },
+            { "text": "Sie rufen die Polizei." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "core.b1u4.l4",
+      "title": "Anekdoten erzählen",
+      "description": "Lustige Geschichten: funny, embarrassing, laugh, in the end",
+      "introduces": ["core.b1u4.by-the-way", "core.b1u4.funny", "core.b1u4.embarrassing", "core.b1u4.laugh", "core.b1u4.in-the-end"],
+      "exercises": [
+        { "id": "e01", "type": "intro", "word": "core.b1u4.by-the-way" },
+        { "id": "e02", "type": "intro", "word": "core.b1u4.funny" },
+        {
+          "id": "e03",
+          "type": "choice",
+          "prompt": "Was bedeutet das?",
+          "question": "funny",
+          "questionLang": "en",
+          "choices": [
+            { "text": "lustig", "correct": true },
+            { "text": "traurig" },
+            { "text": "laut" }
+          ],
+          "words": ["core.b1u4.funny"]
+        },
+        { "id": "e04", "type": "intro", "word": "core.b1u4.embarrassing" },
+        { "id": "e05", "type": "intro", "word": "core.b1u4.laugh" },
+        {
+          "id": "e06",
+          "type": "match",
+          "pairs": [
+            { "en": "funny", "de": "lustig" },
+            { "en": "embarrassing", "de": "peinlich" },
+            { "en": "laugh", "de": "lachen" },
+            { "en": "by the way", "de": "übrigens" }
+          ],
+          "words": ["core.b1u4.funny", "core.b1u4.embarrassing", "core.b1u4.laugh", "core.b1u4.by-the-way"]
+        },
+        {
+          "id": "e07",
+          "type": "listen-choice",
+          "audio": "By the way, that was really embarrassing.",
+          "prompt": "Was hast du gehört?",
+          "choices": [
+            { "text": "Übrigens, das war richtig peinlich.", "correct": true },
+            { "text": "Übrigens, das war richtig lustig." },
+            { "text": "Plötzlich war das richtig laut." }
+          ],
+          "words": ["core.b1u4.by-the-way", "core.b1u4.embarrassing"]
+        },
+        { "id": "e08", "type": "intro", "word": "core.b1u4.in-the-end" },
+        {
+          "id": "e09",
+          "type": "translate",
+          "direction": "de-en",
+          "prompt": "Am Ende haben wir alle gelacht.",
+          "answer": "In the end, we all laughed.",
+          "distractors": ["cried", "funny", "loud"],
+          "words": ["core.b1u4.in-the-end", "core.b1u4.laugh"]
+        },
+        {
+          "id": "e10",
+          "type": "fill",
+          "sentence": "That was really ___!",
+          "choices": [
+            { "text": "embarrassing", "correct": true },
+            { "text": "embarrassed" },
+            { "text": "embarrass" }
+          ],
+          "translation": "Das war richtig peinlich!",
+          "explanation": "-ing beschreibt die Sache, -ed das Gefühl der Person (verlegen).",
+          "words": ["core.b1u4.embarrassing"]
+        },
+        {
+          "id": "e11",
+          "type": "type",
+          "sentence": "We ___ until our stomachs hurt.",
+          "accepted": ["laughed"],
+          "hint": "lachen (Vergangenheit)",
+          "translation": "Wir lachten, bis uns der Bauch wehtat.",
+          "words": ["core.b1u4.laugh"]
+        },
+        {
+          "id": "e12",
+          "type": "listen-type",
+          "audio": "The story was funny, but embarrassing.",
+          "translation": "Die Geschichte war lustig, aber peinlich.",
+          "words": ["core.b1u4.funny", "core.b1u4.embarrassing"]
+        },
+        {
+          "id": "e13",
+          "type": "speak",
+          "text": "Suddenly the lights went out, and we all laughed.",
+          "translation": "Plötzlich gingen die Lichter aus, und wir lachten alle.",
+          "words": ["core.b1u4.suddenly", "core.b1u4.laugh"]
+        },
+        {
+          "id": "e14",
+          "type": "dialogue",
+          "title": "Das Wochenende",
+          "lines": [
+            { "speaker": "a", "name": "Sam", "en": "So, how was your weekend?", "de": "Und, wie war dein Wochenende?" },
+            { "speaker": "b", "name": "Anna", "en": "It was embarrassing. I forgot my keys, so I waited outside for an hour.", "de": "Es war peinlich. Ich hatte meine Schlüssel vergessen und habe eine Stunde draußen gewartet." },
+            { "speaker": "a", "name": "Sam", "en": "Oh no! What happened in the end?", "de": "Oh nein! Was ist am Ende passiert?" },
+            { "speaker": "b", "name": "Anna", "en": "Ben opened the door, and we laughed a lot.", "de": "Ben hat die Tür aufgemacht, und wir haben viel gelacht." }
+          ],
+          "question": "Warum war es für Anna peinlich?",
+          "choices": [
+            { "text": "Sie hatte ihre Schlüssel vergessen.", "correct": true },
+            { "text": "Sie hatte ihren Ausweis verloren." },
+            { "text": "Sie hat den Zug verpasst." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "core.b1u4.l5",
+      "title": "Wiederholung",
+      "description": "Alle Wörter der Unit gemischt",
+      "exercises": [
+        {
+          "id": "e01",
+          "type": "match",
+          "pairs": [
+            { "en": "cook", "de": "kochen" },
+            { "en": "whisper", "de": "flüstern" },
+            { "en": "dark", "de": "dunkel" },
+            { "en": "funny", "de": "lustig" }
+          ],
+          "words": ["core.b1u4.cook", "core.b1u4.whisper", "core.b1u4.dark", "core.b1u4.funny"]
+        },
+        {
+          "id": "e02",
+          "type": "choice",
+          "prompt": "Was bedeutet das?",
+          "question": "embarrassing",
+          "questionLang": "en",
+          "choices": [
+            { "text": "peinlich", "correct": true },
+            { "text": "lustig" },
+            { "text": "dunkel" }
+          ],
+          "words": ["core.b1u4.embarrassing"]
+        },
+        {
+          "id": "e03",
+          "type": "fill",
+          "sentence": "Yesterday at six, Sam ___ dinner.",
+          "choices": [
+            { "text": "was cooking", "correct": true },
+            { "text": "cooks" },
+            { "text": "is cooking" }
+          ],
+          "translation": "Gestern um sechs kochte Sam gerade das Abendessen.",
+          "words": ["core.b1u4.cook"]
+        },
+        {
+          "id": "e04",
+          "type": "translate",
+          "direction": "de-en",
+          "prompt": "Ich hörte ein seltsames Geräusch, als ich nach Hause kam.",
+          "answer": "I heard a strange noise when I came home.",
+          "accepted": ["When I came home, I heard a strange noise."],
+          "distractors": ["is", "house", "loud"],
+          "words": ["core.b1u4.strange", "core.b1u4.noise"]
+        },
+        {
+          "id": "e05",
+          "type": "listen-choice",
+          "audio": "While we were laughing, the dog ran away.",
+          "prompt": "Was hast du gehört?",
+          "choices": [
+            { "text": "Während wir lachten, lief der Hund weg.", "correct": true },
+            { "text": "Bevor wir lachten, schlief der Hund." },
+            { "text": "Nachdem wir lachten, kam der Hund zurück." }
+          ],
+          "words": ["core.b1u4.while", "core.b1u4.laugh"]
+        },
+        {
+          "id": "e06",
+          "type": "type",
+          "sentence": "The thief ___ through the back door.",
+          "accepted": ["escaped", "fled"],
+          "hint": "entkommen (Vergangenheit)",
+          "translation": "Der Dieb ist durch die Hintertür entkommen.",
+          "words": ["core.b1u4.escape"]
+        },
+        {
+          "id": "e07",
+          "type": "translate",
+          "direction": "en-de",
+          "prompt": "Suddenly, she whispered: 'Stay here.'",
+          "answer": "Plötzlich flüsterte sie: „Bleib hier.“",
+          "accepted": ["Sie flüsterte plötzlich: „Bleib hier.“"],
+          "distractors": ["schrie", "Haus", "gehen"],
+          "words": ["core.b1u4.whisper", "core.b1u4.suddenly"]
+        },
+        {
+          "id": "e08",
+          "type": "fill",
+          "sentence": "The story was so ___ that everyone laughed.",
+          "choices": [
+            { "text": "funny", "correct": true },
+            { "text": "quiet" },
+            { "text": "dark" }
+          ],
+          "translation": "Die Geschichte war so lustig, dass alle lachten.",
+          "words": ["core.b1u4.funny"]
+        },
+        {
+          "id": "e09",
+          "type": "listen-type",
+          "audio": "The dog was hiding under the table.",
+          "translation": "Der Hund versteckte sich gerade unter dem Tisch.",
+          "words": ["core.b1u4.hide"]
+        },
+        {
+          "id": "e10",
+          "type": "type",
+          "sentence": "In the ___, we all went home.",
+          "accepted": ["end"],
+          "hint": "Ende",
+          "translation": "Am Ende gingen wir alle nach Hause.",
+          "words": ["core.b1u4.in-the-end"]
+        },
+        {
+          "id": "e11",
+          "type": "choice",
+          "prompt": "Welches Bild zeigt „ruhig“?",
+          "choices": [
+            { "text": "quiet", "emoji": "🤫", "correct": true },
+            { "text": "noise", "emoji": "🔊" },
+            { "text": "funny", "emoji": "😂" }
+          ],
+          "words": ["core.b1u4.quiet"]
+        },
+        {
+          "id": "e12",
+          "type": "dialogue",
+          "title": "Die Burg",
+          "lines": [
+            { "speaker": "a", "name": "Sam", "en": "Tell me about your trip to the old castle.", "de": "Erzähl mir von deinem Ausflug zur alten Burg." },
+            { "speaker": "b", "name": "Anna", "en": "It was dark and quiet. Suddenly, we heard a strange noise.", "de": "Es war dunkel und ruhig. Plötzlich hörten wir ein seltsames Geräusch." },
+            { "speaker": "a", "name": "Sam", "en": "What was it?", "de": "Was war das?" },
+            { "speaker": "b", "name": "Anna", "en": "In the end, it was just the wind. So embarrassing!", "de": "Am Ende war es nur der Wind. So peinlich!" }
+          ],
+          "question": "Was war das seltsame Geräusch am Ende?",
+          "choices": [
+            { "text": "Der Wind.", "correct": true },
+            { "text": "Ein Hund." },
+            { "text": "Ein Dieb." }
+          ]
+        }
+      ]
+    }
+  ]
+}

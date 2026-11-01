@@ -267,7 +267,7 @@
             { "en": "rice", "de": "Reis" },
             { "en": "bread", "de": "Brot" }
           ],
-          "words": ["core.a1u3.like", "core.a1u3.dont-like", "core.a1u3.rice", "core.bread"]
+          "words": ["core.a1u3.like", "core.a1u3.dont-like", "core.a1u3.rice", "core.a1u3.bread"]
         },
         {
           "id": "e07",
@@ -288,7 +288,7 @@
           "prompt": "I like tea.",
           "answer": "Ich mag Tee.",
           "distractors": ["Kaffee", "Brot", "esse"],
-          "words": ["core.a1u3.like", "core.tea"]
+          "words": ["core.a1u3.like", "core.a1u3.tea"]
         },
         {
           "id": "e09",

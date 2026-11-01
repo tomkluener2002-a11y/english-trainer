@@ -1,0 +1,173 @@
+[
+  {
+    "id": "core.b1u4.wait",
+    "en": "wait",
+    "de": "warten",
+    "emoji": "⏳",
+    "pos": "verb",
+    "example": "We were waiting for the bus.",
+    "exampleDe": "Wir warteten gerade auf den Bus.",
+    "note": "Immer mit for: wait for the bus = auf den Bus warten."
+  },
+  {
+    "id": "core.b1u4.cook",
+    "en": "cook",
+    "de": "kochen",
+    "emoji": "🍳",
+    "pos": "verb",
+    "example": "I was cooking dinner at seven.",
+    "exampleDe": "Um sieben kochte ich gerade das Abendessen.",
+    "note": "Auch als Substantiv: a cook = ein Koch."
+  },
+  {
+    "id": "core.b1u4.while",
+    "en": "while",
+    "de": "während",
+    "pos": "other",
+    "example": "While I was cooking, the phone rang.",
+    "exampleDe": "Während ich kochte, klingelte das Telefon.",
+    "note": "Betont, dass zwei Dinge gleichzeitig ablaufen. Nicht mit „wile“ verwechseln."
+  },
+  {
+    "id": "core.b1u4.suddenly",
+    "en": "suddenly",
+    "de": "plötzlich",
+    "pos": "adv",
+    "example": "Suddenly, the lights went out.",
+    "exampleDe": "Plötzlich gingen die Lichter aus.",
+    "altDe": ["auf einmal"],
+    "note": "Steht meist am Satzanfang und kündigt ein Ereignis an."
+  },
+  {
+    "id": "core.b1u4.hide",
+    "en": "hide",
+    "de": "sich verstecken",
+    "pos": "verb",
+    "example": "The cat hid under the bed.",
+    "exampleDe": "Die Katze versteckte sich unter dem Bett.",
+    "altDe": ["verstecken"],
+    "note": "Unregelmäßig: hide – hid – hidden."
+  },
+  {
+    "id": "core.b1u4.escape",
+    "en": "escape",
+    "de": "entkommen",
+    "pos": "verb",
+    "example": "The thief escaped through the window.",
+    "exampleDe": "Der Dieb ist durchs Fenster entkommen.",
+    "altDe": ["fliehen", "flüchten"],
+    "note": "Regelmäßig: escaped. Mit from: escape from prison = aus dem Gefängnis entkommen."
+  },
+  {
+    "id": "core.b1u4.notice",
+    "en": "notice",
+    "de": "bemerken",
+    "pos": "verb",
+    "example": "I noticed a small cat in the garden.",
+    "exampleDe": "Ich habe im Garten eine kleine Katze bemerkt.",
+    "altDe": ["wahrnehmen"],
+    "note": "Nicht mit „remember“ verwechseln: sich etwas merken = remember."
+  },
+  {
+    "id": "core.b1u4.whisper",
+    "en": "whisper",
+    "de": "flüstern",
+    "pos": "verb",
+    "example": "She whispered, 'Be quiet.'",
+    "exampleDe": "Sie flüsterte: „Sei leise.“",
+    "note": "Auch Substantiv: a whisper = ein Flüstern."
+  },
+  {
+    "id": "core.b1u4.quiet",
+    "en": "quiet",
+    "de": "ruhig, leise",
+    "emoji": "🤫",
+    "pos": "adj",
+    "example": "The house was quiet.",
+    "exampleDe": "Das Haus war ruhig.",
+    "altDe": ["leise", "still"],
+    "note": "Auch Substantiv: the quiet = die Stille."
+  },
+  {
+    "id": "core.b1u4.dark",
+    "en": "dark",
+    "de": "dunkel",
+    "emoji": "🌑",
+    "pos": "adj",
+    "example": "The room was dark.",
+    "exampleDe": "Das Zimmer war dunkel.",
+    "altDe": ["finster"],
+    "note": "Im Dunkeln = in the dark."
+  },
+  {
+    "id": "core.b1u4.noise",
+    "en": "noise",
+    "de": "das Geräusch",
+    "emoji": "🔊",
+    "pos": "noun",
+    "example": "I heard a strange noise.",
+    "exampleDe": "Ich hörte ein seltsames Geräusch.",
+    "altDe": ["Geräusch", "Lärm"],
+    "note": "Für lauten Krach sagst du loud noise."
+  },
+  {
+    "id": "core.b1u4.strange",
+    "en": "strange",
+    "de": "seltsam, merkwürdig",
+    "pos": "adj",
+    "example": "There was a strange smell in the kitchen.",
+    "exampleDe": "In der Küche gab es einen seltsamen Geruch.",
+    "altDe": ["merkwürdig", "komisch"],
+    "note": "Nicht „fremd“ im Sinne von Ausland: dafür foreign."
+  },
+  {
+    "id": "core.b1u4.by-the-way",
+    "en": "by the way",
+    "de": "übrigens",
+    "pos": "phrase",
+    "example": "By the way, I met Anna yesterday.",
+    "exampleDe": "Übrigens, ich habe gestern Anna getroffen.",
+    "altDe": ["nebenbei bemerkt"],
+    "note": "Leitet eine Nebenbemerkung ein, die nicht zur Handlung gehört."
+  },
+  {
+    "id": "core.b1u4.in-the-end",
+    "en": "in the end",
+    "de": "am Ende",
+    "pos": "phrase",
+    "example": "In the end, we got home at midnight.",
+    "exampleDe": "Am Ende kamen wir um Mitternacht nach Hause.",
+    "altDe": ["schließlich"],
+    "note": "Nicht mit at the end verwechseln: at the end of the film = am Ende des Films."
+  },
+  {
+    "id": "core.b1u4.funny",
+    "en": "funny",
+    "de": "lustig",
+    "emoji": "😄",
+    "pos": "adj",
+    "example": "It was a funny story.",
+    "exampleDe": "Es war eine lustige Geschichte.",
+    "altDe": ["witzig", "komisch"],
+    "note": "funny = lustig. Für „seltsam“ sagst du strange."
+  },
+  {
+    "id": "core.b1u4.embarrassing",
+    "en": "embarrassing",
+    "de": "peinlich",
+    "pos": "adj",
+    "example": "That was really embarrassing!",
+    "exampleDe": "Das war richtig peinlich!",
+    "note": "Die Situation ist embarrassing, die Person ist embarrassed (verlegen)."
+  },
+  {
+    "id": "core.b1u4.laugh",
+    "en": "laugh",
+    "de": "lachen",
+    "emoji": "😂",
+    "pos": "verb",
+    "example": "We laughed all evening.",
+    "exampleDe": "Wir haben den ganzen Abend gelacht.",
+    "note": "Vergangenheit: laughed. Auch Substantiv: a laugh = ein Lacher."
+  }
+]

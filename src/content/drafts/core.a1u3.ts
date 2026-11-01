@@ -1,0 +1,1526 @@
+// Generiert von scripts/gen-drafts.ts aus content-drafts/core.a1u3.json – nicht von Hand ändern.
+import type { Unit, VocabEntry } from '../schema'
+
+export const unit: Unit = {
+  "id": "core.a1u3",
+  "title": "Essen & Trinken",
+  "description": "Bestellen, Vorlieben ausdrücken und einkaufen.",
+  "cefr": "A1",
+  "color": "orange",
+  "icon": "🍎",
+  "topics": [
+    "Lebensmittel",
+    "Im Café bestellen",
+    "Mögen & nicht mögen",
+    "Mengen & Preise"
+  ],
+  "status": "ready",
+  "tips": [
+    {
+      "title": "I would like: höflich bestellen",
+      "text": "Im Café bestellst du mit I would like (ich möchte) plus dem Wort. Das klingt höflicher als I want. Die Kurzform lautet I'd like. Mit please (bitte) wird es freundlich.",
+      "examples": [
+        {
+          "en": "I would like a coffee, please.",
+          "de": "Ich möchte bitte einen Kaffee."
+        },
+        {
+          "en": "I'd like a tea.",
+          "de": "Ich möchte einen Tee."
+        }
+      ]
+    },
+    {
+      "title": "like und don't like",
+      "text": "Nach like steht ein Nomen (I like pizza) oder ein Tunwort mit -ing (I like swimming). Verneint wird mit don't: I don't like rice. Bei he, she und it heißt es likes und doesn't like.",
+      "examples": [
+        {
+          "en": "I like pizza.",
+          "de": "Ich mag Pizza."
+        },
+        {
+          "en": "He doesn't like tea.",
+          "de": "Er mag keinen Tee."
+        }
+      ]
+    },
+    {
+      "title": "some, Mengen und a coffee",
+      "text": "Wörter wie bread, milk, water und rice sind unzählbar: some bread, nicht a bread. Zählbare Dinge gibt es im Plural: some apples oder two apples. Im Café sagt man aber a coffee oder a tea, also eine Tasse Kaffee oder Tee.",
+      "examples": [
+        {
+          "en": "I eat some bread.",
+          "de": "Ich esse etwas Brot."
+        },
+        {
+          "en": "A coffee, please.",
+          "de": "Einen Kaffee, bitte."
+        }
+      ]
+    }
+  ],
+  "lessons": [
+    {
+      "id": "core.a1u3.l1",
+      "title": "Lebensmittel",
+      "description": "Die wichtigsten Lebensmittel benennen",
+      "introduces": [
+        "core.a1u3.food",
+        "core.a1u3.apple",
+        "core.a1u3.bread",
+        "core.a1u3.cheese",
+        "core.a1u3.milk"
+      ],
+      "exercises": [
+        {
+          "id": "e01",
+          "type": "intro",
+          "word": "core.a1u3.food"
+        },
+        {
+          "id": "e02",
+          "type": "intro",
+          "word": "core.a1u3.apple"
+        },
+        {
+          "id": "e03",
+          "type": "choice",
+          "prompt": "Welches Bild zeigt „der Apfel“?",
+          "choices": [
+            {
+              "text": "apple",
+              "emoji": "🍎",
+              "correct": true
+            },
+            {
+              "text": "bread",
+              "emoji": "🍞"
+            },
+            {
+              "text": "milk",
+              "emoji": "🥛"
+            }
+          ],
+          "words": [
+            "core.a1u3.apple"
+          ]
+        },
+        {
+          "id": "e04",
+          "type": "intro",
+          "word": "core.a1u3.bread"
+        },
+        {
+          "id": "e05",
+          "type": "intro",
+          "word": "core.a1u3.cheese"
+        },
+        {
+          "id": "e06",
+          "type": "match",
+          "pairs": [
+            {
+              "en": "apple",
+              "de": "Apfel"
+            },
+            {
+              "en": "bread",
+              "de": "Brot"
+            },
+            {
+              "en": "cheese",
+              "de": "Käse"
+            },
+            {
+              "en": "food",
+              "de": "Essen"
+            }
+          ],
+          "words": [
+            "core.a1u3.apple",
+            "core.a1u3.bread",
+            "core.a1u3.cheese",
+            "core.a1u3.food"
+          ]
+        },
+        {
+          "id": "e07",
+          "type": "intro",
+          "word": "core.a1u3.milk"
+        },
+        {
+          "id": "e08",
+          "type": "listen-choice",
+          "audio": "I eat bread and cheese.",
+          "prompt": "Was hast du gehört?",
+          "choices": [
+            {
+              "text": "Ich esse Brot und Käse.",
+              "correct": true
+            },
+            {
+              "text": "Ich esse Apfel und Milch."
+            },
+            {
+              "text": "Ich trinke Milch und Wasser."
+            }
+          ],
+          "words": [
+            "core.a1u3.bread",
+            "core.a1u3.cheese"
+          ]
+        },
+        {
+          "id": "e09",
+          "type": "translate",
+          "direction": "en-de",
+          "prompt": "I eat an apple.",
+          "answer": "Ich esse einen Apfel.",
+          "distractors": [
+            "Brot",
+            "trinke",
+            "Milch"
+          ],
+          "words": [
+            "core.a1u3.apple"
+          ]
+        },
+        {
+          "id": "e10",
+          "type": "type",
+          "sentence": "I drink ___ every morning.",
+          "accepted": [
+            "milk"
+          ],
+          "hint": "Milch",
+          "translation": "Ich trinke jeden Morgen Milch.",
+          "words": [
+            "core.a1u3.milk"
+          ]
+        },
+        {
+          "id": "e11",
+          "type": "fill",
+          "sentence": "I eat ___ and cheese.",
+          "choices": [
+            {
+              "text": "bread",
+              "correct": true
+            },
+            {
+              "text": "water"
+            },
+            {
+              "text": "tea"
+            }
+          ],
+          "translation": "Ich esse Brot und Käse.",
+          "explanation": "eat = essen, drink = trinken. Wasser und Tee trinkst du, also drink.",
+          "words": [
+            "core.a1u3.bread",
+            "core.a1u3.cheese"
+          ]
+        },
+        {
+          "id": "e12",
+          "type": "translate",
+          "direction": "de-en",
+          "prompt": "Ich esse Käse.",
+          "answer": "I eat cheese.",
+          "distractors": [
+            "drink",
+            "an",
+            "milk"
+          ],
+          "words": [
+            "core.a1u3.cheese"
+          ]
+        },
+        {
+          "id": "e13",
+          "type": "listen-type",
+          "audio": "Apples and bread, please.",
+          "translation": "Äpfel und Brot, bitte.",
+          "words": [
+            "core.a1u3.apple",
+            "core.a1u3.bread",
+            "core.please"
+          ]
+        },
+        {
+          "id": "e14",
+          "type": "dialogue",
+          "title": "Zum Frühstück",
+          "lines": [
+            {
+              "speaker": "a",
+              "name": "Sam",
+              "en": "What do you eat for breakfast?",
+              "de": "Was isst du zum Frühstück?"
+            },
+            {
+              "speaker": "b",
+              "name": "Anna",
+              "en": "I eat bread and cheese. And you?",
+              "de": "Ich esse Brot und Käse. Und du?"
+            },
+            {
+              "speaker": "a",
+              "name": "Sam",
+              "en": "I eat an apple.",
+              "de": "Ich esse einen Apfel."
+            },
+            {
+              "speaker": "b",
+              "name": "Anna",
+              "en": "Nice!",
+              "de": "Schön!"
+            }
+          ],
+          "question": "Was isst Sam zum Frühstück?",
+          "choices": [
+            {
+              "text": "Einen Apfel",
+              "correct": true
+            },
+            {
+              "text": "Brot und Käse"
+            },
+            {
+              "text": "Milch"
+            }
+          ],
+          "words": [
+            "core.a1u3.apple",
+            "core.a1u3.bread",
+            "core.a1u3.cheese"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "core.a1u3.l2",
+      "title": "Im Café",
+      "description": "Höflich bestellen mit I would like",
+      "introduces": [
+        "core.a1u3.menu",
+        "core.a1u3.coffee",
+        "core.a1u3.tea",
+        "core.a1u3.water",
+        "core.a1u3.i-would-like"
+      ],
+      "exercises": [
+        {
+          "id": "e01",
+          "type": "intro",
+          "word": "core.a1u3.menu"
+        },
+        {
+          "id": "e02",
+          "type": "intro",
+          "word": "core.a1u3.coffee"
+        },
+        {
+          "id": "e03",
+          "type": "choice",
+          "prompt": "Welches Bild zeigt „der Kaffee“?",
+          "choices": [
+            {
+              "text": "coffee",
+              "emoji": "☕",
+              "correct": true
+            },
+            {
+              "text": "milk",
+              "emoji": "🥛"
+            },
+            {
+              "text": "bread",
+              "emoji": "🍞"
+            }
+          ],
+          "words": [
+            "core.a1u3.coffee",
+            "core.a1u3.milk",
+            "core.a1u3.bread"
+          ]
+        },
+        {
+          "id": "e04",
+          "type": "intro",
+          "word": "core.a1u3.tea"
+        },
+        {
+          "id": "e05",
+          "type": "intro",
+          "word": "core.a1u3.water"
+        },
+        {
+          "id": "e06",
+          "type": "match",
+          "pairs": [
+            {
+              "en": "menu",
+              "de": "Speisekarte"
+            },
+            {
+              "en": "coffee",
+              "de": "Kaffee"
+            },
+            {
+              "en": "tea",
+              "de": "Tee"
+            },
+            {
+              "en": "water",
+              "de": "Wasser"
+            }
+          ],
+          "words": [
+            "core.a1u3.menu",
+            "core.a1u3.coffee",
+            "core.a1u3.tea",
+            "core.a1u3.water"
+          ]
+        },
+        {
+          "id": "e07",
+          "type": "intro",
+          "word": "core.a1u3.i-would-like"
+        },
+        {
+          "id": "e08",
+          "type": "listen-choice",
+          "audio": "I would like a coffee, please.",
+          "prompt": "Was hast du gehört?",
+          "choices": [
+            {
+              "text": "Ich möchte bitte einen Kaffee.",
+              "correct": true
+            },
+            {
+              "text": "Ich esse einen Apfel."
+            },
+            {
+              "text": "Wo ist die Toilette?"
+            }
+          ],
+          "words": [
+            "core.a1u3.i-would-like",
+            "core.a1u3.coffee"
+          ]
+        },
+        {
+          "id": "e09",
+          "type": "translate",
+          "direction": "de-en",
+          "prompt": "Ich möchte bitte einen Tee.",
+          "answer": "I would like a tea, please.",
+          "accepted": [
+            "I'd like a tea, please."
+          ],
+          "distractors": [
+            "coffee",
+            "are",
+            "milk"
+          ],
+          "words": [
+            "core.a1u3.i-would-like",
+            "core.a1u3.tea"
+          ]
+        },
+        {
+          "id": "e10",
+          "type": "type",
+          "sentence": "I would like a ___, please.",
+          "accepted": [
+            "coffee"
+          ],
+          "hint": "Kaffee",
+          "translation": "Ich möchte bitte einen Kaffee.",
+          "words": [
+            "core.a1u3.coffee",
+            "core.a1u3.i-would-like"
+          ]
+        },
+        {
+          "id": "e11",
+          "type": "listen-type",
+          "audio": "Here is the menu.",
+          "accepted": [
+            "Here's the menu."
+          ],
+          "translation": "Hier ist die Speisekarte.",
+          "words": [
+            "core.a1u3.menu"
+          ]
+        },
+        {
+          "id": "e12",
+          "type": "fill",
+          "sentence": "I would ___ a tea, please.",
+          "choices": [
+            {
+              "text": "like",
+              "correct": true
+            },
+            {
+              "text": "likes"
+            },
+            {
+              "text": "liked"
+            }
+          ],
+          "translation": "Ich möchte bitte einen Tee.",
+          "explanation": "Nach would steht immer die Grundform: would like, nie would likes.",
+          "words": [
+            "core.a1u3.i-would-like",
+            "core.a1u3.tea"
+          ]
+        },
+        {
+          "id": "e13",
+          "type": "dialogue",
+          "title": "Im Café",
+          "lines": [
+            {
+              "speaker": "a",
+              "name": "Anna",
+              "en": "Hi! Here is the menu.",
+              "de": "Hallo! Hier ist die Speisekarte."
+            },
+            {
+              "speaker": "b",
+              "name": "Sam",
+              "en": "Thanks. I would like a coffee, please.",
+              "de": "Danke. Ich möchte bitte einen Kaffee."
+            },
+            {
+              "speaker": "a",
+              "name": "Anna",
+              "en": "And a tea? Or water?",
+              "de": "Und einen Tee? Oder Wasser?"
+            },
+            {
+              "speaker": "b",
+              "name": "Sam",
+              "en": "Water, please.",
+              "de": "Wasser, bitte."
+            }
+          ],
+          "question": "Was möchte Sam zuerst?",
+          "choices": [
+            {
+              "text": "Einen Kaffee",
+              "correct": true
+            },
+            {
+              "text": "Einen Tee"
+            },
+            {
+              "text": "Eine Speisekarte"
+            }
+          ],
+          "words": [
+            "core.a1u3.menu",
+            "core.a1u3.coffee",
+            "core.a1u3.water",
+            "core.a1u3.i-would-like",
+            "core.a1u3.tea"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "core.a1u3.l3",
+      "title": "Vorlieben",
+      "description": "Sagen, was du magst und was nicht",
+      "introduces": [
+        "core.a1u3.like",
+        "core.a1u3.pizza",
+        "core.a1u3.dont-like",
+        "core.a1u3.rice"
+      ],
+      "exercises": [
+        {
+          "id": "e01",
+          "type": "intro",
+          "word": "core.a1u3.like"
+        },
+        {
+          "id": "e02",
+          "type": "intro",
+          "word": "core.a1u3.pizza"
+        },
+        {
+          "id": "e03",
+          "type": "choice",
+          "prompt": "Was bedeutet das?",
+          "question": "I like pizza.",
+          "questionLang": "en",
+          "choices": [
+            {
+              "text": "Ich mag Pizza.",
+              "correct": true
+            },
+            {
+              "text": "Ich bestelle eine Pizza."
+            },
+            {
+              "text": "Pizza ist teuer."
+            }
+          ],
+          "words": [
+            "core.a1u3.like",
+            "core.a1u3.pizza"
+          ]
+        },
+        {
+          "id": "e04",
+          "type": "intro",
+          "word": "core.a1u3.dont-like"
+        },
+        {
+          "id": "e05",
+          "type": "intro",
+          "word": "core.a1u3.rice"
+        },
+        {
+          "id": "e06",
+          "type": "match",
+          "pairs": [
+            {
+              "en": "like",
+              "de": "mögen"
+            },
+            {
+              "en": "don't like",
+              "de": "nicht mögen"
+            },
+            {
+              "en": "rice",
+              "de": "Reis"
+            },
+            {
+              "en": "bread",
+              "de": "Brot"
+            }
+          ],
+          "words": [
+            "core.a1u3.like",
+            "core.a1u3.dont-like",
+            "core.a1u3.rice",
+            "core.a1u3.bread"
+          ]
+        },
+        {
+          "id": "e07",
+          "type": "listen-choice",
+          "audio": "I don't like rice.",
+          "prompt": "Was hast du gehört?",
+          "choices": [
+            {
+              "text": "Ich mag keinen Reis.",
+              "correct": true
+            },
+            {
+              "text": "Ich mag Reis."
+            },
+            {
+              "text": "Ich esse Brot."
+            }
+          ],
+          "words": [
+            "core.a1u3.dont-like",
+            "core.a1u3.rice"
+          ]
+        },
+        {
+          "id": "e08",
+          "type": "translate",
+          "direction": "en-de",
+          "prompt": "I like tea.",
+          "answer": "Ich mag Tee.",
+          "distractors": [
+            "Kaffee",
+            "Brot",
+            "esse"
+          ],
+          "words": [
+            "core.a1u3.like",
+            "core.a1u3.tea"
+          ]
+        },
+        {
+          "id": "e09",
+          "type": "type",
+          "sentence": "I ___ like rice.",
+          "accepted": [
+            "don't",
+            "do not"
+          ],
+          "hint": "nicht (Verneinung)",
+          "translation": "Ich mag keinen Reis.",
+          "words": [
+            "core.a1u3.dont-like",
+            "core.a1u3.rice"
+          ]
+        },
+        {
+          "id": "e10",
+          "type": "fill",
+          "sentence": "She ___ pizza.",
+          "choices": [
+            {
+              "text": "likes",
+              "correct": true
+            },
+            {
+              "text": "like"
+            },
+            {
+              "text": "is"
+            }
+          ],
+          "translation": "Sie mag Pizza.",
+          "explanation": "he/she/it → likes (mit -s). Nur bei I, you, we, they bleibt like.",
+          "words": [
+            "core.a1u3.like",
+            "core.a1u3.pizza"
+          ]
+        },
+        {
+          "id": "e11",
+          "type": "listen-type",
+          "audio": "He likes rice.",
+          "translation": "Er mag Reis.",
+          "words": [
+            "core.a1u3.rice",
+            "core.a1u3.like"
+          ]
+        },
+        {
+          "id": "e12",
+          "type": "dialogue",
+          "title": "Abendessen",
+          "lines": [
+            {
+              "speaker": "a",
+              "name": "Ben",
+              "en": "What do you like to eat?",
+              "de": "Was isst du gern?"
+            },
+            {
+              "speaker": "b",
+              "name": "Mia",
+              "en": "I like pizza. But I don't like rice.",
+              "de": "Ich mag Pizza. Aber Reis mag ich nicht."
+            },
+            {
+              "speaker": "a",
+              "name": "Ben",
+              "en": "Really? I like rice!",
+              "de": "Echt? Ich mag Reis!"
+            },
+            {
+              "speaker": "b",
+              "name": "Mia",
+              "en": "Then we eat pizza, OK?",
+              "de": "Dann essen wir Pizza, okay?"
+            }
+          ],
+          "question": "Was mag Mia nicht?",
+          "choices": [
+            {
+              "text": "Reis",
+              "correct": true
+            },
+            {
+              "text": "Pizza"
+            },
+            {
+              "text": "Tee"
+            }
+          ],
+          "words": [
+            "core.a1u3.like",
+            "core.a1u3.pizza",
+            "core.a1u3.dont-like",
+            "core.a1u3.rice"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "core.a1u3.l4",
+      "title": "Mengen & Preise",
+      "description": "Nach dem Preis fragen und Mengen nennen",
+      "introduces": [
+        "core.a1u3.how-much",
+        "core.a1u3.euro",
+        "core.a1u3.cheap",
+        "core.a1u3.some",
+        "core.a1u3.kilo"
+      ],
+      "exercises": [
+        {
+          "id": "e01",
+          "type": "intro",
+          "word": "core.a1u3.how-much"
+        },
+        {
+          "id": "e02",
+          "type": "intro",
+          "word": "core.a1u3.euro"
+        },
+        {
+          "id": "e03",
+          "type": "choice",
+          "prompt": "Was bedeutet das?",
+          "question": "How much is it?",
+          "questionLang": "en",
+          "choices": [
+            {
+              "text": "Was kostet das?",
+              "correct": true
+            },
+            {
+              "text": "Wie alt ist das?"
+            },
+            {
+              "text": "Wo ist das?"
+            }
+          ],
+          "words": [
+            "core.a1u3.how-much"
+          ]
+        },
+        {
+          "id": "e04",
+          "type": "intro",
+          "word": "core.a1u3.cheap"
+        },
+        {
+          "id": "e05",
+          "type": "intro",
+          "word": "core.a1u3.some"
+        },
+        {
+          "id": "e06",
+          "type": "match",
+          "pairs": [
+            {
+              "en": "How much is it?",
+              "de": "Was kostet das?"
+            },
+            {
+              "en": "cheap",
+              "de": "billig"
+            },
+            {
+              "en": "euro",
+              "de": "Euro"
+            },
+            {
+              "en": "some",
+              "de": "etwas"
+            }
+          ],
+          "words": [
+            "core.a1u3.how-much",
+            "core.a1u3.cheap",
+            "core.a1u3.euro",
+            "core.a1u3.some"
+          ]
+        },
+        {
+          "id": "e07",
+          "type": "intro",
+          "word": "core.a1u3.kilo"
+        },
+        {
+          "id": "e08",
+          "type": "listen-choice",
+          "audio": "It is five euros.",
+          "prompt": "Was hast du gehört?",
+          "choices": [
+            {
+              "text": "Es kostet fünf Euro.",
+              "correct": true
+            },
+            {
+              "text": "Es kostet fünfzehn Euro."
+            },
+            {
+              "text": "Es kostet fünf Cent."
+            }
+          ],
+          "words": [
+            "core.a1u3.euro"
+          ]
+        },
+        {
+          "id": "e09",
+          "type": "translate",
+          "direction": "de-en",
+          "prompt": "Was kostet das Brot?",
+          "answer": "How much is the bread?",
+          "distractors": [
+            "cheap",
+            "many",
+            "what"
+          ],
+          "words": [
+            "core.a1u3.how-much",
+            "core.a1u3.bread"
+          ]
+        },
+        {
+          "id": "e10",
+          "type": "type",
+          "sentence": "Two ___ of apples, please.",
+          "accepted": [
+            "kilos"
+          ],
+          "hint": "Kilo (Mehrzahl)",
+          "translation": "Zwei Kilo Äpfel, bitte.",
+          "words": [
+            "core.a1u3.kilo",
+            "core.a1u3.apple"
+          ]
+        },
+        {
+          "id": "e11",
+          "type": "listen-type",
+          "audio": "Some cheese, please.",
+          "translation": "Etwas Käse, bitte.",
+          "words": [
+            "core.a1u3.some",
+            "core.a1u3.cheese"
+          ]
+        },
+        {
+          "id": "e12",
+          "type": "fill",
+          "sentence": "This coffee is ___.",
+          "choices": [
+            {
+              "text": "cheap",
+              "correct": true
+            },
+            {
+              "text": "old"
+            },
+            {
+              "text": "tall"
+            }
+          ],
+          "translation": "Dieser Kaffee ist billig.",
+          "explanation": "cheap = billig. Der Gegensatz ist expensive (teuer).",
+          "words": [
+            "core.a1u3.cheap",
+            "core.a1u3.coffee"
+          ]
+        },
+        {
+          "id": "e13",
+          "type": "dialogue",
+          "title": "Am Markt",
+          "lines": [
+            {
+              "speaker": "a",
+              "name": "Priya",
+              "en": "Hi! How much is the cheese?",
+              "de": "Hallo! Was kostet der Käse?"
+            },
+            {
+              "speaker": "b",
+              "name": "Ben",
+              "en": "It is five euros. It is cheap.",
+              "de": "Er kostet fünf Euro. Er ist billig."
+            },
+            {
+              "speaker": "a",
+              "name": "Priya",
+              "en": "OK. I would like some cheese, please.",
+              "de": "Okay. Ich möchte bitte etwas Käse."
+            },
+            {
+              "speaker": "b",
+              "name": "Ben",
+              "en": "Here you are.",
+              "de": "Bitte schön."
+            }
+          ],
+          "question": "Wie viel kostet der Käse?",
+          "choices": [
+            {
+              "text": "Fünf Euro",
+              "correct": true
+            },
+            {
+              "text": "Zwei Euro"
+            },
+            {
+              "text": "Fünfzehn Euro"
+            }
+          ],
+          "words": [
+            "core.a1u3.how-much",
+            "core.a1u3.euro",
+            "core.a1u3.cheap",
+            "core.a1u3.some",
+            "core.a1u3.i-would-like"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "core.a1u3.l5",
+      "title": "Wiederholung",
+      "description": "Alles aus Essen & Trinken",
+      "exercises": [
+        {
+          "id": "e01",
+          "type": "choice",
+          "prompt": "Welches Bild zeigt „der Käse“?",
+          "choices": [
+            {
+              "text": "cheese",
+              "emoji": "🧀",
+              "correct": true
+            },
+            {
+              "text": "milk",
+              "emoji": "🥛"
+            },
+            {
+              "text": "bread",
+              "emoji": "🍞"
+            }
+          ],
+          "words": [
+            "core.a1u3.cheese",
+            "core.a1u3.milk",
+            "core.a1u3.bread"
+          ]
+        },
+        {
+          "id": "e02",
+          "type": "match",
+          "pairs": [
+            {
+              "en": "coffee",
+              "de": "Kaffee"
+            },
+            {
+              "en": "tea",
+              "de": "Tee"
+            },
+            {
+              "en": "water",
+              "de": "Wasser"
+            },
+            {
+              "en": "rice",
+              "de": "Reis"
+            },
+            {
+              "en": "milk",
+              "de": "Milch"
+            }
+          ],
+          "words": [
+            "core.a1u3.coffee",
+            "core.a1u3.tea",
+            "core.a1u3.water",
+            "core.a1u3.rice",
+            "core.a1u3.milk"
+          ]
+        },
+        {
+          "id": "e03",
+          "type": "listen-choice",
+          "audio": "I don't like tea.",
+          "prompt": "Was hast du gehört?",
+          "choices": [
+            {
+              "text": "Ich mag keinen Tee.",
+              "correct": true
+            },
+            {
+              "text": "Ich mag Tee."
+            },
+            {
+              "text": "Ich möchte Tee."
+            }
+          ],
+          "words": [
+            "core.a1u3.dont-like",
+            "core.a1u3.tea"
+          ]
+        },
+        {
+          "id": "e04",
+          "type": "fill",
+          "sentence": "I ___ like rice.",
+          "choices": [
+            {
+              "text": "don't",
+              "correct": true
+            },
+            {
+              "text": "doesn't"
+            },
+            {
+              "text": "am"
+            }
+          ],
+          "translation": "Ich mag keinen Reis.",
+          "explanation": "I/you/we/they → don't. he/she/it → doesn't.",
+          "words": [
+            "core.a1u3.dont-like",
+            "core.a1u3.rice"
+          ]
+        },
+        {
+          "id": "e05",
+          "type": "translate",
+          "direction": "de-en",
+          "prompt": "Ich esse etwas Brot und Käse.",
+          "answer": "I eat some bread and cheese.",
+          "distractors": [
+            "drink",
+            "an",
+            "tea"
+          ],
+          "words": [
+            "core.a1u3.some",
+            "core.a1u3.bread",
+            "core.a1u3.cheese"
+          ]
+        },
+        {
+          "id": "e06",
+          "type": "type",
+          "sentence": "___ much is it?",
+          "accepted": [
+            "How",
+            "how"
+          ],
+          "hint": "Wie viel",
+          "translation": "Was kostet das?",
+          "words": [
+            "core.a1u3.how-much"
+          ]
+        },
+        {
+          "id": "e07",
+          "type": "listen-type",
+          "audio": "My son likes apples.",
+          "translation": "Mein Sohn mag Äpfel.",
+          "words": [
+            "core.a1u3.apple",
+            "core.a1u3.like",
+            "core.son"
+          ]
+        },
+        {
+          "id": "e08",
+          "type": "speak",
+          "text": "I would like some water, please.",
+          "translation": "Ich möchte bitte etwas Wasser.",
+          "words": [
+            "core.a1u3.i-would-like",
+            "core.a1u3.some",
+            "core.a1u3.water"
+          ]
+        },
+        {
+          "id": "e09",
+          "type": "translate",
+          "direction": "en-de",
+          "prompt": "This milk is cheap.",
+          "answer": "Diese Milch ist billig.",
+          "distractors": [
+            "teuer",
+            "Apfel",
+            "Kaffee"
+          ],
+          "words": [
+            "core.a1u3.milk",
+            "core.a1u3.cheap"
+          ]
+        },
+        {
+          "id": "e10",
+          "type": "dialogue",
+          "title": "Die Pizza",
+          "lines": [
+            {
+              "speaker": "a",
+              "name": "Anna",
+              "en": "Hi, Sam! Do you like pizza?",
+              "de": "Hi, Sam! Magst du Pizza?"
+            },
+            {
+              "speaker": "b",
+              "name": "Sam",
+              "en": "Yes, I like pizza. But I don't like rice.",
+              "de": "Ja, ich mag Pizza. Aber Reis mag ich nicht."
+            },
+            {
+              "speaker": "a",
+              "name": "Anna",
+              "en": "How much is a pizza?",
+              "de": "Was kostet eine Pizza?"
+            },
+            {
+              "speaker": "b",
+              "name": "Sam",
+              "en": "Five euros. It is cheap.",
+              "de": "Fünf Euro. Sie ist billig."
+            }
+          ],
+          "question": "Was kostet die Pizza?",
+          "choices": [
+            {
+              "text": "Fünf Euro",
+              "correct": true
+            },
+            {
+              "text": "Zehn Euro"
+            },
+            {
+              "text": "Zwei Euro"
+            }
+          ],
+          "words": [
+            "core.a1u3.pizza",
+            "core.a1u3.like",
+            "core.a1u3.dont-like",
+            "core.a1u3.how-much",
+            "core.a1u3.euro",
+            "core.a1u3.cheap"
+          ]
+        },
+        {
+          "id": "e11",
+          "type": "choice",
+          "prompt": "Welcher Satz bedeutet „Ich mag keinen Reis.“?",
+          "choices": [
+            {
+              "text": "I don't like rice.",
+              "correct": true
+            },
+            {
+              "text": "I like rice."
+            },
+            {
+              "text": "I would like rice."
+            }
+          ],
+          "words": [
+            "core.a1u3.dont-like",
+            "core.a1u3.rice"
+          ]
+        },
+        {
+          "id": "e12",
+          "type": "fill",
+          "sentence": "I would like ___ apples, please.",
+          "choices": [
+            {
+              "text": "some",
+              "correct": true
+            },
+            {
+              "text": "a"
+            },
+            {
+              "text": "an"
+            }
+          ],
+          "translation": "Ich möchte bitte ein paar Äpfel.",
+          "explanation": "Bei Mengen und Mehrzahl steht some, nicht a oder an.",
+          "words": [
+            "core.a1u3.some",
+            "core.a1u3.apple",
+            "core.a1u3.i-would-like"
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+export const vocab: VocabEntry[] = [
+  {
+    "id": "core.a1u3.food",
+    "en": "food",
+    "de": "das Essen",
+    "emoji": "🍽️",
+    "pos": "noun",
+    "example": "The food is good.",
+    "exampleDe": "Das Essen ist gut.",
+    "altDe": [
+      "Lebensmittel"
+    ],
+    "note": "Unzählbar: kein a/an und kein -s. Sagt man: some food, the food."
+  },
+  {
+    "id": "core.a1u3.apple",
+    "en": "apple",
+    "de": "der Apfel",
+    "emoji": "🍎",
+    "pos": "noun",
+    "example": "I eat an apple every day.",
+    "exampleDe": "Ich esse jeden Tag einen Apfel.",
+    "altEn": [
+      "an apple"
+    ],
+    "altDe": [
+      "Apfel"
+    ],
+    "note": "Vor Vokal-Laut: an apple, nicht a apple."
+  },
+  {
+    "id": "core.a1u3.bread",
+    "en": "bread",
+    "de": "das Brot",
+    "emoji": "🍞",
+    "pos": "noun",
+    "example": "I eat bread with cheese.",
+    "exampleDe": "Ich esse Brot mit Käse.",
+    "altDe": [
+      "Brot"
+    ],
+    "note": "Unzählbar: some bread, nicht a bread. Ein Brot heißt a loaf of bread."
+  },
+  {
+    "id": "core.a1u3.cheese",
+    "en": "cheese",
+    "de": "der Käse",
+    "emoji": "🧀",
+    "pos": "noun",
+    "example": "I like cheese.",
+    "exampleDe": "Ich mag Käse.",
+    "altDe": [
+      "Käse"
+    ],
+    "note": "Unzählbar wie bread: some cheese."
+  },
+  {
+    "id": "core.a1u3.milk",
+    "en": "milk",
+    "de": "die Milch",
+    "emoji": "🥛",
+    "pos": "noun",
+    "example": "I drink milk every morning.",
+    "exampleDe": "Ich trinke jeden Morgen Milch.",
+    "altDe": [
+      "Milch"
+    ],
+    "note": "Unzählbar: some milk, nicht a milk."
+  },
+  {
+    "id": "core.a1u3.coffee",
+    "en": "coffee",
+    "de": "der Kaffee",
+    "emoji": "☕",
+    "pos": "noun",
+    "example": "I would like a coffee, please.",
+    "exampleDe": "Ich möchte bitte einen Kaffee.",
+    "altDe": [
+      "Kaffee"
+    ],
+    "note": "Im Café heißt a coffee: eine Tasse Kaffee."
+  },
+  {
+    "id": "core.a1u3.tea",
+    "en": "tea",
+    "de": "der Tee",
+    "emoji": "🍵",
+    "pos": "noun",
+    "example": "Tea, please.",
+    "exampleDe": "Tee, bitte.",
+    "altDe": [
+      "Tee"
+    ],
+    "note": "Im Café heißt a tea: eine Tasse Tee."
+  },
+  {
+    "id": "core.a1u3.water",
+    "en": "water",
+    "de": "das Wasser",
+    "emoji": "💧",
+    "pos": "noun",
+    "example": "Water, please.",
+    "exampleDe": "Wasser, bitte.",
+    "altDe": [
+      "Wasser"
+    ],
+    "note": "Unzählbar: some water, nicht a water."
+  },
+  {
+    "id": "core.a1u3.menu",
+    "en": "menu",
+    "de": "die Speisekarte",
+    "emoji": "📋",
+    "pos": "noun",
+    "example": "Here is the menu.",
+    "exampleDe": "Hier ist die Speisekarte.",
+    "altDe": [
+      "Speisekarte",
+      "Karte"
+    ],
+    "note": "Achtung: menu heißt die Speisekarte. Ein Menü mit mehreren Gängen heißt auf Englisch set menu."
+  },
+  {
+    "id": "core.a1u3.i-would-like",
+    "en": "I would like",
+    "de": "Ich möchte …",
+    "pos": "phrase",
+    "example": "I would like a tea, please.",
+    "exampleDe": "Ich möchte bitte einen Tee.",
+    "altEn": [
+      "I'd like"
+    ],
+    "altDe": [
+      "ich möchte",
+      "ich hätte gern"
+    ],
+    "note": "Höflicher als I want. Danach folgt die Grundform: I would like tea, nicht likes."
+  },
+  {
+    "id": "core.a1u3.like",
+    "en": "like",
+    "de": "mögen / gern haben",
+    "pos": "verb",
+    "example": "I like pizza.",
+    "exampleDe": "Ich mag Pizza.",
+    "altDe": [
+      "mögen",
+      "mag",
+      "gern haben"
+    ],
+    "note": "Danach ein Nomen oder ein Tunwort mit -ing: I like swimming."
+  },
+  {
+    "id": "core.a1u3.dont-like",
+    "en": "don't like",
+    "de": "nicht mögen",
+    "pos": "phrase",
+    "example": "I don't like rice.",
+    "exampleDe": "Ich mag keinen Reis.",
+    "altEn": [
+      "do not like",
+      "dont like"
+    ],
+    "altDe": [
+      "nicht mögen",
+      "mag nicht",
+      "mag keinen"
+    ],
+    "note": "Bei he/she/it: doesn't like, z.B. He doesn't like tea."
+  },
+  {
+    "id": "core.a1u3.pizza",
+    "en": "pizza",
+    "de": "die Pizza",
+    "emoji": "🍕",
+    "pos": "noun",
+    "example": "We eat pizza on Friday.",
+    "exampleDe": "Wir essen freitags Pizza.",
+    "altDe": [
+      "Pizza"
+    ]
+  },
+  {
+    "id": "core.a1u3.rice",
+    "en": "rice",
+    "de": "der Reis",
+    "emoji": "🍚",
+    "pos": "noun",
+    "example": "I don't like rice.",
+    "exampleDe": "Ich mag keinen Reis.",
+    "altDe": [
+      "Reis"
+    ],
+    "note": "Unzählbar: some rice, nicht a rice."
+  },
+  {
+    "id": "core.a1u3.how-much",
+    "en": "How much is it?",
+    "de": "Was kostet das?",
+    "pos": "phrase",
+    "example": "How much is the bread?",
+    "exampleDe": "Was kostet das Brot?",
+    "altEn": [
+      "how much is it",
+      "how much is this",
+      "how much is that"
+    ],
+    "altDe": [
+      "Wie viel kostet das?",
+      "Was kostet es?"
+    ],
+    "note": "Für Preise. Für Mengen gilt How much milk? – Wie viel Milch?"
+  },
+  {
+    "id": "core.a1u3.cheap",
+    "en": "cheap",
+    "de": "billig / günstig",
+    "pos": "adj",
+    "example": "The apples are cheap.",
+    "exampleDe": "Die Äpfel sind billig.",
+    "altDe": [
+      "billig",
+      "günstig",
+      "preiswert"
+    ],
+    "note": "Gegenteil: expensive (teuer)."
+  },
+  {
+    "id": "core.a1u3.some",
+    "en": "some",
+    "de": "etwas / ein paar",
+    "pos": "other",
+    "example": "I eat some bread.",
+    "exampleDe": "Ich esse etwas Brot.",
+    "altDe": [
+      "etwas",
+      "ein paar",
+      "einige"
+    ],
+    "note": "Vor unzählbaren Wörtern (some bread) und vor Mehrzahl (some apples). Nie a/an davor."
+  },
+  {
+    "id": "core.a1u3.kilo",
+    "en": "kilo",
+    "de": "das Kilo",
+    "pos": "noun",
+    "example": "Two kilos of apples, please.",
+    "exampleDe": "Zwei Kilo Äpfel, bitte.",
+    "altEn": [
+      "kilogram"
+    ],
+    "note": "Mehrzahl: kilos. Nach Zahlen immer die Mehrzahl: two kilos."
+  },
+  {
+    "id": "core.a1u3.euro",
+    "en": "euro",
+    "de": "der Euro",
+    "emoji": "💶",
+    "pos": "noun",
+    "example": "It is five euros.",
+    "exampleDe": "Es kostet fünf Euro.",
+    "altEn": [
+      "euros"
+    ],
+    "altDe": [
+      "Euro"
+    ],
+    "note": "Nach Zahlen: five euros, nicht five euro."
+  }
+]

@@ -1,0 +1,622 @@
+{
+  "id": "core.b2u4",
+  "title": "Formelle Sprache",
+  "description": "Register wechseln: formell, neutral, umgangssprachlich.",
+  "cefr": "B2",
+  "color": "blue",
+  "icon": "🎩",
+  "topics": ["Formelle E-Mails", "Höflichkeitsformen", "Phrasal Verbs vs. formell", "Präsentieren"],
+  "status": "ready",
+  "milestone": true,
+  "tips": [
+    {
+      "title": "Would you mind + -ing, Could you possibly + Infinitiv",
+      "text": "Nach Would you mind folgt immer die -ing-Form. Could you possibly dagegen steht mit dem Infinitiv ohne to. Beide Konstruktionen machen eine Bitte höflicher als ein Imperativ.",
+      "examples": [
+        { "en": "Would you mind waiting a moment?", "de": "Würde es Ihnen etwas ausmachen, kurz zu warten?" },
+        { "en": "Could you possibly send me the file?", "de": "Könnten Sie mir vielleicht die Datei schicken?" },
+        { "en": "Send me the file.", "de": "Schicken Sie mir die Datei. (direkt, für formelle Texte zu knapp)" }
+      ]
+    },
+    {
+      "title": "Anrede und Gruß passen zusammen",
+      "text": "Kennst du den Namen nicht, schreibst du Dear Sir or Madam und endest mit Yours faithfully (Hochachtungsvoll). Kennst du den Namen, passt Dear Mr Kim, mit Yours sincerely (Mit freundlichen Grüßen).",
+      "examples": [
+        { "en": "Dear Sir or Madam, … Yours faithfully,", "de": "Sehr geehrte Damen und Herren, … Hochachtungsvoll," },
+        { "en": "Dear Mr Kim, … Yours sincerely, Anna", "de": "Sehr geehrter Herr Kim, … Mit freundlichen Grüßen, Anna" }
+      ]
+    },
+    {
+      "title": "Phrasal Verbs vs. formelle Verben",
+      "text": "Im Alltag sagt man look into, sort out und put off. In formellen Texten und Berichten passen eher investigate, resolve und postpone. Phrasal Verbs klingen locker, Einzelverben sachlich.",
+      "examples": [
+        { "en": "We will look into the problem.", "de": "Wir werden dem Problem nachgehen." },
+        { "en": "We need to resolve the issue.", "de": "Wir müssen das Problem lösen." }
+      ]
+    }
+  ],
+  "lessons": [
+    {
+      "id": "core.b2u4.l1",
+      "title": "Ton & Höflichkeit",
+      "description": "Formell, locker, höflich bitten",
+      "introduces": [
+        "core.b2u4.formal",
+        "core.b2u4.informal",
+        "core.b2u4.polite",
+        "core.b2u4.request",
+        "core.b2u4.would-you-mind",
+        "core.b2u4.could-you-possibly"
+      ],
+      "exercises": [
+        { "id": "e01", "type": "intro", "word": "core.b2u4.formal" },
+        {
+          "id": "e02",
+          "type": "choice",
+          "prompt": "Was bedeutet „formal“?",
+          "choices": [
+            { "text": "formell", "correct": true },
+            { "text": "unhöflich" },
+            { "text": "laut" }
+          ],
+          "words": ["core.b2u4.formal"]
+        },
+        { "id": "e03", "type": "intro", "word": "core.b2u4.informal" },
+        { "id": "e04", "type": "intro", "word": "core.b2u4.polite" },
+        {
+          "id": "e05",
+          "type": "match",
+          "pairs": [
+            { "en": "formal", "de": "formell" },
+            { "en": "informal", "de": "locker" },
+            { "en": "polite", "de": "höflich" }
+          ],
+          "words": ["core.b2u4.formal", "core.b2u4.informal", "core.b2u4.polite"]
+        },
+        { "id": "e06", "type": "intro", "word": "core.b2u4.request" },
+        {
+          "id": "e07",
+          "type": "translate",
+          "direction": "de-en",
+          "prompt": "Ich habe eine Bitte.",
+          "answer": "I have a request.",
+          "distractors": ["question", "an", "reply"],
+          "words": ["core.b2u4.request"]
+        },
+        { "id": "e08", "type": "intro", "word": "core.b2u4.would-you-mind" },
+        {
+          "id": "e09",
+          "type": "listen-choice",
+          "audio": "Would you mind closing the door?",
+          "prompt": "Was hast du gehört?",
+          "choices": [
+            { "text": "Würde es dir etwas ausmachen, die Tür zu schließen?", "correct": true },
+            { "text": "Wann schließt du die Tür?" },
+            { "text": "Hast du die Tür geschlossen?" }
+          ],
+          "words": ["core.b2u4.would-you-mind"]
+        },
+        {
+          "id": "e10",
+          "type": "fill",
+          "sentence": "Would you mind ___ a moment?",
+          "choices": [{ "text": "waiting", "correct": true }, { "text": "to wait" }, { "text": "wait" }],
+          "translation": "Würde es Ihnen etwas ausmachen, einen Moment zu warten?",
+          "explanation": "Nach would you mind steht die -ing-Form.",
+          "words": ["core.b2u4.would-you-mind"]
+        },
+        { "id": "e11", "type": "intro", "word": "core.b2u4.could-you-possibly" },
+        {
+          "id": "e12",
+          "type": "choice",
+          "prompt": "Welche Bitte klingt am höflichsten?",
+          "choices": [
+            { "text": "Could you possibly send me the file?", "correct": true },
+            { "text": "Send me the file now!" },
+            { "text": "Give me the file!" }
+          ],
+          "explanation": "possibly macht die Bitte besonders zurückhaltend.",
+          "words": ["core.b2u4.could-you-possibly"]
+        },
+        {
+          "id": "e13",
+          "type": "type",
+          "sentence": "Could you ___ help me with this form?",
+          "accepted": ["possibly"],
+          "hint": "vielleicht",
+          "translation": "Könnten Sie mir vielleicht bei diesem Formular helfen?",
+          "words": ["core.b2u4.could-you-possibly"]
+        },
+        {
+          "id": "e14",
+          "type": "dialogue",
+          "title": "Am Empfang",
+          "lines": [
+            { "speaker": "a", "name": "Anna", "en": "Excuse me, could you possibly help me?", "de": "Entschuldigung, könnten Sie mir vielleicht helfen?" },
+            { "speaker": "b", "name": "Ben", "en": "Of course. What do you need?", "de": "Natürlich. Was brauchen Sie?" },
+            { "speaker": "a", "name": "Anna", "en": "I have a request. Would you mind showing me room four?", "de": "Ich habe eine Bitte. Würde es Ihnen etwas ausmachen, mir Raum vier zu zeigen?" },
+            { "speaker": "b", "name": "Ben", "en": "No problem at all. Please follow me.", "de": "Kein Problem. Bitte folgen Sie mir." }
+          ],
+          "question": "Wie würdest du den Ton des Gesprächs beschreiben?",
+          "choices": [
+            { "text": "formell und höflich", "correct": true },
+            { "text": "locker und umgangssprachlich" },
+            { "text": "unhöflich und ungeduldig" }
+          ],
+          "words": ["core.b2u4.formal", "core.b2u4.polite", "core.b2u4.request", "core.b2u4.would-you-mind", "core.b2u4.could-you-possibly"]
+        }
+      ]
+    },
+    {
+      "id": "core.b2u4.l2",
+      "title": "Formelle E-Mails",
+      "description": "Anrede, Einstieg, Anhang und Gruß",
+      "introduces": [
+        "core.b2u4.dear-sir",
+        "core.b2u4.i-am-writing",
+        "core.b2u4.regarding",
+        "core.b2u4.please-find-attached",
+        "core.b2u4.look-forward",
+        "core.b2u4.yours-sincerely"
+      ],
+      "exercises": [
+        { "id": "e01", "type": "intro", "word": "core.b2u4.dear-sir" },
+        { "id": "e02", "type": "intro", "word": "core.b2u4.i-am-writing" },
+        {
+          "id": "e03",
+          "type": "choice",
+          "prompt": "Welcher Einstieg passt zu einer E-Mail an Leute, deren Namen du nicht kennst?",
+          "choices": [
+            { "text": "Dear Sir or Madam,", "correct": true },
+            { "text": "Hey you," },
+            { "text": "Hi buddy," }
+          ],
+          "explanation": "Dear Sir or Madam, wenn du den Namen nicht kennst.",
+          "words": ["core.b2u4.dear-sir"]
+        },
+        { "id": "e04", "type": "intro", "word": "core.b2u4.regarding" },
+        {
+          "id": "e05",
+          "type": "translate",
+          "direction": "de-en",
+          "prompt": "Ich schreibe Ihnen bezüglich Ihrer Bestellung.",
+          "answer": "I am writing regarding your order.",
+          "distractors": ["from", "for", "to"],
+          "words": ["core.b2u4.i-am-writing", "core.b2u4.regarding"]
+        },
+        { "id": "e06", "type": "intro", "word": "core.b2u4.please-find-attached" },
+        {
+          "id": "e07",
+          "type": "listen-type",
+          "audio": "Please find attached my CV.",
+          "accepted": ["Please find my CV attached."],
+          "translation": "Anbei finden Sie meinen Lebenslauf.",
+          "words": ["core.b2u4.please-find-attached"]
+        },
+        {
+          "id": "e08",
+          "type": "fill",
+          "sentence": "Please ___ attached my invoice.",
+          "choices": [{ "text": "find", "correct": true }, { "text": "found" }, { "text": "finds" }],
+          "translation": "Anbei finden Sie meine Rechnung.",
+          "explanation": "Nach please steht der Infinitiv: find, nicht found.",
+          "words": ["core.b2u4.please-find-attached"]
+        },
+        { "id": "e09", "type": "intro", "word": "core.b2u4.look-forward" },
+        {
+          "id": "e10",
+          "type": "choice",
+          "prompt": "Welcher Satz ist grammatisch korrekt?",
+          "choices": [
+            { "text": "I look forward to hearing from you.", "correct": true },
+            { "text": "I look forward to hear from you." },
+            { "text": "I look forward to hear you." }
+          ],
+          "words": ["core.b2u4.look-forward"]
+        },
+        {
+          "id": "e11",
+          "type": "translate",
+          "direction": "de-en",
+          "prompt": "Ich freue mich auf Ihre Antwort.",
+          "answer": "I look forward to your reply.",
+          "distractors": ["hear", "wait", "for"],
+          "words": ["core.b2u4.look-forward"]
+        },
+        { "id": "e12", "type": "intro", "word": "core.b2u4.yours-sincerely" },
+        {
+          "id": "e13",
+          "type": "choice",
+          "prompt": "Welche Grußformel passt zu einer formellen E-Mail an eine Person, deren Namen du kennst?",
+          "choices": [
+            { "text": "Yours sincerely", "correct": true },
+            { "text": "See you later" },
+            { "text": "Bye bye" }
+          ],
+          "words": ["core.b2u4.yours-sincerely"]
+        },
+        {
+          "id": "e14",
+          "type": "type",
+          "sentence": "___ sincerely,",
+          "accepted": ["Yours"],
+          "hint": "Anfang der Grußformel",
+          "translation": "Mit freundlichen Grüßen",
+          "words": ["core.b2u4.yours-sincerely"]
+        }
+      ]
+    },
+    {
+      "id": "core.b2u4.l3",
+      "title": "Formelle Verben",
+      "description": "Umgangssprachliche Phrasal Verbs und ihre formellen Entsprechungen",
+      "introduces": [
+        "core.b2u4.put-off",
+        "core.b2u4.postpone",
+        "core.b2u4.look-into",
+        "core.b2u4.investigate",
+        "core.b2u4.sort-out",
+        "core.b2u4.resolve"
+      ],
+      "exercises": [
+        { "id": "e01", "type": "intro", "word": "core.b2u4.put-off" },
+        { "id": "e02", "type": "intro", "word": "core.b2u4.postpone" },
+        {
+          "id": "e03",
+          "type": "choice",
+          "prompt": "Was bedeutet „postpone“?",
+          "choices": [
+            { "text": "vertagen", "correct": true },
+            { "text": "absagen" },
+            { "text": "bestätigen" }
+          ],
+          "words": ["core.b2u4.postpone"]
+        },
+        { "id": "e04", "type": "intro", "word": "core.b2u4.look-into" },
+        { "id": "e05", "type": "intro", "word": "core.b2u4.investigate" },
+        {
+          "id": "e06",
+          "type": "translate",
+          "direction": "de-en",
+          "prompt": "Wir werden dem Problem nachgehen.",
+          "answer": "We will look into the problem.",
+          "distractors": ["onto", "after", "for"],
+          "words": ["core.b2u4.look-into"]
+        },
+        { "id": "e07", "type": "intro", "word": "core.b2u4.sort-out" },
+        { "id": "e08", "type": "intro", "word": "core.b2u4.resolve" },
+        {
+          "id": "e09",
+          "type": "match",
+          "pairs": [
+            { "en": "look into", "de": "nachgehen" },
+            { "en": "investigate", "de": "untersuchen" },
+            { "en": "sort out", "de": "klären" },
+            { "en": "resolve", "de": "lösen" },
+            { "en": "postpone", "de": "vertagen" }
+          ],
+          "words": ["core.b2u4.look-into", "core.b2u4.investigate", "core.b2u4.sort-out", "core.b2u4.resolve", "core.b2u4.postpone"]
+        },
+        {
+          "id": "e10",
+          "type": "fill",
+          "sentence": "We had to ___ the meeting until next week.",
+          "choices": [{ "text": "put off", "correct": true }, { "text": "put on" }, { "text": "put up" }],
+          "translation": "Wir mussten das Treffen bis nächste Woche verschieben.",
+          "explanation": "put off = verschieben. put on heißt anziehen, put up heißt ertragen.",
+          "words": ["core.b2u4.put-off"]
+        },
+        {
+          "id": "e11",
+          "type": "listen-choice",
+          "audio": "Can you sort out the problem?",
+          "prompt": "Was hast du gehört?",
+          "choices": [
+            { "text": "Kannst du das Problem klären?", "correct": true },
+            { "text": "Kannst du das Fenster öffnen?" },
+            { "text": "Hast du das Problem schon gesehen?" }
+          ],
+          "words": ["core.b2u4.sort-out"]
+        },
+        {
+          "id": "e12",
+          "type": "choice",
+          "prompt": "Welches Verb ist am formellsten?",
+          "choices": [
+            { "text": "investigate", "correct": true },
+            { "text": "check out" },
+            { "text": "mess around" }
+          ],
+          "explanation": "check out und mess around sind umgangssprachlich.",
+          "words": ["core.b2u4.investigate", "core.b2u4.look-into"]
+        },
+        {
+          "id": "e13",
+          "type": "type",
+          "sentence": "The team will ___ the dispute next week.",
+          "accepted": ["resolve"],
+          "hint": "beilegen (formell)",
+          "translation": "Das Team wird den Streit nächste Woche beilegen.",
+          "words": ["core.b2u4.resolve"]
+        },
+        {
+          "id": "e14",
+          "type": "type",
+          "sentence": "The meeting has been ___.",
+          "accepted": ["postponed"],
+          "hint": "vertagt",
+          "translation": "Das Treffen wurde vertagt.",
+          "words": ["core.b2u4.postpone"]
+        }
+      ]
+    },
+    {
+      "id": "core.b2u4.l4",
+      "title": "Vortrag halten",
+      "description": "Tagesordnung, Einstieg, Übergänge und Schluss",
+      "introduces": [
+        "core.b2u4.agenda",
+        "core.b2u4.audience",
+        "core.b2u4.key-point",
+        "core.b2u4.to-begin-with",
+        "core.b2u4.move-on-to",
+        "core.b2u4.in-conclusion"
+      ],
+      "exercises": [
+        { "id": "e01", "type": "intro", "word": "core.b2u4.agenda" },
+        { "id": "e02", "type": "intro", "word": "core.b2u4.audience" },
+        {
+          "id": "e03",
+          "type": "choice",
+          "prompt": "Was bedeutet „audience“?",
+          "choices": [
+            { "text": "das Publikum", "correct": true },
+            { "text": "die Tagesordnung" },
+            { "text": "der Kernpunkt" }
+          ],
+          "words": ["core.b2u4.audience"]
+        },
+        { "id": "e04", "type": "intro", "word": "core.b2u4.key-point" },
+        {
+          "id": "e05",
+          "type": "translate",
+          "direction": "de-en",
+          "prompt": "Hier ist der Kernpunkt.",
+          "answer": "Here is the key point.",
+          "distractors": ["audience", "agenda", "keys"],
+          "words": ["core.b2u4.key-point"]
+        },
+        { "id": "e06", "type": "intro", "word": "core.b2u4.to-begin-with" },
+        {
+          "id": "e07",
+          "type": "listen-choice",
+          "audio": "To begin with, let me introduce myself.",
+          "prompt": "Was hast du gehört?",
+          "choices": [
+            { "text": "Zunächst möchte ich mich vorstellen.", "correct": true },
+            { "text": "Ich möchte mich verabschieden." },
+            { "text": "Ich habe mich schon vorgestellt." }
+          ],
+          "words": ["core.b2u4.to-begin-with"]
+        },
+        { "id": "e08", "type": "intro", "word": "core.b2u4.move-on-to" },
+        {
+          "id": "e09",
+          "type": "fill",
+          "sentence": "Let's ___ the next slide.",
+          "choices": [{ "text": "move on to", "correct": true }, { "text": "move out of" }, { "text": "move back" }],
+          "translation": "Gehen wir zur nächsten Folie über.",
+          "explanation": "move on to + Ziel: zu etwas übergehen.",
+          "words": ["core.b2u4.move-on-to"]
+        },
+        { "id": "e10", "type": "intro", "word": "core.b2u4.in-conclusion" },
+        {
+          "id": "e11",
+          "type": "match",
+          "pairs": [
+            { "en": "agenda", "de": "Tagesordnung" },
+            { "en": "audience", "de": "Publikum" },
+            { "en": "key point", "de": "Kernpunkt" },
+            { "en": "move on to", "de": "zu … übergehen" },
+            { "en": "in conclusion", "de": "abschließend" }
+          ],
+          "words": ["core.b2u4.agenda", "core.b2u4.audience", "core.b2u4.key-point", "core.b2u4.move-on-to", "core.b2u4.in-conclusion"]
+        },
+        {
+          "id": "e12",
+          "type": "type",
+          "sentence": "___ we need a new plan.",
+          "accepted": ["In conclusion"],
+          "hint": "abschließend",
+          "translation": "Abschließend brauchen wir einen neuen Plan.",
+          "words": ["core.b2u4.in-conclusion"]
+        },
+        {
+          "id": "e13",
+          "type": "type",
+          "sentence": "The ___ was very attentive.",
+          "accepted": ["audience"],
+          "hint": "Publikum",
+          "translation": "Das Publikum war sehr aufmerksam.",
+          "words": ["core.b2u4.audience"]
+        },
+        {
+          "id": "e14",
+          "type": "dialogue",
+          "title": "Vor dem Vortrag",
+          "lines": [
+            { "speaker": "a", "name": "Sam", "en": "Good morning, everyone. Let's look at the agenda.", "de": "Guten Morgen, alle zusammen. Schauen wir uns die Tagesordnung an." },
+            { "speaker": "b", "name": "Priya", "en": "Sure. What is the key point?", "de": "Gern. Was ist der Kernpunkt?" },
+            { "speaker": "a", "name": "Sam", "en": "The new budget. Let's move on to it next.", "de": "Das neue Budget. Gehen wir als Nächstes dazu über." },
+            { "speaker": "b", "name": "Priya", "en": "Great, I am ready.", "de": "Prima, ich bin bereit." }
+          ],
+          "question": "Was ist der Kernpunkt laut Sam?",
+          "choices": [
+            { "text": "Das neue Budget", "correct": true },
+            { "text": "Die Tagesordnung" },
+            { "text": "Das Publikum" }
+          ],
+          "words": ["core.b2u4.agenda", "core.b2u4.key-point", "core.b2u4.move-on-to"]
+        }
+      ]
+    },
+    {
+      "id": "core.b2u4.l5",
+      "title": "Wiederholung",
+      "description": "Alle Wörter der Unit gemischt, ohne neue Wörter",
+      "exercises": [
+        {
+          "id": "e01",
+          "type": "match",
+          "pairs": [
+            { "en": "formal", "de": "formell" },
+            { "en": "polite", "de": "höflich" },
+            { "en": "request", "de": "Bitte, Anfrage" },
+            { "en": "Dear Sir or Madam", "de": "Sehr geehrte Damen und Herren" },
+            { "en": "Yours sincerely", "de": "Mit freundlichen Grüßen" }
+          ],
+          "words": ["core.b2u4.formal", "core.b2u4.polite", "core.b2u4.request", "core.b2u4.dear-sir", "core.b2u4.yours-sincerely"]
+        },
+        {
+          "id": "e02",
+          "type": "match",
+          "pairs": [
+            { "en": "informal", "de": "locker" },
+            { "en": "regarding", "de": "bezüglich" },
+            { "en": "look forward to", "de": "sich freuen auf" },
+            { "en": "put off", "de": "verschieben" },
+            { "en": "investigate", "de": "untersuchen" }
+          ],
+          "words": ["core.b2u4.informal", "core.b2u4.regarding", "core.b2u4.look-forward", "core.b2u4.put-off", "core.b2u4.investigate"]
+        },
+        {
+          "id": "e03",
+          "type": "listen-choice",
+          "audio": "Could you possibly send me the file?",
+          "prompt": "Was hast du gehört?",
+          "choices": [
+            { "text": "Könntest du mir vielleicht die Datei schicken?", "correct": true },
+            { "text": "Schick mir die Datei sofort!" },
+            { "text": "Hast du die Datei schon geschickt?" }
+          ],
+          "words": ["core.b2u4.could-you-possibly"]
+        },
+        {
+          "id": "e04",
+          "type": "translate",
+          "direction": "de-en",
+          "prompt": "Gehen wir zum nächsten Punkt über.",
+          "answer": "Let us move on to the next point.",
+          "distractors": ["audience", "resolve", "back"],
+          "words": ["core.b2u4.move-on-to"]
+        },
+        {
+          "id": "e05",
+          "type": "translate",
+          "direction": "de-en",
+          "prompt": "Wir sollten das Treffen verschieben.",
+          "answer": "We should put off the meeting.",
+          "distractors": ["sort", "audience", "dear"],
+          "words": ["core.b2u4.put-off"]
+        },
+        {
+          "id": "e06",
+          "type": "choice",
+          "prompt": "Welche Formulierung passt am besten in eine formelle E-Mail?",
+          "choices": [
+            { "text": "I am writing regarding your order.", "correct": true },
+            { "text": "Hey, what's up with your order?" },
+            { "text": "Yo, about your order!" }
+          ],
+          "words": ["core.b2u4.i-am-writing", "core.b2u4.regarding"]
+        },
+        {
+          "id": "e07",
+          "type": "type",
+          "sentence": "Can you ___ the problem with the printer?",
+          "accepted": ["sort out", "resolve"],
+          "hint": "klären, lösen",
+          "translation": "Kannst du das Problem mit dem Drucker klären?",
+          "words": ["core.b2u4.sort-out", "core.b2u4.resolve"]
+        },
+        {
+          "id": "e08",
+          "type": "type",
+          "sentence": "To ___ with, let me say thank you.",
+          "accepted": ["begin"],
+          "hint": "anfangen",
+          "translation": "Zunächst möchte ich Danke sagen.",
+          "words": ["core.b2u4.to-begin-with"]
+        },
+        {
+          "id": "e09",
+          "type": "choice",
+          "prompt": "Was passt zum Schluss eines Vortrags?",
+          "choices": [
+            { "text": "In conclusion, thank you for listening.", "correct": true },
+            { "text": "Good night, sleep well." },
+            { "text": "Let me sleep on it." }
+          ],
+          "words": ["core.b2u4.in-conclusion"]
+        },
+        {
+          "id": "e10",
+          "type": "fill",
+          "sentence": "I ___ writing to ask about the job.",
+          "choices": [{ "text": "am", "correct": true }, { "text": "is" }, { "text": "have" }],
+          "translation": "Ich schreibe Ihnen, um mich nach der Stelle zu erkundigen.",
+          "words": ["core.b2u4.i-am-writing"]
+        },
+        {
+          "id": "e11",
+          "type": "match",
+          "pairs": [
+            { "en": "could you possibly …?", "de": "Könnten Sie vielleicht …?" },
+            { "en": "would you mind …?", "de": "Würde es Ihnen etwas ausmachen, …?" },
+            { "en": "to begin with", "de": "zunächst" },
+            { "en": "look into", "de": "nachgehen" },
+            { "en": "resolve", "de": "lösen (formell)" }
+          ],
+          "words": ["core.b2u4.could-you-possibly", "core.b2u4.would-you-mind", "core.b2u4.to-begin-with", "core.b2u4.look-into", "core.b2u4.resolve"]
+        },
+        {
+          "id": "e12",
+          "type": "listen-type",
+          "audio": "We should postpone the meeting until Monday.",
+          "accepted": ["We should put off the meeting until Monday."],
+          "translation": "Wir sollten das Treffen bis Montag vertagen.",
+          "words": ["core.b2u4.postpone", "core.b2u4.put-off"]
+        },
+        {
+          "id": "e13",
+          "type": "dialogue",
+          "title": "Im Büro",
+          "lines": [
+            { "speaker": "a", "name": "Anna", "en": "Hey Ben, what's up with the report?", "de": "Hey Ben, was ist mit dem Bericht?" },
+            { "speaker": "b", "name": "Ben", "en": "Sorry, we need to postpone the meeting.", "de": "Tut mir leid, wir müssen das Treffen vertagen." },
+            { "speaker": "a", "name": "Anna", "en": "No problem. Could you possibly send me an update?", "de": "Kein Problem. Könntest du mir vielleicht ein Update schicken?" },
+            { "speaker": "b", "name": "Ben", "en": "Yes, I will look into it.", "de": "Ja, ich kümmere mich darum." }
+          ],
+          "question": "Was macht Ben?",
+          "choices": [
+            { "text": "Er vertagt das Treffen.", "correct": true },
+            { "text": "Er sagt das Treffen komplett ab." },
+            { "text": "Er schickt den Bericht sofort." }
+          ],
+          "words": ["core.b2u4.postpone", "core.b2u4.could-you-possibly", "core.b2u4.look-into"]
+        },
+        {
+          "id": "e14",
+          "type": "choice",
+          "prompt": "Welche Anrede passt zu einer E-Mail an Herrn Kim?",
+          "choices": [
+            { "text": "Dear Mr Kim,", "correct": true },
+            { "text": "Hey you," },
+            { "text": "Yo Kim!" }
+          ],
+          "words": ["core.b2u4.dear-sir"]
+        }
+      ]
+    }
+  ]
+}
