@@ -13,6 +13,7 @@ import { Mascot } from './Mascot'
 import { INTERESTS } from './options'
 import { navigate } from './router'
 import { Page } from './Shell'
+import { speak, speechSupported } from '../lib/speech'
 import { sfx } from './sfx'
 import { pal } from './theme'
 import { Modal } from './ui'
@@ -41,6 +42,8 @@ function Section({ title, children }: { title: string; children: ReactNode }) {
   )
 }
 
+const OFF_FOREVER = 8640000000000000
+
 export function ProfileScreen() {
   const s = useAppState()
   const now = useNow()
@@ -54,7 +57,7 @@ export function ProfileScreen() {
   const since = new Date(s.profile.createdAt)
   const display = s.profile.name.trim() || 'Lernende:r'
   const unlocked = ACHIEVEMENTS.filter((a) => s.achievements[a.id]).length
-  const paused = s.settings.speakingOffUntil > now || s.settings.listeningOffUntil > now
+  const [toneMsg, setToneMsg] = useState('')
 
   return (
     <Page>
@@ -152,6 +155,37 @@ export function ProfileScreen() {
       <Section title="Einstellungen">
         <div className="divide-y-2 divide-line rounded-2xl border-2 border-line px-4">
           <Toggle label="Soundeffekte" checked={s.settings.sound} onChange={(v) => updateSettings({ sound: v })} />
+          <div className="flex flex-col gap-2 py-3">
+            <div className="flex items-center gap-3">
+              <div className="flex-1">
+                <p className="font-extrabold">Ton testen</p>
+                <p className="text-sm font-semibold text-ink-soft">{toneMsg || 'Spielt einen Klang und einen englischen Satz ab.'}</p>
+              </div>
+              <button
+                className="btn btn-blue min-h-[44px] px-4 text-sm"
+                onClick={() => {
+                  sfx.prime()
+                  sfx.correct()
+                  setToneMsg(speechSupported ? 'Hörst du den Klang und die Stimme? Wenn nicht: Lautstärke und Stumm-Schalter am Handy prüfen.' : 'Dieser Browser hat keine Sprachausgabe. Hörübungen werden übersprungen.')
+                  speak('Hello! Can you hear me?', { onFail: () => setToneMsg('Keine Sprachausgabe möglich. Prüfe Lautstärke und Stumm-Schalter oder schalte Hör- und Sprechaufgaben unten aus.') })
+                }}
+              >
+                Testen
+              </button>
+            </div>
+          </div>
+          <Toggle
+            label="Hörübungen"
+            desc="Aus = Aufgaben mit Audio werden ohne Strafe übersprungen"
+            checked={!(s.settings.listeningOffUntil > now)}
+            onChange={(v) => updateSettings({ listeningOffUntil: v ? 0 : OFF_FOREVER })}
+          />
+          <Toggle
+            label="Sprechübungen"
+            desc="Aus = Aufgaben zum Sprechen werden ohne Strafe übersprungen"
+            checked={!(s.settings.speakingOffUntil > now)}
+            onChange={(v) => updateSettings({ speakingOffUntil: v ? 0 : OFF_FOREVER })}
+          />
           <Toggle label="Vibration" desc="Haptisches Feedback, falls unterstützt" checked={s.settings.haptics} onChange={(v) => updateSettings({ haptics: v })} />
           <Toggle label="Herzen" desc="Aus = entspannter Modus ohne Herzverlust" checked={s.settings.hearts} onChange={(v) => updateSettings({ hearts: v })} />
           <div className="py-3">
@@ -189,14 +223,6 @@ export function ProfileScreen() {
               })}
             </div>
           </div>
-          {paused && (
-            <div className="flex items-center gap-3 py-3">
-              <span className="flex-1 text-sm font-semibold text-ink-soft">Sprech- oder Höraufgaben sind gerade pausiert.</span>
-              <button className="btn btn-white min-h-[40px] px-3 text-xs" onClick={() => updateSettings({ speakingOffUntil: 0, listeningOffUntil: 0 })}>
-                Aktivieren
-              </button>
-            </div>
-          )}
         </div>
         <div className="mt-4 flex flex-col gap-3">
           <button className="btn btn-white w-full" onClick={() => navigate('/fork')}>

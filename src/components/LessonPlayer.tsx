@@ -159,7 +159,7 @@ export function LessonPlayer({ spec, onDone, onExit }: { spec: SessionSpec; onDo
   if (!item) return null
   const ex = item.ex
   const isListen = ex.type === 'listen-choice' || ex.type === 'listen-type'
-  const skipLabel = ex.type === 'speak' && recognitionSupported ? 'Kann gerade nicht sprechen' : isListen ? 'Kann gerade nicht zuhören' : null
+  const skipLabel = ex.type === 'speak' && recognitionSupported ? '🤐 Kann gerade nicht sprechen – überspringen' : isListen ? '🔇 Kann gerade nicht zuhören – überspringen' : null
   const primaryLabel = ex.type === 'intro' || (ex.type === 'speak' && !recognitionSupported) ? 'Weiter' : 'Prüfen'
   const progress = sessionProgress(session)
   const locked = phase === 'feedback'
@@ -218,10 +218,13 @@ export function LessonPlayer({ spec, onDone, onExit }: { spec: SessionSpec; onDo
               <button
                 type="button"
                 onClick={() => skipPaused(ex.type === 'speak' ? 'speak' : 'listen')}
-                className="btn btn-ghost min-h-[40px] text-[13px] text-mute"
+                className="btn btn-white min-h-[44px] text-[14px]"
               >
                 {skipLabel}
               </button>
+            )}
+            {skipLabel && (
+              <p className="-mt-1 text-center text-[12px] font-semibold text-mute">Solche Aufgaben werden dann 1 Std. übersprungen (Profil → Einstellungen).</p>
             )}
             {ex.type !== 'match' && (
               <button type="button" className="btn w-full" disabled={!ready} onClick={check}>

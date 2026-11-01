@@ -27,17 +27,38 @@ if (speechSupported) {
   })
 }
 
-export function speak(text: string, options: { slow?: boolean } = {}): void {
-  if (!speechSupported) return
+/**
+ * Spricht einen Text. `onFail` wird aufgerufen, wenn die Ausgabe nicht startet
+ * (z.B. kein Ton, Stumm-Schalter oder fehlende Stimme), damit die UI ein Überspringen anbieten kann.
+ */
+export function speak(text: string, options: { slow?: boolean; onFail?: () => void } = {}): void {
+  if (!speechSupported) {
+    options.onFail?.()
+    return
+  }
   const synth = window.speechSynthesis
   if (cachedVoice === undefined) cachedVoice = pickVoice()
-  synth.cancel()
+  const wasBusy = synth.speaking || synth.pending
+  if (wasBusy) synth.cancel()
   const utterance = new SpeechSynthesisUtterance(text)
   utterance.lang = cachedVoice?.lang ?? 'en-GB'
   if (cachedVoice) utterance.voice = cachedVoice
   utterance.rate = options.slow ? 0.65 : 0.95
-  // Chrome verschluckt gelegentlich Ausgaben direkt nach cancel() – kurze Pause hilft.
-  window.setTimeout(() => synth.speak(utterance), 60)
+  let started = false
+  utterance.onstart = () => {
+    started = true
+  }
+  utterance.onerror = () => {
+    if (!started) options.onFail?.()
+  }
+  // iOS verlangt den Aufruf direkt in der Nutzergeste. Nur nach cancel() kurz warten (Chrome verschluckt sonst).
+  const run = () => {
+    synth.resume?.()
+    synth.speak(utterance)
+  }
+  if (wasBusy) window.setTimeout(run, 60)
+  else run()
+  if (options.onFail) window.setTimeout(() => !started && options.onFail?.(), 2500)
 }
 
 export function stopSpeaking(): void {

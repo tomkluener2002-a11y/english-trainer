@@ -1,7 +1,20 @@
 /** Synthetische Sounds (WebAudio, keine Audiodateien) und Haptik. */
+import { onFirstGesture } from '../lib/audioUnlock'
 import { getState } from '../state/store'
 
 let ctx: AudioContext | null = null
+
+function prime() {
+  try {
+    const AC = window.AudioContext ?? (window as unknown as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext
+    if (!AC) return
+    if (!ctx) ctx = new AC()
+    if (ctx.state !== 'running') void ctx.resume()
+  } catch {
+    /* nicht unterstützt */
+  }
+}
+if (typeof window !== 'undefined') onFirstGesture(prime)
 
 function audio(): AudioContext | null {
   if (!getState().settings.sound) return null
@@ -46,6 +59,8 @@ function vibrate(pattern: number | number[]) {
 }
 
 export const sfx = {
+  /** Für den Ton-Test im Profil: ignoriert den Sound-Schalter nicht, startet aber den Kontext neu. */
+  prime,
   click() {
     tone(660, 0, 0.06, { type: 'triangle', gain: 0.07 })
     vibrate(8)

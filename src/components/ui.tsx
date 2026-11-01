@@ -1,5 +1,5 @@
 /** Kleine, wiederverwendbare UI-Bausteine. */
-import { type ReactNode, useEffect, useRef } from 'react'
+import { type ReactNode, useCallback, useEffect, useRef, useState } from 'react'
 import { speak, speechSupported } from '../lib/speech'
 import { SpeakerIcon, TurtleIcon, XIcon } from './Icons'
 import { sfx } from './sfx'
@@ -91,47 +91,49 @@ export function Sheet({ open, onClose, title, children }: { open: boolean; onClo
 
 /** Großer blauer Lautsprecher-Button (+ optional Schildkröte für langsam). */
 export function AudioButtons({ text, size = 'lg', autoPlay = false, slow = true }: { text: string; size?: 'lg' | 'sm'; autoPlay?: boolean; slow?: boolean }) {
+  const [failed, setFailed] = useState(false)
+  const play = useCallback(
+    (isSlow = false) => {
+      setFailed(false)
+      speak(text, { slow: isSlow, onFail: () => setFailed(true) })
+    },
+    [text],
+  )
   useEffect(() => {
     if (autoPlay) {
-      const t = window.setTimeout(() => speak(text), 250)
+      const t = window.setTimeout(() => play(false), 250)
       return () => window.clearTimeout(t)
     }
-  }, [text, autoPlay])
+  }, [autoPlay, play])
+  const hint = failed ? (
+    <p className="mt-3 text-center text-sm font-bold text-cardinal-dark" role="alert">
+      Kein Ton? Prüfe Lautstärke und Stumm-Schalter – oder überspringe die Aufgabe unten.
+    </p>
+  ) : null
   if (size === 'sm') {
     return (
-      <button
-        type="button"
-        onClick={() => speak(text)}
-        className="btn btn-blue h-10 min-h-0 w-10 shrink-0 rounded-xl p-0"
-        aria-label="Vorlesen"
-        disabled={!speechSupported}
-      >
-        <SpeakerIcon size={20} />
-      </button>
+      <>
+        <button type="button" onClick={() => play(false)} className="btn btn-blue h-10 min-h-0 w-10 shrink-0 rounded-xl p-0" aria-label="Vorlesen" disabled={!speechSupported}>
+          <SpeakerIcon size={20} />
+        </button>
+        {hint}
+      </>
     )
   }
   return (
-    <div className="flex items-end justify-center gap-4">
-      <button
-        type="button"
-        onClick={() => speak(text)}
-        className="btn btn-blue h-24 w-24 rounded-3xl p-0"
-        aria-label="Anhören"
-        disabled={!speechSupported}
-      >
-        <SpeakerIcon size={44} />
-      </button>
-      {slow && (
-        <button
-          type="button"
-          onClick={() => speak(text, { slow: true })}
-          className="btn btn-white h-16 w-16 rounded-2xl p-0"
-          aria-label="Langsam anhören"
-          disabled={!speechSupported}
-        >
-          <TurtleIcon size={34} />
+    <div>
+      <div className="flex items-end justify-center gap-4">
+        <button type="button" onClick={() => play(false)} className="btn btn-blue h-24 w-24 rounded-3xl p-0" aria-label="Anhören" disabled={!speechSupported}>
+          <SpeakerIcon size={44} />
         </button>
-      )}
+        {slow && (
+          <button type="button" onClick={() => play(true)} className="btn btn-white h-16 w-16 rounded-2xl p-0" aria-label="Langsam anhören" disabled={!speechSupported}>
+            <TurtleIcon size={34} />
+          </button>
+        )}
+      </div>
+      {hint}
+      {!speechSupported && <p className="mt-3 text-center text-sm font-bold text-ink-soft">Dieser Browser kann nicht vorlesen – überspringe die Aufgabe unten.</p>}
     </div>
   )
 }
