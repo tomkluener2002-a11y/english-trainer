@@ -1,0 +1,600 @@
+{
+  "id": "treasury.u3",
+  "title": "FX & Hedging",
+  "description": "Devisengeschäfte und Absicherungsstrategien mit Banken besprechen.",
+  "cefr": "B2",
+  "color": "purple",
+  "icon": "💱",
+  "topics": ["Spot & Forward", "Optionen", "Hedge Accounting", "Marktkommentare"],
+  "status": "ready",
+  "tips": [
+    {
+      "title": "Kurse sprechen: rate, against, above",
+      "text": "Kurse nennst du mit „the rate“ und vergleichst sie mit above oder below. Wechselkurse gibst du mit against an: The euro is trading at 1.08 against the dollar. Verben wie to weaken oder to rally beschreiben die Bewegung.",
+      "examples": [
+        { "en": "The euro is trading at 1.08 against the dollar.", "de": "Der Euro notiert bei 1,08 gegenüber dem Dollar." },
+        { "en": "The forward rate is above the spot rate.", "de": "Der Terminkurs liegt über dem Kassakurs." },
+        { "en": "The dollar rallied after the data.", "de": "Der Dollar erholte sich nach den Daten." }
+      ]
+    },
+    {
+      "title": "Seit Montag: Present Perfect",
+      "text": "Eine Entwicklung, die bis heute andauert oder noch Folgen hat, steht im Present Perfect (have/has + Partizip II). Mit since nennst du den Zeitpunkt, mit for den Zeitraum. Für abgeschlossene Ereignisse mit festem Datum bleibt es beim Past Simple.",
+      "examples": [
+        { "en": "The euro has weakened since Monday.", "de": "Der Euro hat seit Montag an Wert verloren." },
+        { "en": "We have hedged our exposure for three months.", "de": "Wir sichern unsere Position seit drei Monaten ab." },
+        { "en": "The rate fell yesterday.", "de": "Der Kurs fiel gestern." }
+      ]
+    },
+    {
+      "title": "Konsequenzen: if-Sätze",
+      "text": "Für wahrscheinliche Bedingungen nutzt du if + Präsens und will im Hauptsatz. Für eine hypothetische Entscheidung steht would. Nach if kommt nie will.",
+      "examples": [
+        { "en": "If the dollar rises, our costs will increase.", "de": "Wenn der Dollar steigt, steigen unsere Kosten." },
+        { "en": "If we hedged now, we would lock in the rate.", "de": "Würden wir jetzt absichern, würden wir den Kurs festschreiben." }
+      ]
+    }
+  ],
+  "lessons": [
+    {
+      "id": "treasury.u3.l1",
+      "title": "Kassa- & Terminkurse",
+      "description": "Kassakurs, Terminkurs und Devisentermingeschäft unterscheiden",
+      "introduces": ["treasury.u3.spot-rate", "treasury.u3.forward-rate", "treasury.u3.currency-pair", "treasury.u3.forward-contract"],
+      "exercises": [
+        { "id": "e01", "type": "intro", "word": "treasury.u3.spot-rate" },
+        { "id": "e02", "type": "intro", "word": "treasury.u3.forward-rate" },
+        {
+          "id": "e03",
+          "type": "choice",
+          "prompt": "Welcher Kurs gilt für sofortige Abwicklung?",
+          "choices": [
+            { "text": "spot rate", "correct": true },
+            { "text": "forward rate" },
+            { "text": "interest rate" }
+          ],
+          "explanation": "Der spot rate gilt für die kurzfristige Abwicklung. Der forward rate ist für einen späteren Termin.",
+          "words": ["treasury.u3.spot-rate", "treasury.u3.forward-rate", "fin.interest-rate"]
+        },
+        { "id": "e04", "type": "intro", "word": "treasury.u3.currency-pair" },
+        {
+          "id": "e05",
+          "type": "listen-choice",
+          "audio": "The euro-dollar spot rate is one point oh eight.",
+          "prompt": "Was hast du gehört?",
+          "choices": [
+            { "text": "Der Kassakurs für Euro-Dollar liegt bei 1,08.", "correct": true },
+            { "text": "Der Terminkurs für Euro-Dollar liegt bei 1,80." },
+            { "text": "Der Zinssatz für Euro-Dollar liegt bei 1,08 Prozent." }
+          ],
+          "words": ["treasury.u3.spot-rate", "treasury.u3.currency-pair"]
+        },
+        { "id": "e06", "type": "intro", "word": "treasury.u3.forward-contract" },
+        {
+          "id": "e07",
+          "type": "match",
+          "pairs": [
+            { "en": "spot rate", "de": "Kassakurs" },
+            { "en": "forward rate", "de": "Terminkurs" },
+            { "en": "currency pair", "de": "Währungspaar" },
+            { "en": "forward contract", "de": "Devisentermingeschäft" },
+            { "en": "to hedge", "de": "absichern" }
+          ],
+          "words": ["treasury.u3.spot-rate", "treasury.u3.forward-rate", "treasury.u3.currency-pair", "treasury.u3.forward-contract", "fin.hedge"]
+        },
+        {
+          "id": "e08",
+          "type": "translate",
+          "direction": "de-en",
+          "prompt": "Der Terminkurs liegt über dem Kassakurs.",
+          "answer": "The forward rate is above the spot rate.",
+          "distractors": ["below", "from", "fixed"],
+          "explanation": "above = über, below = unter.",
+          "words": ["treasury.u3.forward-rate", "treasury.u3.spot-rate"]
+        },
+        {
+          "id": "e09",
+          "type": "fill",
+          "sentence": "The forward rate ___ higher than the spot rate.",
+          "choices": [{ "text": "is", "correct": true }, { "text": "are" }, { "text": "have" }],
+          "translation": "Der Terminkurs ist höher als der Kassakurs.",
+          "explanation": "rate ist Singular, daher is.",
+          "words": ["treasury.u3.forward-rate", "treasury.u3.spot-rate"]
+        },
+        {
+          "id": "e10",
+          "type": "type",
+          "sentence": "We use a ___ to fix the rate for next month.",
+          "accepted": ["forward contract", "forward"],
+          "hint": "Devisentermingeschäft",
+          "translation": "Wir nutzen ein Devisentermingeschäft, um den Kurs für nächsten Monat festzulegen.",
+          "words": ["treasury.u3.forward-contract"]
+        },
+        {
+          "id": "e11",
+          "type": "listen-type",
+          "audio": "Please check the spot rate before you book.",
+          "translation": "Bitte prüf den Kassakurs, bevor du buchst.",
+          "words": ["treasury.u3.spot-rate"]
+        },
+        {
+          "id": "e12",
+          "type": "dialogue",
+          "title": "Am Telefon mit der Bank",
+          "lines": [
+            { "speaker": "a", "name": "Anna", "en": "Hi Ben, can we talk about a forward contract?", "de": "Hi Ben, können wir über ein Devisentermingeschäft sprechen?" },
+            { "speaker": "b", "name": "Ben", "en": "Sure. The spot rate is one point oh eight today.", "de": "Klar. Der Kassakurs liegt heute bei 1,08." },
+            { "speaker": "a", "name": "Anna", "en": "Then I would like a three-month forward contract.", "de": "Dann hätte ich gern ein Devisentermingeschäft über drei Monate." },
+            { "speaker": "b", "name": "Ben", "en": "Good. The forward rate is slightly higher.", "de": "Gut. Der Terminkurs liegt etwas höher." }
+          ],
+          "question": "Was möchte Anna?",
+          "choices": [
+            { "text": "Ein Devisentermingeschäft über drei Monate", "correct": true },
+            { "text": "Einen neuen Kredit" },
+            { "text": "Eine Option über drei Monate" }
+          ],
+          "words": ["treasury.u3.spot-rate", "treasury.u3.forward-rate", "treasury.u3.forward-contract"]
+        }
+      ]
+    },
+    {
+      "id": "treasury.u3.l2",
+      "title": "Optionen",
+      "description": "Optionsrecht, Ausübungspreis und Prämie",
+      "introduces": ["treasury.u3.option", "treasury.u3.strike-price", "treasury.u3.premium", "treasury.u3.in-the-money"],
+      "exercises": [
+        { "id": "e01", "type": "intro", "word": "treasury.u3.option" },
+        { "id": "e02", "type": "intro", "word": "treasury.u3.strike-price" },
+        {
+          "id": "e03",
+          "type": "choice",
+          "prompt": "Was bedeutet „option“ im Treasury?",
+          "choices": [
+            { "text": "Das Recht, aber nicht die Pflicht, ein Geschäft abzuschließen.", "correct": true },
+            { "text": "Die Pflicht, Devisen zu kaufen." },
+            { "text": "Ein fester Terminkurs für später." }
+          ],
+          "explanation": "Bei einer Option entscheidest du, ob du sie ausübst. Ein Termingeschäft ist dagegen verbindlich.",
+          "words": ["treasury.u3.option"]
+        },
+        { "id": "e04", "type": "intro", "word": "treasury.u3.premium" },
+        {
+          "id": "e05",
+          "type": "translate",
+          "direction": "en-de",
+          "prompt": "We paid a premium for the option.",
+          "answer": "Wir haben für die Option eine Prämie gezahlt.",
+          "accepted": ["Für die Option haben wir eine Prämie gezahlt."],
+          "distractors": ["Zinsen", "verkauft", "Pflicht"],
+          "words": ["treasury.u3.premium", "treasury.u3.option"]
+        },
+        {
+          "id": "e06",
+          "type": "match",
+          "pairs": [
+            { "en": "option", "de": "Optionsrecht" },
+            { "en": "strike price", "de": "Ausübungspreis" },
+            { "en": "premium", "de": "Optionsprämie" },
+            { "en": "forward contract", "de": "Devisentermingeschäft" }
+          ],
+          "words": ["treasury.u3.option", "treasury.u3.strike-price", "treasury.u3.premium", "treasury.u3.forward-contract"]
+        },
+        {
+          "id": "e07",
+          "type": "listen-choice",
+          "audio": "We bought a call option, not a forward contract.",
+          "prompt": "Was hast du gehört?",
+          "choices": [
+            { "text": "Wir haben eine Kaufoption gekauft, kein Termingeschäft.", "correct": true },
+            { "text": "Wir haben ein Termingeschäft gekauft, keine Option." },
+            { "text": "Wir haben einen Kredit aufgenommen." }
+          ],
+          "words": ["treasury.u3.option", "treasury.u3.forward-contract"]
+        },
+        { "id": "e08", "type": "intro", "word": "treasury.u3.in-the-money" },
+        {
+          "id": "e09",
+          "type": "fill",
+          "sentence": "The option is ___ the money because the spot rate is above the strike.",
+          "choices": [{ "text": "in", "correct": true }, { "text": "at" }, { "text": "under" }],
+          "translation": "Die Option ist im Geld, weil der Kassakurs über dem Strike liegt.",
+          "explanation": "Spot über Strike bei einer Call-Option = im Geld (in the money). At the money heißt: Kurs gleich Strike.",
+          "words": ["treasury.u3.in-the-money", "treasury.u3.strike-price"]
+        },
+        {
+          "id": "e10",
+          "type": "translate",
+          "direction": "de-en",
+          "prompt": "Der Ausübungspreis liegt bei 1,10 Dollar.",
+          "answer": "The strike price is 1.10 dollars.",
+          "distractors": ["premium", "above", "sold"],
+          "words": ["treasury.u3.strike-price"]
+        },
+        {
+          "id": "e11",
+          "type": "type",
+          "sentence": "We paid a ___ of 0.8 percent for the option.",
+          "accepted": ["premium"],
+          "hint": "Prämie",
+          "translation": "Für die Option haben wir eine Prämie von 0,8 Prozent gezahlt.",
+          "words": ["treasury.u3.premium"]
+        },
+        {
+          "id": "e12",
+          "type": "listen-type",
+          "audio": "The option is in the money.",
+          "translation": "Die Option ist im Geld.",
+          "words": ["treasury.u3.in-the-money"]
+        },
+        {
+          "id": "e13",
+          "type": "speak",
+          "text": "We will exercise the option before it expires.",
+          "translation": "Wir üben die Option aus, bevor sie verfällt.",
+          "words": ["treasury.u3.option"]
+        },
+        {
+          "id": "e14",
+          "type": "dialogue",
+          "title": "Im Treasury-Meeting",
+          "lines": [
+            { "speaker": "a", "name": "Sam", "en": "Should we buy a call option or a forward contract?", "de": "Sollen wir eine Kaufoption oder ein Termingeschäft abschließen?" },
+            { "speaker": "b", "name": "Ben", "en": "A call option. It costs a premium, but we profit if the rate rises.", "de": "Eine Kaufoption. Sie kostet eine Prämie, aber wir profitieren, wenn der Kurs steigt." },
+            { "speaker": "a", "name": "Sam", "en": "And the strike price?", "de": "Und der Ausübungspreis?" },
+            { "speaker": "b", "name": "Ben", "en": "We set it at one point one oh dollars.", "de": "Wir legen ihn auf 1,10 Dollar fest." }
+          ],
+          "question": "Wofür entscheidet sich Ben?",
+          "choices": [
+            { "text": "Eine Kaufoption", "correct": true },
+            { "text": "Ein Termingeschäft" },
+            { "text": "Einen Kredit" }
+          ],
+          "words": ["treasury.u3.option", "treasury.u3.premium", "treasury.u3.strike-price"]
+        }
+      ]
+    },
+    {
+      "id": "treasury.u3.l3",
+      "title": "Hedge Accounting",
+      "description": "Bilanzierung von Sicherungsgeschäften und Wirksamkeitstests",
+      "introduces": ["treasury.u3.hedge-accounting", "treasury.u3.fair-value", "treasury.u3.effectiveness-test", "treasury.u3.to-recognise", "treasury.u3.hedge-documentation"],
+      "exercises": [
+        { "id": "e01", "type": "intro", "word": "treasury.u3.hedge-accounting" },
+        { "id": "e02", "type": "intro", "word": "treasury.u3.fair-value" },
+        {
+          "id": "e03",
+          "type": "choice",
+          "prompt": "Was ist „hedge accounting“?",
+          "choices": [
+            { "text": "Die Buchung von Bankgebühren" },
+            { "text": "Die Berechnung von Zinsen" },
+            { "text": "Die Bilanzierung von Sicherungsgeschäften", "correct": true }
+          ],
+          "explanation": "Hedge accounting bedeutet: Sicherung und Grundgeschäft gemeinsam bilanzieren.",
+          "words": ["treasury.u3.hedge-accounting"]
+        },
+        { "id": "e04", "type": "intro", "word": "treasury.u3.effectiveness-test" },
+        {
+          "id": "e05",
+          "type": "match",
+          "pairs": [
+            { "en": "hedge accounting", "de": "Bilanzierung von Sicherungsgeschäften" },
+            { "en": "effectiveness test", "de": "Wirksamkeitstest" },
+            { "en": "fair value", "de": "beizulegender Zeitwert" },
+            { "en": "to hedge", "de": "absichern" },
+            { "en": "forward contract", "de": "Devisentermingeschäft" }
+          ],
+          "words": ["treasury.u3.hedge-accounting", "treasury.u3.effectiveness-test", "treasury.u3.fair-value", "fin.hedge", "treasury.u3.forward-contract"]
+        },
+        {
+          "id": "e06",
+          "type": "translate",
+          "direction": "de-en",
+          "prompt": "Wir führen jedes Quartal einen Wirksamkeitstest durch.",
+          "answer": "We run an effectiveness test every quarter.",
+          "distractors": ["fair", "value", "rate"],
+          "words": ["treasury.u3.effectiveness-test"]
+        },
+        { "id": "e07", "type": "intro", "word": "treasury.u3.to-recognise" },
+        {
+          "id": "e08",
+          "type": "fill",
+          "sentence": "Gains and losses are ___ in other comprehensive income.",
+          "choices": [{ "text": "recognised", "correct": true }, { "text": "ignored" }, { "text": "rejected" }],
+          "translation": "Gewinne und Verluste werden im sonstigen Ergebnis erfasst.",
+          "explanation": "to recognise = erfassen, bilanzieren. Nicht mit „realise“ verwechseln.",
+          "words": ["treasury.u3.to-recognise"]
+        },
+        { "id": "e09", "type": "intro", "word": "treasury.u3.hedge-documentation" },
+        {
+          "id": "e10",
+          "type": "listen-choice",
+          "audio": "The hedge documentation must exist before we book the trade.",
+          "prompt": "Was hast du gehört?",
+          "choices": [
+            { "text": "Die Dokumentation muss vorliegen, bevor wir das Geschäft buchen.", "correct": true },
+            { "text": "Die Dokumentation kann nachträglich erstellt werden." },
+            { "text": "Wir buchen das Geschäft, bevor wir es absichern." }
+          ],
+          "words": ["treasury.u3.hedge-documentation"]
+        },
+        {
+          "id": "e11",
+          "type": "translate",
+          "direction": "en-de",
+          "prompt": "Hedge accounting keeps earnings volatility under control.",
+          "answer": "Hedge Accounting hält die Ergebnisschwankungen unter Kontrolle.",
+          "distractors": ["Zinsen", "Kredit", "verkauft"],
+          "words": ["treasury.u3.hedge-accounting"]
+        },
+        {
+          "id": "e12",
+          "type": "type",
+          "sentence": "Before we book a hedge, we need the ___ ready.",
+          "accepted": ["hedge documentation", "documentation"],
+          "hint": "Dokumentation der Sicherung",
+          "translation": "Bevor wir eine Sicherung buchen, muss die Dokumentation fertig sein.",
+          "words": ["treasury.u3.hedge-documentation"]
+        },
+        {
+          "id": "e13",
+          "type": "dialogue",
+          "title": "Im Reporting-Meeting",
+          "lines": [
+            { "speaker": "a", "name": "Lisa", "en": "Did the hedge pass the effectiveness test?", "de": "Hat die Sicherung den Wirksamkeitstest bestanden?" },
+            { "speaker": "b", "name": "Omar", "en": "Yes. The documentation is ready, so we can apply hedge accounting.", "de": "Ja. Die Dokumentation ist fertig, daher können wir Hedge Accounting anwenden." },
+            { "speaker": "a", "name": "Lisa", "en": "Great. And what is the fair value today?", "de": "Super. Und wie hoch ist der beizulegende Zeitwert heute?" },
+            { "speaker": "b", "name": "Omar", "en": "It is a small gain at the moment.", "de": "Im Moment ist es ein kleiner Gewinn." }
+          ],
+          "question": "Wie ist der Stand der Dokumentation?",
+          "choices": [
+            { "text": "Sie ist fertig, Hedge Accounting ist möglich.", "correct": true },
+            { "text": "Sie fehlt noch, daher kein Hedge Accounting." },
+            { "text": "Der Wirksamkeitstest ist fehlgeschlagen." }
+          ],
+          "words": ["treasury.u3.effectiveness-test", "treasury.u3.hedge-documentation", "treasury.u3.hedge-accounting", "treasury.u3.fair-value"]
+        }
+      ]
+    },
+    {
+      "id": "treasury.u3.l4",
+      "title": "Marktkommentare",
+      "description": "Marktlage einschätzen und Entwicklungen beschreiben",
+      "introduces": ["treasury.u3.market-commentary", "treasury.u3.volatility", "treasury.u3.to-rally", "treasury.u3.outlook", "treasury.u3.to-weaken"],
+      "exercises": [
+        { "id": "e01", "type": "intro", "word": "treasury.u3.market-commentary" },
+        { "id": "e02", "type": "intro", "word": "treasury.u3.volatility" },
+        {
+          "id": "e03",
+          "type": "choice",
+          "prompt": "Was ist ein Marktkommentar?",
+          "choices": [
+            { "text": "Eine Einschätzung der aktuellen Marktlage", "correct": true },
+            { "text": "Eine Gebühr für Kontoauszüge" },
+            { "text": "Ein Kreditvertrag mit Auflagen" }
+          ],
+          "words": ["treasury.u3.market-commentary"]
+        },
+        { "id": "e04", "type": "intro", "word": "treasury.u3.to-rally" },
+        {
+          "id": "e05",
+          "type": "listen-choice",
+          "audio": "Volatility is high, but the dollar is rallying.",
+          "prompt": "Was hast du gehört?",
+          "choices": [
+            { "text": "Die Schwankungen sind hoch, aber der Dollar legt zu.", "correct": true },
+            { "text": "Die Schwankungen sind niedrig, und der Dollar fällt." },
+            { "text": "Die Zinsen sind hoch, aber der Euro legt zu." }
+          ],
+          "words": ["treasury.u3.volatility", "treasury.u3.to-rally"]
+        },
+        { "id": "e06", "type": "intro", "word": "treasury.u3.outlook" },
+        {
+          "id": "e07",
+          "type": "match",
+          "pairs": [
+            { "en": "market commentary", "de": "Marktkommentar" },
+            { "en": "volatility", "de": "Volatilität" },
+            { "en": "to rally", "de": "stark steigen" },
+            { "en": "outlook", "de": "Ausblick" },
+            { "en": "covenant", "de": "Kreditauflage" }
+          ],
+          "words": ["treasury.u3.market-commentary", "treasury.u3.volatility", "treasury.u3.to-rally", "treasury.u3.outlook", "fin.covenant"]
+        },
+        { "id": "e08", "type": "intro", "word": "treasury.u3.to-weaken" },
+        {
+          "id": "e09",
+          "type": "fill",
+          "sentence": "The euro has ___ against the dollar since Monday.",
+          "choices": [{ "text": "weakened", "correct": true }, { "text": "weaken" }, { "text": "weakens" }],
+          "translation": "Seit Montag hat der Euro gegenüber dem Dollar an Wert verloren.",
+          "explanation": "since + Zeitpunkt → Present Perfect: has + Partizip II.",
+          "words": ["treasury.u3.to-weaken"]
+        },
+        {
+          "id": "e10",
+          "type": "translate",
+          "direction": "de-en",
+          "prompt": "Der Ausblick ist seit Montag vorsichtig.",
+          "answer": "The outlook has been cautious since Monday.",
+          "distractors": ["weakened", "rallied", "forward"],
+          "words": ["treasury.u3.outlook"]
+        },
+        {
+          "id": "e11",
+          "type": "listen-type",
+          "audio": "The market commentary says the euro has weakened.",
+          "translation": "Der Marktkommentar sagt, dass der Euro an Wert verloren hat.",
+          "words": ["treasury.u3.market-commentary", "treasury.u3.to-weaken"]
+        },
+        {
+          "id": "e12",
+          "type": "type",
+          "sentence": "Traders expect high ___ this week.",
+          "accepted": ["volatility"],
+          "hint": "Schwankungen",
+          "translation": "Händler erwarten diese Woche hohe Schwankungen.",
+          "words": ["treasury.u3.volatility"]
+        },
+        {
+          "id": "e13",
+          "type": "speak",
+          "text": "The dollar rallied after the inflation data.",
+          "translation": "Der Dollar erholte sich nach den Inflationsdaten.",
+          "words": ["treasury.u3.to-rally"]
+        },
+        {
+          "id": "e14",
+          "type": "dialogue",
+          "title": "Morgenrunde im Treasury",
+          "lines": [
+            { "speaker": "a", "name": "Priya", "en": "Did you read the market commentary?", "de": "Hast du den Marktkommentar gelesen?" },
+            { "speaker": "b", "name": "Kim", "en": "Yes. The outlook is cautious and volatility is high.", "de": "Ja. Der Ausblick ist vorsichtig und die Volatilität ist hoch." },
+            { "speaker": "a", "name": "Priya", "en": "So should we hedge more?", "de": "Sollen wir also mehr absichern?" },
+            { "speaker": "b", "name": "Kim", "en": "I think so. The euro has weakened since Monday.", "de": "Ich denke schon. Der Euro hat seit Montag an Wert verloren." }
+          ],
+          "question": "Was empfiehlt Kim?",
+          "choices": [
+            { "text": "Mehr absichern", "correct": true },
+            { "text": "Weniger absichern" },
+            { "text": "Die Sicherung auflösen" }
+          ],
+          "words": ["treasury.u3.market-commentary", "treasury.u3.outlook", "treasury.u3.volatility", "treasury.u3.to-weaken", "fin.hedge"]
+        }
+      ]
+    },
+    {
+      "id": "treasury.u3.l5",
+      "title": "Wiederholung",
+      "description": "Alle Wörter der Unit mischen",
+      "exercises": [
+        {
+          "id": "e01",
+          "type": "choice",
+          "prompt": "Welcher Begriff passt zu „der Kassakurs“?",
+          "choices": [
+            { "text": "spot rate", "correct": true },
+            { "text": "forward rate" },
+            { "text": "strike price" }
+          ],
+          "words": ["treasury.u3.spot-rate", "treasury.u3.forward-rate", "treasury.u3.strike-price"]
+        },
+        {
+          "id": "e02",
+          "type": "match",
+          "pairs": [
+            { "en": "currency pair", "de": "Währungspaar" },
+            { "en": "premium", "de": "Optionsprämie" },
+            { "en": "hedge documentation", "de": "Dokumentation der Sicherung" },
+            { "en": "to recognise", "de": "erfassen" },
+            { "en": "to weaken", "de": "an Wert verlieren" }
+          ],
+          "words": ["treasury.u3.currency-pair", "treasury.u3.premium", "treasury.u3.hedge-documentation", "treasury.u3.to-recognise", "treasury.u3.to-weaken"]
+        },
+        {
+          "id": "e03",
+          "type": "listen-choice",
+          "audio": "The option is in the money, so we will exercise it.",
+          "prompt": "Was hast du gehört?",
+          "choices": [
+            { "text": "Die Option ist im Geld, daher üben wir sie aus.", "correct": true },
+            { "text": "Die Option ist aus dem Geld, daher verkaufen wir sie." },
+            { "text": "Die Option ist teuer, daher kaufen wir sie nicht." }
+          ],
+          "words": ["treasury.u3.in-the-money", "treasury.u3.option"]
+        },
+        {
+          "id": "e04",
+          "type": "translate",
+          "direction": "de-en",
+          "prompt": "Der Marktkommentar sagt, die Volatilität ist hoch.",
+          "answer": "The market commentary says volatility is high.",
+          "distractors": ["rallied", "strike", "under"],
+          "words": ["treasury.u3.market-commentary", "treasury.u3.volatility"]
+        },
+        {
+          "id": "e05",
+          "type": "fill",
+          "sentence": "We ___ our FX risk with a forward contract every month.",
+          "choices": [{ "text": "hedge", "correct": true }, { "text": "hedges" }, { "text": "hedging" }],
+          "translation": "Wir sichern unser Währungsrisiko jeden Monat mit einem Devisentermingeschäft ab.",
+          "explanation": "Nach we steht die Grundform ohne -s.",
+          "words": ["fin.hedge", "treasury.u3.forward-contract"]
+        },
+        {
+          "id": "e06",
+          "type": "type",
+          "sentence": "The ___ rate is the rate for delivery in the future.",
+          "accepted": ["forward"],
+          "hint": "Terminkurs",
+          "translation": "Der Terminkurs ist der Kurs für eine Lieferung in der Zukunft.",
+          "words": ["treasury.u3.forward-rate"]
+        },
+        {
+          "id": "e07",
+          "type": "listen-type",
+          "audio": "We need the fair value of the hedge by Friday.",
+          "translation": "Wir brauchen den beizulegenden Zeitwert der Sicherung bis Freitag.",
+          "words": ["treasury.u3.fair-value"]
+        },
+        {
+          "id": "e08",
+          "type": "speak",
+          "text": "The dollar rallied, but the outlook is cautious.",
+          "translation": "Der Dollar legte zu, aber der Ausblick ist vorsichtig.",
+          "words": ["treasury.u3.to-rally", "treasury.u3.outlook"]
+        },
+        {
+          "id": "e09",
+          "type": "translate",
+          "direction": "en-de",
+          "prompt": "A forward contract locks in the rate.",
+          "answer": "Ein Devisentermingeschäft legt den Kurs fest.",
+          "distractors": ["Zinsen", "Kredit", "Ausübungspreis"],
+          "words": ["treasury.u3.forward-contract"]
+        },
+        {
+          "id": "e10",
+          "type": "choice",
+          "prompt": "Was bedeutet das?",
+          "question": "The option was in the money at expiry.",
+          "questionLang": "en",
+          "choices": [
+            { "text": "Die Option war bei Fälligkeit im Geld.", "correct": true },
+            { "text": "Die Option war bei Fälligkeit aus dem Geld." },
+            { "text": "Die Option wurde bei Fälligkeit verlängert." }
+          ],
+          "words": ["treasury.u3.in-the-money", "treasury.u3.option"]
+        },
+        {
+          "id": "e11",
+          "type": "dialogue",
+          "title": "Ein Telefonat mit der Bank",
+          "lines": [
+            { "speaker": "a", "name": "Anna", "en": "Hello, this is Anna from Northwind Ltd. Is Omar available?", "de": "Hallo, hier ist Anna von Northwind Ltd. Ist Omar erreichbar?" },
+            { "speaker": "b", "name": "Omar", "en": "Speaking. How can I help?", "de": "Am Apparat. Wie kann ich helfen?" },
+            { "speaker": "a", "name": "Anna", "en": "We want to hedge our currency risk for three months. Can you quote a forward rate?", "de": "Wir möchten unser Währungsrisiko für drei Monate absichern. Können Sie einen Terminkurs nennen?" },
+            { "speaker": "b", "name": "Omar", "en": "Yes, the three-month forward rate is one point one oh. Are you applying hedge accounting?", "de": "Ja, der Terminkurs für drei Monate liegt bei 1,10. Wenden Sie Hedge Accounting an?" },
+            { "speaker": "a", "name": "Anna", "en": "Yes. The hedge documentation is ready.", "de": "Ja. Die Dokumentation der Sicherung ist fertig." }
+          ],
+          "question": "Was sagt Anna zur Dokumentation?",
+          "choices": [
+            { "text": "Sie ist fertig.", "correct": true },
+            { "text": "Sie fehlt noch." },
+            { "text": "Sie wurde abgelehnt." }
+          ],
+          "words": ["treasury.u3.forward-rate", "treasury.u3.hedge-accounting", "treasury.u3.hedge-documentation", "fin.hedge"]
+        },
+        {
+          "id": "e12",
+          "type": "type",
+          "sentence": "The hedge is only ___ if the documentation is complete.",
+          "accepted": ["effective"],
+          "hint": "wirksam",
+          "translation": "Die Sicherung ist nur wirksam, wenn die Dokumentation vollständig ist.",
+          "words": ["treasury.u3.effectiveness-test"]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1516 @@
+// Generiert von scripts/gen-drafts.ts aus content-drafts/treasury.u4.json – nicht von Hand ändern.
+import type { Unit, VocabEntry } from '../schema'
+
+export const unit: Unit = {
+  "id": "treasury.u4",
+  "title": "Finanzierung",
+  "description": "Kredite, Covenants und Ratings verstehen und verhandeln.",
+  "cefr": "B2",
+  "color": "orange",
+  "icon": "📑",
+  "topics": [
+    "Kreditverträge",
+    "Covenants",
+    "Ratings",
+    "Investor Relations"
+  ],
+  "status": "ready",
+  "tips": [
+    {
+      "title": "in compliance with / in breach of",
+      "text": "Im Kreditvertrag steht „in compliance with“ für „im Einklang mit“ (Auflagen erfüllt) und „in breach of“ für „in Verletzung von“. Nach beiden Wendungen folgt ein Nomen, nie ein Verb.",
+      "examples": [
+        {
+          "en": "We are in compliance with all covenants.",
+          "de": "Wir erfüllen alle Auflagen."
+        },
+        {
+          "en": "The company is in breach of its leverage covenant.",
+          "de": "Das Unternehmen verletzt seine Auflage zur Verschuldungsquote."
+        }
+      ]
+    },
+    {
+      "title": "Falsche Freunde im Finanzbereich",
+      "text": "actual heißt „tatsächlich“, nicht „aktuell“ (dafür current). eventually heißt „schließlich“, nicht „eventuell“ (dafür possibly oder if necessary). sensible heißt „vernünftig“, nicht „sensibel“.",
+      "examples": [
+        {
+          "en": "The actual leverage ratio is 2.8.",
+          "de": "Die tatsächliche Verschuldungsquote liegt bei 2,8."
+        },
+        {
+          "en": "We may eventually need a waiver.",
+          "de": "Wir brauchen schließlich vielleicht eine Ausnahmegenehmigung."
+        }
+      ]
+    },
+    {
+      "title": "Passiv bei Herabstufungen",
+      "text": "Ein Rating wird herabgestuft oder angehoben. Im Englischen steht dafür das Passiv mit „was downgraded to“ bzw. „was upgraded to“. Der Ausblick wird dagegen „changed to“ oder „revised to“.",
+      "examples": [
+        {
+          "en": "Our rating was downgraded to BBB-.",
+          "de": "Unser Rating wurde auf BBB- herabgestuft."
+        },
+        {
+          "en": "The outlook was revised to negative.",
+          "de": "Der Ausblick wurde auf negativ revidiert."
+        }
+      ]
+    }
+  ],
+  "lessons": [
+    {
+      "id": "treasury.u4.l1",
+      "title": "Kreditverträge",
+      "description": "Kreditlinie, Parteien, Sicherheiten und Laufzeit",
+      "introduces": [
+        "treasury.u4.facility",
+        "treasury.u4.lender",
+        "treasury.u4.borrower",
+        "treasury.u4.collateral",
+        "treasury.u4.maturity"
+      ],
+      "exercises": [
+        {
+          "id": "e01",
+          "type": "intro",
+          "word": "treasury.u4.facility"
+        },
+        {
+          "id": "e02",
+          "type": "choice",
+          "prompt": "Was bedeutet „credit facility“?",
+          "choices": [
+            {
+              "text": "Kreditlinie, Kreditrahmen",
+              "correct": true
+            },
+            {
+              "text": "Kreditkarte"
+            },
+            {
+              "text": "Kreditwürdigkeit"
+            },
+            {
+              "text": "Kreditrückzahlung"
+            }
+          ],
+          "explanation": "Eine credit facility ist eine vereinbarte Kreditlinie, die bis zu einer Obergrenze genutzt werden kann.",
+          "words": [
+            "treasury.u4.facility"
+          ]
+        },
+        {
+          "id": "e03",
+          "type": "intro",
+          "word": "treasury.u4.lender"
+        },
+        {
+          "id": "e04",
+          "type": "intro",
+          "word": "treasury.u4.borrower"
+        },
+        {
+          "id": "e05",
+          "type": "fill",
+          "sentence": "The ___ is the bank that provides the loan.",
+          "choices": [
+            {
+              "text": "lender",
+              "correct": true
+            },
+            {
+              "text": "borrower"
+            },
+            {
+              "text": "investor"
+            }
+          ],
+          "translation": "Der Kreditgeber ist die Bank, die den Kredit vergibt.",
+          "explanation": "Der lender gibt den Kredit, der borrower nimmt ihn auf.",
+          "words": [
+            "treasury.u4.lender",
+            "treasury.u4.borrower"
+          ]
+        },
+        {
+          "id": "e06",
+          "type": "translate",
+          "direction": "de-en",
+          "prompt": "Der Kreditnehmer hat die Kreditlinie noch nicht genutzt.",
+          "answer": "The borrower has not used the credit facility yet.",
+          "accepted": [
+            "The borrower has not yet used the credit facility."
+          ],
+          "distractors": [
+            "lender",
+            "collateral",
+            "always"
+          ],
+          "words": [
+            "treasury.u4.borrower",
+            "treasury.u4.facility"
+          ]
+        },
+        {
+          "id": "e07",
+          "type": "listen-choice",
+          "audio": "The loan matures in twenty twenty-nine.",
+          "prompt": "Was hast du gehört?",
+          "choices": [
+            {
+              "text": "Der Kredit wird 2029 fällig.",
+              "correct": true
+            },
+            {
+              "text": "Der Kredit wird 2029 aufgestockt."
+            },
+            {
+              "text": "Die Bank zahlt 2029 eine Dividende."
+            }
+          ]
+        },
+        {
+          "id": "e08",
+          "type": "intro",
+          "word": "treasury.u4.collateral"
+        },
+        {
+          "id": "e09",
+          "type": "choice",
+          "prompt": "Was bedeutet „collateral“?",
+          "choices": [
+            {
+              "text": "die Sicherheit (ein Pfand)",
+              "correct": true
+            },
+            {
+              "text": "die Gebühr"
+            },
+            {
+              "text": "die Rendite"
+            },
+            {
+              "text": "die Laufzeit"
+            }
+          ],
+          "explanation": "Collateral sind Vermögenswerte, mit denen der Kredit abgesichert wird.",
+          "words": [
+            "treasury.u4.collateral"
+          ]
+        },
+        {
+          "id": "e10",
+          "type": "intro",
+          "word": "treasury.u4.maturity"
+        },
+        {
+          "id": "e11",
+          "type": "type",
+          "sentence": "The loan has a final ___ in 2031.",
+          "accepted": [
+            "maturity"
+          ],
+          "hint": "Fälligkeit",
+          "translation": "Der Kredit ist im Jahr 2031 endfällig.",
+          "words": [
+            "treasury.u4.maturity"
+          ]
+        },
+        {
+          "id": "e12",
+          "type": "listen-type",
+          "audio": "The bank holds the shares as collateral.",
+          "accepted": [
+            "The bank holds the shares as security."
+          ],
+          "translation": "Die Bank hält die Aktien als Sicherheit.",
+          "words": [
+            "treasury.u4.collateral"
+          ]
+        },
+        {
+          "id": "e13",
+          "type": "match",
+          "pairs": [
+            {
+              "en": "lender",
+              "de": "Kreditgeber"
+            },
+            {
+              "en": "borrower",
+              "de": "Kreditnehmer"
+            },
+            {
+              "en": "collateral",
+              "de": "Sicherheit"
+            },
+            {
+              "en": "maturity",
+              "de": "Fälligkeit"
+            }
+          ],
+          "words": [
+            "treasury.u4.lender",
+            "treasury.u4.borrower",
+            "treasury.u4.collateral",
+            "treasury.u4.maturity"
+          ]
+        },
+        {
+          "id": "e14",
+          "type": "dialogue",
+          "title": "Kreditlinie verlängern",
+          "lines": [
+            {
+              "speaker": "a",
+              "name": "Sam",
+              "en": "Anna, when does our credit facility mature?",
+              "de": "Anna, wann läuft unsere Kreditlinie aus?"
+            },
+            {
+              "speaker": "b",
+              "name": "Anna",
+              "en": "In twenty twenty-nine. The lender wants new collateral before we renew it.",
+              "de": "Im Jahr 2029. Der Kreditgeber will neue Sicherheiten, bevor wir verlängern."
+            },
+            {
+              "speaker": "a",
+              "name": "Sam",
+              "en": "Fine. Then we should start the talks early.",
+              "de": "Gut. Dann sollten wir früh mit den Verhandlungen beginnen."
+            },
+            {
+              "speaker": "b",
+              "name": "Anna",
+              "en": "Agreed. Our leverage has improved, so we are in a good position.",
+              "de": "Einverstanden. Unsere Verschuldung ist gesunken, daher stehen wir gut da."
+            }
+          ],
+          "question": "Worum geht es im Gespräch vor allem?",
+          "choices": [
+            {
+              "text": "Laufzeit und Sicherheiten der Kreditlinie",
+              "correct": true
+            },
+            {
+              "text": "Eine neue Bankkarte"
+            },
+            {
+              "text": "Eine Gehaltsverhandlung"
+            }
+          ],
+          "words": [
+            "treasury.u4.facility",
+            "treasury.u4.lender",
+            "treasury.u4.collateral",
+            "treasury.u4.maturity"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "treasury.u4.l2",
+      "title": "Covenants",
+      "description": "Auflagen im Kreditvertrag einhalten und Ausnahmen aushandeln",
+      "introduces": [
+        "treasury.u4.covenant",
+        "treasury.u4.leverage-ratio",
+        "treasury.u4.breach",
+        "treasury.u4.waiver"
+      ],
+      "exercises": [
+        {
+          "id": "e01",
+          "type": "intro",
+          "word": "treasury.u4.covenant"
+        },
+        {
+          "id": "e02",
+          "type": "choice",
+          "prompt": "Was bedeutet „covenant“ im Kreditvertrag?",
+          "choices": [
+            {
+              "text": "Vertragliche Auflage, die eingehalten werden muss",
+              "correct": true
+            },
+            {
+              "text": "Zinssatz des Kredits"
+            },
+            {
+              "text": "Rückzahlung in Raten"
+            },
+            {
+              "text": "Gerichtsbeschluss"
+            }
+          ],
+          "explanation": "Ein covenant ist eine Bedingung, die du während der ganzen Laufzeit dauerhaft einhältst.",
+          "words": [
+            "treasury.u4.covenant"
+          ]
+        },
+        {
+          "id": "e03",
+          "type": "intro",
+          "word": "treasury.u4.leverage-ratio"
+        },
+        {
+          "id": "e04",
+          "type": "fill",
+          "sentence": "Our ___ is 2.8, well below the covenant of 3.5.",
+          "choices": [
+            {
+              "text": "leverage ratio",
+              "correct": true
+            },
+            {
+              "text": "credit rating"
+            },
+            {
+              "text": "outlook"
+            }
+          ],
+          "translation": "Unsere Verschuldungsquote liegt bei 2,8 und damit deutlich unter der Auflage von 3,5.",
+          "explanation": "Die leverage ratio ist eine Kennzahl, die die Verschuldung ins Verhältnis zum Ergebnis setzt.",
+          "words": [
+            "treasury.u4.leverage-ratio"
+          ]
+        },
+        {
+          "id": "e05",
+          "type": "listen-choice",
+          "audio": "We are in compliance with all covenants.",
+          "prompt": "Was hast du gehört?",
+          "choices": [
+            {
+              "text": "Wir erfüllen alle Auflagen des Kreditvertrags.",
+              "correct": true
+            },
+            {
+              "text": "Wir haben die Kreditlinie vollständig gezogen."
+            },
+            {
+              "text": "Wir haben alle Verträge gekündigt."
+            }
+          ],
+          "words": [
+            "treasury.u4.covenant"
+          ]
+        },
+        {
+          "id": "e06",
+          "type": "intro",
+          "word": "treasury.u4.breach"
+        },
+        {
+          "id": "e07",
+          "type": "choice",
+          "prompt": "Was bedeutet „covenant breach“?",
+          "choices": [
+            {
+              "text": "Verstoß gegen eine Auflage",
+              "correct": true
+            },
+            {
+              "text": "Verlängerung einer Kreditlinie"
+            },
+            {
+              "text": "Erhöhung des Zinssatzes"
+            },
+            {
+              "text": "Erfolgreiche Rückzahlung"
+            }
+          ],
+          "words": [
+            "treasury.u4.breach",
+            "treasury.u4.covenant"
+          ]
+        },
+        {
+          "id": "e08",
+          "type": "translate",
+          "direction": "de-en",
+          "prompt": "Wir haben die Auflage verletzt.",
+          "answer": "We have breached the covenant.",
+          "accepted": [
+            "We breached the covenant."
+          ],
+          "distractors": [
+            "in",
+            "sold",
+            "is"
+          ],
+          "words": [
+            "treasury.u4.breach",
+            "treasury.u4.covenant"
+          ]
+        },
+        {
+          "id": "e09",
+          "type": "intro",
+          "word": "treasury.u4.waiver"
+        },
+        {
+          "id": "e10",
+          "type": "type",
+          "sentence": "If we breach the covenant, we need to ask the bank for a ___.",
+          "accepted": [
+            "waiver"
+          ],
+          "hint": "Ausnahmegenehmigung",
+          "translation": "Wenn wir die Auflage verletzen, müssen wir die Bank um eine Ausnahmegenehmigung bitten.",
+          "words": [
+            "treasury.u4.waiver"
+          ]
+        },
+        {
+          "id": "e11",
+          "type": "listen-type",
+          "audio": "The bank granted us a waiver.",
+          "accepted": [
+            "The bank has granted us a waiver."
+          ],
+          "translation": "Die Bank hat uns eine Ausnahmegenehmigung erteilt.",
+          "words": [
+            "treasury.u4.waiver"
+          ]
+        },
+        {
+          "id": "e12",
+          "type": "match",
+          "pairs": [
+            {
+              "en": "covenant",
+              "de": "Auflage"
+            },
+            {
+              "en": "waiver",
+              "de": "Ausnahmegenehmigung"
+            },
+            {
+              "en": "breach",
+              "de": "Verstoß"
+            },
+            {
+              "en": "leverage ratio",
+              "de": "Verschuldungsquote"
+            }
+          ],
+          "words": [
+            "treasury.u4.covenant",
+            "treasury.u4.waiver",
+            "treasury.u4.breach",
+            "treasury.u4.leverage-ratio"
+          ]
+        },
+        {
+          "id": "e13",
+          "type": "speak",
+          "text": "We expect to stay within all covenants this year.",
+          "translation": "Wir erwarten, dieses Jahr alle Auflagen einzuhalten.",
+          "words": [
+            "treasury.u4.covenant"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "treasury.u4.l3",
+      "title": "Ratings",
+      "description": "Bonitätsnoten lesen und Herabstufungen erklären",
+      "introduces": [
+        "treasury.u4.credit-rating",
+        "treasury.u4.downgrade",
+        "treasury.u4.outlook",
+        "treasury.u4.investment-grade"
+      ],
+      "exercises": [
+        {
+          "id": "e01",
+          "type": "intro",
+          "word": "treasury.u4.credit-rating"
+        },
+        {
+          "id": "e02",
+          "type": "choice",
+          "prompt": "Was bedeutet „credit rating“?",
+          "choices": [
+            {
+              "text": "Bonitätsnote",
+              "correct": true
+            },
+            {
+              "text": "Kreditkarte"
+            },
+            {
+              "text": "Kreditvertrag"
+            },
+            {
+              "text": "Zinsbindung"
+            }
+          ],
+          "explanation": "Ein credit rating bewertet, wie zuverlässig ein Schuldner seine Kredite zurückzahlt.",
+          "words": [
+            "treasury.u4.credit-rating"
+          ]
+        },
+        {
+          "id": "e03",
+          "type": "intro",
+          "word": "treasury.u4.downgrade"
+        },
+        {
+          "id": "e04",
+          "type": "translate",
+          "direction": "de-en",
+          "prompt": "Die Agentur hat unser Rating herabgestuft.",
+          "answer": "The agency has downgraded our rating.",
+          "accepted": [
+            "The agency downgraded our rating."
+          ],
+          "distractors": [
+            "upgraded",
+            "lender",
+            "sold"
+          ],
+          "explanation": "Herabstufen = to downgrade. Das Gegenteil ist to upgrade (anheben).",
+          "words": [
+            "treasury.u4.downgrade",
+            "treasury.u4.credit-rating"
+          ]
+        },
+        {
+          "id": "e05",
+          "type": "intro",
+          "word": "treasury.u4.outlook"
+        },
+        {
+          "id": "e06",
+          "type": "fill",
+          "sentence": "The rating is still BBB-, but the ___ has changed to negative.",
+          "choices": [
+            {
+              "text": "outlook",
+              "correct": true
+            },
+            {
+              "text": "maturity"
+            },
+            {
+              "text": "collateral"
+            }
+          ],
+          "translation": "Das Rating liegt noch bei BBB-, aber der Ausblick wurde auf negativ geändert.",
+          "explanation": "Der outlook zeigt die Richtung (stable, positive, negative), das Rating den aktuellen Stand.",
+          "words": [
+            "treasury.u4.outlook"
+          ]
+        },
+        {
+          "id": "e07",
+          "type": "intro",
+          "word": "treasury.u4.investment-grade"
+        },
+        {
+          "id": "e08",
+          "type": "choice",
+          "prompt": "Was bedeutet „investment grade“?",
+          "choices": [
+            {
+              "text": "erstklassige Bonität",
+              "correct": true
+            },
+            {
+              "text": "Anlage in Rohstoffe"
+            },
+            {
+              "text": "Schuldenschnitt"
+            },
+            {
+              "text": "Zinsobergrenze"
+            }
+          ],
+          "words": [
+            "treasury.u4.investment-grade"
+          ]
+        },
+        {
+          "id": "e09",
+          "type": "type",
+          "sentence": "Our rating was ___ to BBB-.",
+          "accepted": [
+            "downgraded"
+          ],
+          "hint": "herabgestuft",
+          "translation": "Unser Rating wurde auf BBB- herabgestuft.",
+          "words": [
+            "treasury.u4.downgrade"
+          ]
+        },
+        {
+          "id": "e10",
+          "type": "listen-choice",
+          "audio": "The outlook for our rating is stable.",
+          "prompt": "Was hast du gehört?",
+          "choices": [
+            {
+              "text": "Der Ausblick für unser Rating ist stabil.",
+              "correct": true
+            },
+            {
+              "text": "Unser Rating ist gerade stark gestiegen."
+            },
+            {
+              "text": "Das Unternehmen hat neue Anleihen ausgegeben."
+            }
+          ],
+          "words": [
+            "treasury.u4.outlook"
+          ]
+        },
+        {
+          "id": "e11",
+          "type": "listen-type",
+          "audio": "Our rating is still in investment grade.",
+          "accepted": [
+            "Our rating is still investment grade."
+          ],
+          "translation": "Unser Rating liegt noch im Investment-Grade-Bereich.",
+          "words": [
+            "treasury.u4.investment-grade"
+          ]
+        },
+        {
+          "id": "e12",
+          "type": "match",
+          "pairs": [
+            {
+              "en": "credit rating",
+              "de": "Bonitätsnote"
+            },
+            {
+              "en": "downgrade",
+              "de": "Herabstufung"
+            },
+            {
+              "en": "outlook",
+              "de": "Ausblick"
+            },
+            {
+              "en": "investment grade",
+              "de": "erstklassige Bonität"
+            }
+          ],
+          "words": [
+            "treasury.u4.credit-rating",
+            "treasury.u4.downgrade",
+            "treasury.u4.outlook",
+            "treasury.u4.investment-grade"
+          ]
+        },
+        {
+          "id": "e13",
+          "type": "dialogue",
+          "title": "Nach der Agentur-Meldung",
+          "lines": [
+            {
+              "speaker": "a",
+              "name": "Sam",
+              "en": "Did the agency downgrade us?",
+              "de": "Hat die Agentur uns herabgestuft?"
+            },
+            {
+              "speaker": "b",
+              "name": "Anna",
+              "en": "No. They changed only the outlook to negative.",
+              "de": "Nein. Sie haben nur den Ausblick auf negativ geändert."
+            },
+            {
+              "speaker": "a",
+              "name": "Sam",
+              "en": "So we are still in investment grade?",
+              "de": "Wir sind also noch im Investment-Grade-Bereich?"
+            },
+            {
+              "speaker": "b",
+              "name": "Anna",
+              "en": "Yes, but we should talk to our lenders before the next call.",
+              "de": "Ja, aber wir sollten vor dem nächsten Call mit unseren Kreditgebern sprechen."
+            }
+          ],
+          "question": "Was ist bisher passiert?",
+          "choices": [
+            {
+              "text": "Der Ausblick ist negativ, das Rating blieb im Investment Grade.",
+              "correct": true
+            },
+            {
+              "text": "Das Rating wurde unter Investment Grade herabgestuft."
+            },
+            {
+              "text": "Die Bank hat die Kreditlinie gekündigt."
+            }
+          ],
+          "words": [
+            "treasury.u4.outlook",
+            "treasury.u4.investment-grade",
+            "treasury.u4.downgrade"
+          ]
+        },
+        {
+          "id": "e14",
+          "type": "translate",
+          "direction": "de-en",
+          "prompt": "Das Rating bleibt wahrscheinlich im Investment-Grade-Bereich.",
+          "answer": "The rating will probably stay in investment grade.",
+          "distractors": [
+            "downgraded",
+            "upgraded",
+            "lender"
+          ],
+          "words": [
+            "treasury.u4.investment-grade",
+            "treasury.u4.credit-rating"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "treasury.u4.l4",
+      "title": "Investor Relations",
+      "description": "Investoren informieren: Quartalszahlen, Prognosen und Anleihen",
+      "introduces": [
+        "treasury.u4.guidance",
+        "treasury.u4.earnings-call",
+        "treasury.u4.bondholder",
+        "treasury.u4.roadshow"
+      ],
+      "exercises": [
+        {
+          "id": "e01",
+          "type": "intro",
+          "word": "treasury.u4.guidance"
+        },
+        {
+          "id": "e02",
+          "type": "choice",
+          "prompt": "Was bedeutet „guidance“ im Finanzbereich?",
+          "choices": [
+            {
+              "text": "Prognose für künftige Geschäftszahlen",
+              "correct": true
+            },
+            {
+              "text": "Kreditauflage"
+            },
+            {
+              "text": "Zinsbindung"
+            },
+            {
+              "text": "Dividendenausschüttung"
+            }
+          ],
+          "explanation": "Guidance ist die offizielle Erwartung des Managements für künftige Zahlen.",
+          "words": [
+            "treasury.u4.guidance"
+          ]
+        },
+        {
+          "id": "e03",
+          "type": "intro",
+          "word": "treasury.u4.earnings-call"
+        },
+        {
+          "id": "e04",
+          "type": "fill",
+          "sentence": "We will discuss the results in our quarterly ___ on Thursday.",
+          "choices": [
+            {
+              "text": "earnings call",
+              "correct": true
+            },
+            {
+              "text": "covenant"
+            },
+            {
+              "text": "waiver"
+            }
+          ],
+          "translation": "Wir besprechen die Ergebnisse am Donnerstag in unserer Quartals-Telefonkonferenz.",
+          "words": [
+            "treasury.u4.earnings-call"
+          ]
+        },
+        {
+          "id": "e05",
+          "type": "intro",
+          "word": "treasury.u4.bondholder"
+        },
+        {
+          "id": "e06",
+          "type": "choice",
+          "prompt": "Was bedeutet „bondholder“?",
+          "question": "bondholder",
+          "questionLang": "en",
+          "choices": [
+            {
+              "text": "Anleihegläubiger",
+              "correct": true
+            },
+            {
+              "text": "Aktionär"
+            },
+            {
+              "text": "Kreditnehmer"
+            },
+            {
+              "text": "Wirtschaftsprüfer"
+            }
+          ],
+          "explanation": "Ein bondholder hält Anleihen des Unternehmens und bekommt dafür Zinsen.",
+          "words": [
+            "treasury.u4.bondholder"
+          ]
+        },
+        {
+          "id": "e07",
+          "type": "listen-choice",
+          "audio": "Our bondholders expect regular updates.",
+          "prompt": "Was hast du gehört?",
+          "choices": [
+            {
+              "text": "Unsere Anleihegläubiger erwarten regelmäßige Updates.",
+              "correct": true
+            },
+            {
+              "text": "Unsere Aktionäre haben die Dividende erhalten."
+            },
+            {
+              "text": "Unsere Kunden zahlen die Kredite früh zurück."
+            }
+          ],
+          "words": [
+            "treasury.u4.bondholder"
+          ]
+        },
+        {
+          "id": "e08",
+          "type": "intro",
+          "word": "treasury.u4.roadshow"
+        },
+        {
+          "id": "e09",
+          "type": "translate",
+          "direction": "de-en",
+          "prompt": "Wir planen nächsten Monat eine Roadshow in London.",
+          "answer": "We are planning a roadshow in London next month.",
+          "distractors": [
+            "guidance",
+            "covenant",
+            "lender"
+          ],
+          "words": [
+            "treasury.u4.roadshow"
+          ]
+        },
+        {
+          "id": "e10",
+          "type": "type",
+          "sentence": "We raised our ___ for this year after strong sales.",
+          "accepted": [
+            "guidance"
+          ],
+          "hint": "Prognose",
+          "translation": "Nach starken Verkäufen haben wir unsere Prognose für dieses Jahr angehoben.",
+          "words": [
+            "treasury.u4.guidance"
+          ]
+        },
+        {
+          "id": "e11",
+          "type": "listen-type",
+          "audio": "The earnings call starts at ten o'clock.",
+          "accepted": [
+            "The earnings call starts at 10 o'clock."
+          ],
+          "translation": "Die Telefonkonferenz zu den Quartalszahlen beginnt um zehn Uhr.",
+          "words": [
+            "treasury.u4.earnings-call"
+          ]
+        },
+        {
+          "id": "e12",
+          "type": "match",
+          "pairs": [
+            {
+              "en": "earnings call",
+              "de": "Telefonkonferenz zu den Quartalszahlen"
+            },
+            {
+              "en": "guidance",
+              "de": "Prognose"
+            },
+            {
+              "en": "bondholder",
+              "de": "Anleihegläubiger"
+            },
+            {
+              "en": "roadshow",
+              "de": "Investorenreise"
+            }
+          ],
+          "words": [
+            "treasury.u4.earnings-call",
+            "treasury.u4.guidance",
+            "treasury.u4.bondholder",
+            "treasury.u4.roadshow"
+          ]
+        },
+        {
+          "id": "e13",
+          "type": "speak",
+          "text": "We have raised our guidance for this year.",
+          "translation": "Wir haben unsere Prognose für dieses Jahr angehoben.",
+          "words": [
+            "treasury.u4.guidance"
+          ]
+        },
+        {
+          "id": "e14",
+          "type": "dialogue",
+          "title": "Vor der Telefonkonferenz",
+          "lines": [
+            {
+              "speaker": "a",
+              "name": "Sam",
+              "en": "The earnings call is on Thursday. Are we ready?",
+              "de": "Die Telefonkonferenz ist am Donnerstag. Sind wir bereit?"
+            },
+            {
+              "speaker": "b",
+              "name": "Anna",
+              "en": "Yes. We have raised our guidance, so investors will have questions.",
+              "de": "Ja. Wir haben unsere Prognose angehoben, also werden Investoren Fragen haben."
+            },
+            {
+              "speaker": "a",
+              "name": "Sam",
+              "en": "Good news for the bondholders, too.",
+              "de": "Auch für die Anleihegläubiger sind das gute Nachrichten."
+            },
+            {
+              "speaker": "b",
+              "name": "Anna",
+              "en": "Exactly. Right after the call, we start the roadshow.",
+              "de": "Genau. Direkt nach der Telefonkonferenz starten wir die Roadshow."
+            }
+          ],
+          "question": "Was ist die wichtigste Neuigkeit?",
+          "choices": [
+            {
+              "text": "Die Prognose wurde angehoben.",
+              "correct": true
+            },
+            {
+              "text": "Die Kreditlinie wurde gekündigt."
+            },
+            {
+              "text": "Ein neuer Vorstand wurde ernannt."
+            }
+          ],
+          "words": [
+            "treasury.u4.guidance",
+            "treasury.u4.earnings-call",
+            "treasury.u4.bondholder",
+            "treasury.u4.roadshow"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "treasury.u4.l5",
+      "title": "Wiederholung",
+      "description": "Alle Wörter der Unit mischen",
+      "exercises": [
+        {
+          "id": "e01",
+          "type": "choice",
+          "prompt": "Was bedeutet „downgrade“?",
+          "question": "downgrade",
+          "questionLang": "en",
+          "choices": [
+            {
+              "text": "Herabstufung",
+              "correct": true
+            },
+            {
+              "text": "Aufwertung"
+            },
+            {
+              "text": "Kreditlinie"
+            },
+            {
+              "text": "Laufzeit"
+            }
+          ],
+          "words": [
+            "treasury.u4.downgrade"
+          ]
+        },
+        {
+          "id": "e02",
+          "type": "match",
+          "pairs": [
+            {
+              "en": "covenant",
+              "de": "Auflage"
+            },
+            {
+              "en": "waiver",
+              "de": "Ausnahmegenehmigung"
+            },
+            {
+              "en": "credit rating",
+              "de": "Bonitätsnote"
+            },
+            {
+              "en": "bondholder",
+              "de": "Anleihegläubiger"
+            }
+          ],
+          "words": [
+            "treasury.u4.covenant",
+            "treasury.u4.waiver",
+            "treasury.u4.credit-rating",
+            "treasury.u4.bondholder"
+          ]
+        },
+        {
+          "id": "e03",
+          "type": "fill",
+          "sentence": "The bank asks for ___ before it renews the loan.",
+          "choices": [
+            {
+              "text": "collateral",
+              "correct": true
+            },
+            {
+              "text": "a roadshow"
+            },
+            {
+              "text": "a bondholder"
+            }
+          ],
+          "translation": "Die Bank verlangt Sicherheiten, bevor sie den Kredit verlängert.",
+          "explanation": "Banken verlangen oft collateral, bevor sie eine Kreditlinie verlängern.",
+          "words": [
+            "treasury.u4.collateral"
+          ]
+        },
+        {
+          "id": "e04",
+          "type": "listen-choice",
+          "audio": "The lender reviews our leverage ratio every quarter.",
+          "prompt": "Was hast du gehört?",
+          "choices": [
+            {
+              "text": "Der Kreditgeber prüft unsere Verschuldungsquote jedes Quartal.",
+              "correct": true
+            },
+            {
+              "text": "Der Kreditgeber verkauft jedes Quartal seine Aktien."
+            },
+            {
+              "text": "Der Kreditnehmer zahlt jedes Quartal die Dividende."
+            }
+          ],
+          "words": [
+            "treasury.u4.leverage-ratio",
+            "treasury.u4.lender"
+          ]
+        },
+        {
+          "id": "e05",
+          "type": "translate",
+          "direction": "de-en",
+          "prompt": "Wir sind im Einklang mit allen Auflagen.",
+          "answer": "We are in compliance with all covenants.",
+          "distractors": [
+            "outlook",
+            "waiver",
+            "lender"
+          ],
+          "explanation": "„in compliance with“ bedeutet im Einklang mit bzw. Auflagen erfüllt.",
+          "words": [
+            "treasury.u4.covenant"
+          ]
+        },
+        {
+          "id": "e06",
+          "type": "type",
+          "sentence": "After the breach, the bank agreed to a ___ for one quarter.",
+          "accepted": [
+            "waiver"
+          ],
+          "hint": "Ausnahmegenehmigung",
+          "translation": "Nach dem Verstoß stimmte die Bank einer Ausnahmegenehmigung für ein Quartal zu.",
+          "words": [
+            "treasury.u4.waiver",
+            "treasury.u4.breach"
+          ]
+        },
+        {
+          "id": "e07",
+          "type": "speak",
+          "text": "Our credit rating is still investment grade.",
+          "translation": "Unser Kreditrating liegt weiterhin im Investment-Grade-Bereich.",
+          "words": [
+            "treasury.u4.investment-grade",
+            "treasury.u4.credit-rating"
+          ]
+        },
+        {
+          "id": "e08",
+          "type": "dialogue",
+          "title": "Zwischenstand",
+          "lines": [
+            {
+              "speaker": "a",
+              "name": "Sam",
+              "en": "Did the bank check our leverage ratio this quarter?",
+              "de": "Hat die Bank in diesem Quartal unsere Verschuldungsquote geprüft?"
+            },
+            {
+              "speaker": "b",
+              "name": "Anna",
+              "en": "Yes, and we are still within the covenant.",
+              "de": "Ja, und wir liegen noch innerhalb der Auflage."
+            },
+            {
+              "speaker": "a",
+              "name": "Sam",
+              "en": "Good. Then we don't need a waiver.",
+              "de": "Gut. Dann brauchen wir keine Ausnahmegenehmigung."
+            },
+            {
+              "speaker": "b",
+              "name": "Anna",
+              "en": "Right, but the rating outlook is negative, so we should be careful.",
+              "de": "Richtig, aber der Ausblick für das Rating ist negativ, deshalb sollten wir vorsichtig sein."
+            }
+          ],
+          "question": "Wie steht das Unternehmen gerade da?",
+          "choices": [
+            {
+              "text": "Innerhalb der Auflage, ohne Ausnahmegenehmigung, mit negativem Ausblick",
+              "correct": true
+            },
+            {
+              "text": "Verstoß gegen die Auflage, Ausnahmegenehmigung nötig"
+            },
+            {
+              "text": "Rating herabgestuft, Kreditlinie gekündigt"
+            }
+          ],
+          "words": [
+            "treasury.u4.leverage-ratio",
+            "treasury.u4.covenant",
+            "treasury.u4.waiver",
+            "treasury.u4.outlook"
+          ]
+        },
+        {
+          "id": "e09",
+          "type": "listen-type",
+          "audio": "The bank will check our leverage ratio next quarter.",
+          "accepted": [
+            "The bank will check our leverage ratio in the next quarter."
+          ],
+          "translation": "Die Bank prüft unsere Verschuldungsquote im nächsten Quartal.",
+          "words": [
+            "treasury.u4.leverage-ratio"
+          ]
+        },
+        {
+          "id": "e10",
+          "type": "translate",
+          "direction": "en-de",
+          "prompt": "The bank has extended the credit facility.",
+          "answer": "Die Bank hat die Kreditlinie verlängert.",
+          "distractors": [
+            "gekündigt",
+            "Auflage",
+            "Dividende"
+          ],
+          "words": [
+            "treasury.u4.facility"
+          ]
+        },
+        {
+          "id": "e11",
+          "type": "choice",
+          "prompt": "Welcher Begriff bedeutet „Verschuldungsquote“?",
+          "choices": [
+            {
+              "text": "leverage ratio",
+              "correct": true
+            },
+            {
+              "text": "credit rating"
+            },
+            {
+              "text": "covenant"
+            },
+            {
+              "text": "earnings call"
+            }
+          ],
+          "words": [
+            "treasury.u4.leverage-ratio"
+          ]
+        },
+        {
+          "id": "e12",
+          "type": "fill",
+          "sentence": "Our ___ is BBB-, just above junk status.",
+          "choices": [
+            {
+              "text": "credit rating",
+              "correct": true
+            },
+            {
+              "text": "bondholder"
+            },
+            {
+              "text": "waiver"
+            }
+          ],
+          "translation": "Unser Kreditrating ist BBB-, knapp über dem Ramschstatus.",
+          "words": [
+            "treasury.u4.credit-rating"
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+export const vocab: VocabEntry[] = [
+  {
+    "id": "treasury.u4.facility",
+    "en": "credit facility",
+    "de": "die Kreditlinie",
+    "pos": "noun",
+    "example": "We have a five-year credit facility with three banks.",
+    "exampleDe": "Wir haben eine Kreditlinie mit drei Banken über fünf Jahre.",
+    "altEn": [
+      "facility"
+    ],
+    "altDe": [
+      "Kreditrahmen",
+      "Kreditfazilität"
+    ],
+    "note": "Im Finanzbereich meint facility meist eine vereinbarte Kreditzusage."
+  },
+  {
+    "id": "treasury.u4.lender",
+    "en": "lender",
+    "de": "der Kreditgeber",
+    "pos": "noun",
+    "example": "The lender agreed to extend the loan by one year.",
+    "exampleDe": "Der Kreditgeber stimmte zu, den Kredit um ein Jahr zu verlängern.",
+    "altDe": [
+      "Darlehensgeber"
+    ],
+    "note": "Gegenteil: borrower."
+  },
+  {
+    "id": "treasury.u4.borrower",
+    "en": "borrower",
+    "de": "der Kreditnehmer",
+    "pos": "noun",
+    "example": "The borrower must send its financial statements every quarter.",
+    "exampleDe": "Der Kreditnehmer muss seine Finanzberichte jedes Quartal einreichen.",
+    "altDe": [
+      "Darlehensnehmer"
+    ],
+    "note": "Gegenteil: lender."
+  },
+  {
+    "id": "treasury.u4.collateral",
+    "en": "collateral",
+    "de": "die Sicherheit(en)",
+    "pos": "noun",
+    "example": "The machinery serves as collateral for the loan.",
+    "exampleDe": "Die Maschinen dienen als Sicherheit für den Kredit.",
+    "altDe": [
+      "Kreditsicherheit",
+      "Pfand"
+    ],
+    "note": "Sicherheiten stellen heißt to provide collateral."
+  },
+  {
+    "id": "treasury.u4.maturity",
+    "en": "maturity",
+    "de": "die Fälligkeit, das Laufzeitende",
+    "pos": "noun",
+    "example": "The bonds reach maturity in 2031.",
+    "exampleDe": "Die Anleihen werden 2031 fällig.",
+    "altDe": [
+      "Laufzeitende"
+    ],
+    "note": "Meint den Zeitpunkt der Fälligkeit, nicht die Dauer. Die Dauer heißt term."
+  },
+  {
+    "id": "treasury.u4.covenant",
+    "en": "covenant",
+    "de": "die Auflage (im Kreditvertrag)",
+    "pos": "noun",
+    "example": "Our loan has a covenant on the leverage ratio.",
+    "exampleDe": "Unser Kredit enthält eine Auflage zur Verschuldungsquote.",
+    "altEn": [
+      "financial covenant"
+    ],
+    "altDe": [
+      "Kreditauflage"
+    ],
+    "note": "Bedingung, die der Kreditnehmer während der Laufzeit dauerhaft einhalten muss."
+  },
+  {
+    "id": "treasury.u4.leverage-ratio",
+    "en": "leverage ratio",
+    "de": "die Verschuldungsquote",
+    "pos": "noun",
+    "example": "Our leverage ratio fell to 2.5 after the repayment.",
+    "exampleDe": "Unsere Verschuldungsquote sank nach der Rückzahlung auf 2,5.",
+    "altDe": [
+      "Verschuldungsgrad"
+    ],
+    "note": "Meist Nettoverschuldung im Verhältnis zum EBITDA. Die genaue Definition steht im Kreditvertrag."
+  },
+  {
+    "id": "treasury.u4.breach",
+    "en": "breach",
+    "de": "der Verstoß, die Verletzung",
+    "pos": "noun",
+    "example": "A breach of covenant can trigger early repayment.",
+    "exampleDe": "Ein Verstoß gegen eine Auflage kann eine vorzeitige Rückzahlung auslösen.",
+    "altDe": [
+      "Vertragsverletzung"
+    ],
+    "note": "Als Verb: to breach = verletzen, z. B. eine Auflage."
+  },
+  {
+    "id": "treasury.u4.waiver",
+    "en": "waiver",
+    "de": "die Ausnahmegenehmigung, der Verzicht",
+    "pos": "noun",
+    "example": "After the breach, we asked the bank for a waiver.",
+    "exampleDe": "Nach dem Verstoß haben wir die Bank um eine Ausnahmegenehmigung gebeten.",
+    "altDe": [
+      "Verzichtserklärung"
+    ],
+    "note": "Die Bank verzichtet befristet darauf, eine Auflage durchzusetzen."
+  },
+  {
+    "id": "treasury.u4.credit-rating",
+    "en": "credit rating",
+    "de": "das Kreditrating, die Bonitätsnote",
+    "pos": "noun",
+    "example": "Our credit rating determines the interest rate on new bonds.",
+    "exampleDe": "Unser Kreditrating bestimmt den Zinssatz neuer Anleihen.",
+    "altEn": [
+      "rating"
+    ],
+    "altDe": [
+      "Rating",
+      "Bonitätsbewertung"
+    ],
+    "note": "Bewertung der Kreditwürdigkeit durch eine Ratingagentur."
+  },
+  {
+    "id": "treasury.u4.downgrade",
+    "en": "downgrade",
+    "de": "die Herabstufung",
+    "pos": "noun",
+    "example": "A downgrade would make new loans more expensive.",
+    "exampleDe": "Eine Herabstufung würde neue Kredite teurer machen.",
+    "altDe": [
+      "herabstufen"
+    ],
+    "note": "Gegenteil: upgrade (Heraufstufung)."
+  },
+  {
+    "id": "treasury.u4.outlook",
+    "en": "outlook",
+    "de": "der Ausblick",
+    "pos": "noun",
+    "example": "The agency changed the outlook from stable to negative.",
+    "exampleDe": "Die Agentur hat den Ausblick von stabil auf negativ geändert.",
+    "note": "Zeigt die wahrscheinliche Richtung des Ratings: stable, positive oder negative."
+  },
+  {
+    "id": "treasury.u4.investment-grade",
+    "en": "investment grade",
+    "de": "erstklassige Bonität (Investment Grade)",
+    "pos": "phrase",
+    "example": "The bond stays in investment grade despite the weak year.",
+    "exampleDe": "Die Anleihe bleibt trotz des schwachen Jahres im Investment-Grade-Bereich.",
+    "altEn": [
+      "investment-grade"
+    ],
+    "altDe": [
+      "Investment Grade"
+    ],
+    "note": "Ratings ab BBB- gelten als Investment Grade. Darunter spricht man von high yield oder Ramsch."
+  },
+  {
+    "id": "treasury.u4.guidance",
+    "en": "guidance",
+    "de": "die Prognose",
+    "pos": "noun",
+    "example": "We raised our guidance for this year.",
+    "exampleDe": "Wir haben unsere Prognose für dieses Jahr angehoben.",
+    "note": "Offizielle Erwartung des Managements an künftige Zahlen. Nicht mit Anleitung verwechseln."
+  },
+  {
+    "id": "treasury.u4.earnings-call",
+    "en": "earnings call",
+    "de": "die Telefonkonferenz zu den Quartalszahlen",
+    "pos": "noun",
+    "example": "Our CFO hosts the earnings call on Thursday.",
+    "exampleDe": "Unser CFO leitet die Telefonkonferenz am Donnerstag.",
+    "altEn": [
+      "earnings conference call"
+    ],
+    "altDe": [
+      "Quartals-Call"
+    ],
+    "note": "Findet nach der Veröffentlichung der Quartalszahlen statt."
+  },
+  {
+    "id": "treasury.u4.bondholder",
+    "en": "bondholder",
+    "de": "der Anleihegläubiger",
+    "pos": "noun",
+    "example": "Bondholders receive interest every six months.",
+    "exampleDe": "Anleihegläubiger erhalten alle sechs Monate Zinsen.",
+    "altEn": [
+      "bond holder"
+    ],
+    "note": "Wer eine Anleihe des Unternehmens hält. Eine wichtige Zielgruppe der Investor Relations."
+  },
+  {
+    "id": "treasury.u4.roadshow",
+    "en": "roadshow",
+    "de": "die Roadshow (Investorenreise)",
+    "pos": "noun",
+    "example": "We start a roadshow with investors in three European cities.",
+    "exampleDe": "Wir starten eine Roadshow mit Investoren in drei europäischen Städten.",
+    "altDe": [
+      "Investorenreise"
+    ],
+    "note": "Mehrtägige Termintour, bei der das Management Investoren ein Angebot vorstellt."
+  }
+]
